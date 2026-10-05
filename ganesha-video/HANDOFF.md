@@ -92,3 +92,14 @@ Alert the user if any stage goes 20% over (stage 3a: more than 54 images).
 - Optional lip-sync pass for shots 02, 17, 24 (price with `estimate_only`).
 - Shorts approach (60 s, 9:16): either the 16:9 clips on a blurred background, or native 9:16 generations for 3–4 hero moments (extra credits). Ask when we reach Phase 6.
 - Shot 21: the prompt leaves Mooshak out although the shot list has him.
+
+## Where files live, and how the video reaches the user
+
+- **Working folder:** `ganesha-video/` inside the session's repo checkout. Finished deliverables go in `09_final/` (final MP4, Shorts MP4, SRT, thumbnails, `youtube_metadata.md`).
+- **The session container is temporary.** It is lost when the session ends or sits idle. Generated media also stays in the Krea, ElevenLabs and Canva accounts (job and asset URLs), so it can be re-downloaded if the container is lost. Record job IDs and asset URLs in `log.md`.
+- **Never commit media.** GitHub rejects files over 100 MB, the final MP4 will be about 0.5 GB, and this repo is an unrelated firmware project. A fresh checkout has no local exclude rule, so run this first in a new session:
+  ```
+  printf '%s\n' 'ganesha-video/0[3-8]_*/' 'ganesha-video/09_final/*.mp4' 'ganesha-video/09_final/*.png' 'ganesha-video/09_final/*.jpg' >> .git/info/exclude
+  ```
+  Small text deliverables (SRT, metadata) may be committed with `git add -f` if the user wants a backup.
+- **Delivery:** the app can only open files inside the working directory, so send each finished file with SendUserFile as soon as it is done. If the MP4 is too large to send, make a lower-bitrate copy, tell the user, and keep the full-quality one. The user uploads to YouTube by hand (no upload tool is connected).
