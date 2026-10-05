@@ -77,16 +77,7 @@ para(c, 'This book belongs to', 166, 410, 480, 40, align=TA_CENTER, lead=1.1)
 c.setStrokeColor(PLUM); c.setLineWidth(2.5 * S); c.line(196 * S, 576 - 528 * S, 616 * S, 576 - 528 * S)
 c.showPage()
 
-# 3-18 story pages
-for n, (src, text) in enumerate(s.PAGES, 1):
-    para(c, text, 40, 44, 510, 24, lead=1.35)
-    rrect(c, 574, 24, 160, 160, 14, PEACH, ORANGE, 4)
-    img(c, colour(COLOUR[n]), 584, 34, 140, 140)
-    para(c, 'Colour idea', 574, 190, 160, 15, font='Sans-BoldOblique', color=ORANGE, align=TA_CENTER)
-    img(c, lineart(final[str(src)]), 122, 212, 524, 524)
-    c.showPage()
-
-# 19 colour test page
+# 3 colour test page
 para(c, 'Test Your Colours Here!', 40, 48, 688, 44, align=TA_CENTER)
 para(c, 'Try your pencils, pens and crayons in the circles before you start colouring.', 84, 112, 600, 18, font='Sans-Oblique', align=TA_CENTER)
 c.setStrokeColor(black); c.setFillColor(white); c.setLineWidth(4 * S)
@@ -96,20 +87,32 @@ for t in (180, 340, 500):
 para(c, "Tip: slip a spare sheet of paper behind the page you are colouring so markers don't bleed through.", 84, 664, 600, 18, font='Sans-Oblique', align=TA_CENTER)
 c.showPage()
 
-# 20 back cover
-img(c, colour(BACK, 1600), 0, 0, 768, 768)
+# 4-19 story pages
+for n, (src, text) in enumerate(s.PAGES, 1):
+    para(c, text, 40, 44, 510, 24, lead=1.35)
+    rrect(c, 574, 24, 160, 160, 14, PEACH, ORANGE, 4)
+    img(c, colour(COLOUR[n]), 584, 34, 140, 140)
+    para(c, 'Colour idea', 574, 190, 160, 15, font='Sans-BoldOblique', color=ORANGE, align=TA_CENTER)
+    img(c, lineart(final[str(src)]), 122, 212, 524, 524)
+    c.showPage()
+
+# 20 back cover (KDP): art mirrored so Pip + moon sit bottom-left; 2 x 1.2 in barcode zone bottom-right kept clear
+def mirrored(fname, px=1600):
+    im = Image.open(T + fname).convert('RGB').resize((px, px), Image.LANCZOS).transpose(Image.FLIP_LEFT_RIGHT)
+    import io; b = io.BytesIO(); im.save(b, 'JPEG', quality=90); b.seek(0)
+    return ImageReader(b)
+img(c, mirrored(BACK), 0, 0, 768, 768)
 para(c, 'Cozy Spooky Corner', 40, 40, 688, 46, color=CREAM, align=TA_CENTER, lead=1.1)
 para(c, "Pip's Pumpkin Moon Party", 40, 104, 688, 26, color=GOLD, align=TA_CENTER)
 para(c, "Join Pip the little witch, Biscuit the cat and Boo the friendly ghost as they plan the cosiest "
         "Halloween party ever. Pick pumpkins, bake a pie, carve jack-o'-lanterns and dance under the "
         "Pumpkin Moon, colouring every step of the story as you go!", 64, 150, 640, 18, font='Sans', color=CREAM, align=TA_CENTER, lead=1.45)
-for i, (l, n) in enumerate([(64, 7), (220, 10), (376, 13)]):
-    rrect(c, l, 300, 140, 140, 14, PEACH, ORANGE, 4)
-    img(c, colour(COLOUR[n], 500), l + 9, 309, 122, 122)
+for l, n in [(372, 7), (496, 10), (620, 13)]:
+    rrect(c, l, 290, 116, 116, 12, PEACH, ORANGE, 4)
+    img(c, colour(COLOUR[n], 400), l + 8, 298, 100, 100)
 para(c, '★ 16 story pages to colour<br/>★ Bold, easy lines for little hands<br/>★ A colour idea on every page<br/>★ Colour test page included<br/>★ Ages 3+',
-     64, 458, 360, 16, font='Stars', color=CREAM, lead=1.55)
-rrect(c, 64, 600, 180, 100, 4, white)
-para(c, 'Barcode area', 64, 640, 180, 14, font='Sans', color=HexColor('#999999'), align=TA_CENTER)
+     402, 432, 330, 16, font='Stars', color=CREAM, lead=1.55)
+# KDP barcode zone (bottom-right, 2 x 1.2 in, 0.25 in in from the edges) is intentionally left empty.
 c.showPage()
 c.save()
 print('ok')
