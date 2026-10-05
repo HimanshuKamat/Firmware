@@ -1,0 +1,21 @@
+{
+ "note": "shot -> list of Krea job ids for the full clips (latest last). Shot 02 = tests/shot02_veo_1080.mp4 (job 9e53899a-6512-4473-931b-a42c9e5f24d3), shot 04 = tests/shot04_seedance_1080.mp4 (job 16449df1-3f57-4247-9012-bdf0ad44a90b).",
+ "13": [
+  "aafea416-3c53-4251-8fac-9ff873c90e6b"
+ ],
+ "21": [
+  "f1234688-856d-4829-92b2-c2a150297665"
+ ],
+ "32": [
+  "43924bf8-31ff-4d95-a3c5-3620d7b51b42"
+ ],
+ "3": [
+  "501bd23d-5682-4476-b884-fa8fd214acfe"
+ ],
+ "5": [
+  "2bd8872f-bd2b-467f-ab95-9b36e7ef9cf8"
+ ],
+ "6": [
+  "5f3d4847-bfd7-42ce-bfb8-378ec2586ba4"
+ ]
+}
