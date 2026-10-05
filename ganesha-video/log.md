@@ -33,11 +33,12 @@ Read-only calls (listing models, voices, styles) cost nothing and are logged onc
 | 19 | 2026-10-05 | Checkpoint 3 | ffmpeg | rough stitch v1: 08_edit/rough_stitch_v1.mp4 (960x540, silent, shot numbers burned in top-left, 0.5 s crossfades, intro is a placeholder card) | Free review cut for the user | 0 | 280.0 s = 4:40, no black frames. Veo shots with a longer timeline were slowed by up to 1.2x (24, 25, 29, 31) and shot 31 and 33 hold their last frame (31: 0.9 s, 33: about 10 s for the end screen). Filter script in 08_edit/rough_filter.txt. |
 | 20 | 2026-10-05 | 4 Voice | ElevenLabs | estimate_only x5 (eleven_v3 narrator sample x3 voices, eleven_music_v2_5 x1, eleven_text_to_sound_v2 x1) | Price checks, nothing generated | 0 | Narrator 15 s sample = 198 credits (3.96 cents) per voice, 1 take (default is 4 takes: always pass generations_count=1). Music bed = 1,500 credits (30 cents) per track at the default length. One SFX = 50 credits (1 cent). Full narration pass (1,639 characters) about 1,640 credits (33 cents). Estimates left 5 empty flows in the ElevenLabs workspace (ignore). |
 | 21 | 2026-10-05 | 4 Voice | ElevenLabs | eleven_v3, 1 take each: Ria (M6udCbeLpbqc4ZtMMDGJ), Sahana (17cum4YqukEcj2pUa0hd), Arjun (dahpPHJ9zA9ckbsyrVfz) | 3 narrator samples, same 38-word text (script lines L06-L09, L12-L13) | 594 credits ($0.12) | Done. Lengths: Ria 21.2 s (about 108 wpm, slowest), Arjun 18.1 s (126 wpm), Sahana 17.1 s (134 wpm, fastest). Target 110-120 wpm. Files in 06_audio/narrator_samples/. Waiting for the user to pick. |
+| 22 | 2026-10-05 | 4 Voice | ElevenLabs | eleven_v3, 1 take per line: narrator Sahana (17cum4YqukEcj2pUa0hd) 49 lines, Mooshak = Elmoe (1kvnzrSTos1KbmLKMLCC) 7 lines, Ganesha = Mini (hO2yZ8lxM3axUxL8OeKX) 3 lines | Full narration, 59 spoken lines (the 4 sung lines L58-L61 come with the song later) | about 1,639 credits ($0.33) | Done. All lines saved in 06_audio/lines/ (L01.mp3 ...), job IDs in 06_audio/jobs.json, timings in 06_audio/line_durations.json. Total speech 124 s. Every shot's lines fit inside the shot (tightest: shot 9, 0.7 s slack). Raw Sahana pace is about 147 wpm so the review track slows her lines to 0.92x (placement in 06_audio/placement_v1.json). Review files: 06_audio/narration_review_v1.mp3 and 08_edit/rough_stitch_v2_narrated.mp4 (280 s). ElevenLabs total so far about 2,233 credits ($0.45). |
 
 ## Running total
 
 | Service | Credits spent | Estimate (set before Phase 3) | Alert at +20% |
 |---------|---------------|-------------------------------|---------------|
 | Krea | 76 images (units not reported by API) | 3a: 45 images | 54 images |
-| ElevenLabs | 594 | TBD | TBD |
+| ElevenLabs | 2,233 | TBD | TBD |
 | Canva | 0 | n/a | n/a |
