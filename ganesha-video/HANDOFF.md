@@ -92,3 +92,15 @@ Alert the user if any stage goes 20% over (stage 3a: more than 54 images).
 - Optional lip-sync pass for shots 02, 17, 24 (price with `estimate_only`).
 - Shorts approach (60 s, 9:16): either the 16:9 clips on a blurred background, or native 9:16 generations for 3–4 hero moments (extra credits). Ask when we reach Phase 6.
 - Shot 21: the prompt leaves Mooshak out although the shot list has him.
+
+
+---
+## Update (2026-10-05, later session)
+
+- Network: all Krea and ElevenLabs hosts now reachable.
+- Stage 3a done: 9 references approved, saved in `03_refs/` (see `03_refs/PICKS.md`). Parvati uses `ref_char_parvati_v2.jpg`.
+- Stage 3b done: 32 keyframes approved at Checkpoint 2, saved in `04_keyframes/approved/`. Prompts and reference URLs in `02_prompts/keyframe_requests.json`; job IDs in `04_keyframes/jobs.json`.
+- Krea images used: 76 (all nano-banana-pro, 1K). Krea does not report per-job cost. The user's balance was 16k before keyframes. Ask for the current balance to calibrate.
+- User is on Krea Pro.
+- NEXT: stage 3c (clips). Do not spend until the user says go. Proposed first step is 3 test generations to learn real video prices: Seedance 2.5 draft 480p and 1080p of shot 04, and Veo 3.1 1080p 8 s of shot 02. Then re-plan the rest.
+- Open: HyperFrames install, channel name, Shorts approach, shot 21 omits Mooshak.
