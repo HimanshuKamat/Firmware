@@ -15,11 +15,12 @@ Read-only calls (listing models, voices, styles) cost nothing and are logged onc
 | 1 | 2026-10-05 | 3a Refs | Krea | google/nano-banana-pro 1K 16:9 | 36 images: 6 character sheets x4 (Ganesha, Mooshak, Kartikeya, Peacock, Shiva, Parvati) + 3 locations x4 | not shown by API (see note) | Submitted in 3 waves 21:00-21:03 UTC. Job IDs in 03_refs/options/jobs.md. Within 45-image estimate (36). All 36 completed, downloaded to 03_refs/options/ with numbered contact sheets (sheet_*.png). Four files came back as small JPEGs (mooshak 1-2, peacock 4, parvati 2), lower quality. No credit cost reported by any job; real cost still unknown. |
 | 2 | 2026-10-05 | 3a Refs | Krea | google/nano-banana-pro 2K 16:9 | Parvati re-render x1 (user-approved), job e0793c43 | not shown by API | Done. 2752x1536 JPEG, sharp, but body is heavier and more adult than the family style. Saved as options/parvati_rerender1.jpg, NOT yet approved. Used 2K by mistake (plan was 1K), so it may cost more than the other images. Total 3a images now 37. |
 | 3 | 2026-10-05 | 3b Keyframes | Krea | google/nano-banana-pro 1K 16:9, refs as image_urls | Test keyframes: shot 03 (job b3318a05), shot 11 (job 2ac8e818), shot 03 retest with Ganesha clarification (job 95e823e3) | not shown by API | Shot 11 good. Shot 03: Mooshak good, Ganesha drifted (ornate crown, visible dark hair, paler skin), so added one clarifying sentence to the preamble for Ganesha shots (bible text unchanged) and retested. Files in 04_keyframes/options/. |
+| 4 | 2026-10-05 | 3b Keyframes | Krea | google/nano-banana-pro 1K 16:9, refs as image_urls | Keyframes for the remaining 30 shots (02, 04-10, 12-33), one attempt each. Job IDs in 04_keyframes/jobs.json | not shown by API | Submitted 21:24-21:29 UTC. Stage 3b so far 33 images (3 tests + 30), estimate was 43 (alert at 52). Results pending review. |
 
 ## Running total
 
 | Service | Credits spent | Estimate (set before Phase 3) | Alert at +20% |
 |---------|---------------|-------------------------------|---------------|
-| Krea | 40 images (units not reported by API) | 3a: 45 images | 54 images |
+| Krea | 70 images (units not reported by API) | 3a: 45 images | 54 images |
 | ElevenLabs | 0 | TBD | TBD |
 | Canva | 0 | n/a | n/a |
