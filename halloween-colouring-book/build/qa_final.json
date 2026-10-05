@@ -1,0 +1,330 @@
+{
+"1": {
+"media": "MAHXKe1pP6o",
+"ink": 18.9,
+"regions": 99,
+"tiny": 20,
+"solid": 0.24,
+"colour": 0
+},
+"2": {
+"media": "MAHXKbW6K1E",
+"ink": 20.7,
+"regions": 150,
+"tiny": 22,
+"solid": 0.07,
+"colour": 0
+},
+"3": {
+"media": "MAHXKXg8pcA",
+"ink": 14.6,
+"regions": 90,
+"tiny": 28,
+"solid": 0.42,
+"colour": 0
+},
+"4": {
+"media": "MAHXKU8FVYE",
+"ink": 22.1,
+"regions": 137,
+"tiny": 33,
+"solid": 0.41,
+"colour": 0
+},
+"5": {
+"media": "MAHXKYe3IGY",
+"ink": 19.2,
+"regions": 143,
+"tiny": 26,
+"solid": 0.33,
+"colour": 0
+},
+"6": {
+"media": "MAHXKbHY3_4",
+"ink": 19.7,
+"regions": 116,
+"tiny": 27,
+"solid": 0.69,
+"colour": 0
+},
+"7": {
+"media": "MAHXKeE7JeE",
+"ink": 18.5,
+"regions": 98,
+"tiny": 16,
+"solid": 0.11,
+"colour": 0
+},
+"8": {
+"media": "MAHXKdDkJpk",
+"ink": 16.3,
+"regions": 97,
+"tiny": 32,
+"solid": 0.1,
+"colour": 0
+},
+"9": {
+"media": "MAHXKegVkjU",
+"ink": 18.7,
+"regions": 123,
+"tiny": 11,
+"solid": 0.35,
+"colour": 0
+},
+"10": {
+"media": "MAHXKUMMc9E",
+"ink": 16.9,
+"regions": 98,
+"tiny": 19,
+"solid": 0.32,
+"colour": 0
+},
+"11": {
+"media": "MAHXKduuBeA",
+"ink": 14.7,
+"regions": 85,
+"tiny": 19,
+"solid": 0.03,
+"colour": 0
+},
+"12": {
+"media": "MAHXKXccRGk",
+"ink": 17.0,
+"regions": 158,
+"tiny": 28,
+"solid": 0.1,
+"colour": 0
+},
+"13": {
+"media": "MAHXKa5aqGY",
+"ink": 22.8,
+"regions": 156,
+"tiny": 21,
+"solid": 0.47,
+"colour": 0
+},
+"14": {
+"media": "MAHXKacGi4o",
+"ink": 21.0,
+"regions": 72,
+"tiny": 7,
+"solid": 0.79,
+"colour": 0
+},
+"15": {
+"media": "MAHXKXhY_zE",
+"ink": 17.1,
+"regions": 111,
+"tiny": 31,
+"solid": 0.13,
+"colour": 0
+},
+"16": {
+"media": "MAHXKUoa8vg",
+"ink": 20.3,
+"regions": 114,
+"tiny": 15,
+"solid": 0.58,
+"colour": 0
+},
+"17": {
+"media": "MAHXKTGLc0I",
+"ink": 14.7,
+"regions": 82,
+"tiny": 8,
+"solid": 0.61,
+"colour": 0
+},
+"18": {
+"media": "MAHXKS9aAmk",
+"ink": 17.8,
+"regions": 101,
+"tiny": 15,
+"solid": 0.5,
+"colour": 0
+},
+"19": {
+"media": "MAHXKbRZUG8",
+"ink": 19.8,
+"regions": 130,
+"tiny": 19,
+"solid": 0.6,
+"colour": 0
+},
+"20": {
+"media": "MAHXKcVyw-0",
+"ink": 15.8,
+"regions": 82,
+"tiny": 15,
+"solid": 0.6,
+"colour": 0
+},
+"21": {
+"media": "MAHXKcuh38E",
+"ink": 17.3,
+"regions": 78,
+"tiny": 8,
+"solid": 0.22,
+"colour": 0
+},
+"22": {
+"media": "MAHXKRKiw98",
+"ink": 14.0,
+"regions": 79,
+"tiny": 11,
+"solid": 0.08,
+"colour": 0
+},
+"23": {
+"media": "MAHXKQPyDjQ",
+"ink": 18.7,
+"regions": 122,
+"tiny": 26,
+"solid": 0.28,
+"colour": 0
+},
+"24": {
+"media": "MAHXKUX2lkA",
+"ink": 12.5,
+"regions": 110,
+"tiny": 21,
+"solid": 0.14,
+"colour": 0
+},
+"25": {
+"media": "MAHXKeXjBOU",
+"ink": 17.4,
+"regions": 95,
+"tiny": 13,
+"solid": 0.53,
+"colour": 0
+},
+"26": {
+"media": "MAHXKTXHqLA",
+"ink": 19.7,
+"regions": 159,
+"tiny": 31,
+"solid": 0.07,
+"colour": 0
+},
+"27": {
+"media": "MAHXKdYCqdw",
+"ink": 18.8,
+"regions": 125,
+"tiny": 21,
+"solid": 0.72,
+"colour": 0
+},
+"28": {
+"media": "MAHXKXEdRIQ",
+"ink": 17.8,
+"regions": 110,
+"tiny": 23,
+"solid": 0.0,
+"colour": 0
+},
+"29": {
+"media": "MAHXKZ8rDIQ",
+"ink": 12.0,
+"regions": 59,
+"tiny": 9,
+"solid": 0.44,
+"colour": 0
+},
+"30": {
+"media": "MAHXKQq2Wk8",
+"ink": 15.7,
+"regions": 94,
+"tiny": 14,
+"solid": 0.21,
+"colour": 0
+},
+"31": {
+"media": "MAHXKTHHN70",
+"ink": 13.0,
+"regions": 82,
+"tiny": 14,
+"solid": 0.23,
+"colour": 0
+},
+"32": {
+"media": "MAHXKbycYMU",
+"ink": 13.5,
+"regions": 99,
+"tiny": 23,
+"solid": 0.28,
+"colour": 0
+},
+"33": {
+"media": "MAHXKSnXRoo",
+"ink": 14.1,
+"regions": 81,
+"tiny": 8,
+"solid": 0.17,
+"colour": 0
+},
+"34": {
+"media": "MAHXKexMFxM",
+"ink": 17.6,
+"regions": 104,
+"tiny": 18,
+"solid": 0.47,
+"colour": 0
+},
+"35": {
+"media": "MAHXKcmYQPU",
+"ink": 21.3,
+"regions": 118,
+"tiny": 23,
+"solid": 0.4,
+"colour": 0
+},
+"36": {
+"media": "MAHXKSbzXC4",
+"ink": 14.7,
+"regions": 67,
+"tiny": 11,
+"solid": 0.08,
+"colour": 0
+},
+"37": {
+"media": "MAHXKbrUoS8",
+"ink": 15.5,
+"regions": 87,
+"tiny": 14,
+"solid": 0.05,
+"colour": 0
+},
+"38": {
+"media": "MAHXKae8uvo",
+"ink": 18.0,
+"regions": 82,
+"tiny": 13,
+"solid": 0.38,
+"colour": 0
+},
+"39": {
+"media": "MAHXKedHe5U",
+"ink": 19.8,
+"regions": 68,
+"tiny": 3,
+"solid": 0.92,
+"colour": 0
+},
+"40": {
+"media": "MAHXKTmwFfY",
+"ink": 17.7,
+"regions": 73,
+"tiny": 8,
+"solid": 0.12,
+"colour": 0
+},
+"belongs": {
+"media": "MAHXKdbTkMI",
+"ink": 13.6,
+"regions": 85,
+"tiny": 26,
+"solid": 0.65,
+"colour": 0
+}
+}
