@@ -106,3 +106,5 @@ Alert the user if any stage goes 20% over (stage 3a: more than 54 images).
 - Open: HyperFrames install, channel name, Shorts approach, shot 21 omits Mooshak.
 
 - Video tests (see log #9-10): Veo 3.1 shot 02 and Seedance draft shot 04 look good, files in 05_clips/tests/. Seedance 1080p shot 04 (job 16449df1-3f57-4247-9012-bdf0ad44a90b) was still processing at 21:47 UTC; check with get_job before re-planning. Real per-clip costs are still unknown: need the user's Krea balance before and after.
+
+- Seedance 1080p test finished and looks good (job 16449df1). User balance now 6,500 units. Krea plans (show_plans): Pro 20,000 units $35 (no unlimited relaxed), Max 40,000 units $70 (unlimited relaxed generations), compute unit packs available. Waiting for the user to choose how to fund or cut the remaining 29 clips.

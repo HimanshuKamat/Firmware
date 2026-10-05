@@ -22,6 +22,7 @@ Read-only calls (listing models, voices, styles) cost nothing and are logged onc
 | 8 | 2026-10-05 | 3b Keyframes | - | Checkpoint 2 | User approved all 32 keyframes | 0 | Saved to 04_keyframes/approved/. Shot 21 accepted as is. |
 | 9 | 2026-10-05 | 3c Clips (TEST) | Krea | bytedance/seedance-2-5 draft 480p 8s (job 83a52ec8); seedance-2-5 1080p 8s (job 16449df1), both shot 04 with start image + 2 refs; google/veo-3.1 1080p 8s no audio, shot 02 (job 9e53899a) | 3 price-test clips, user said yes | not shown by API | Submitted 21:37 UTC. Cost to be read from the user's balance (balance before the tests was not provided). |
 | 10 | 2026-10-05 | 3c Clips (TEST) | Krea | review | Test results | n/a | Draft 480p Seedance (shot 04) done in ~1.5 min: on-model, smooth push-in, sparkles; file has an audio track (strip with -an). Veo 3.1 1080p (shot 02) done in ~1.7 min: 1920x1080, 24 fps, 8 s, no audio, on-model. Seedance 1080p (job 16449df1) still processing after 10+ min at 21:47 UTC; not cancelled. |
+| 11 | 2026-10-05 | 3c Clips (TEST) | Krea | review | Seedance 1080p shot 04 finished (job 16449df1, 10 min) | n/a | 1920x1080, 24 fps, 8 s, has an audio track (strip with -an). Same motion as the draft but crisper and on-model. User balance after all tests: 6,500 units (was 16,000 before keyframes). Rough split if images cost ~108 each: keyframes ~4,200, three test clips ~5,300 (~1,800 per 8 s clip). Exact per-model cost still unknown. |
 
 ## Running total
 
