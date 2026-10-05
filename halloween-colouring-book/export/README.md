@@ -19,3 +19,7 @@ Built by `v2/build_pdf.py` from the Canva artwork previews (line art upscaled an
 crisp black/white, ~290 dpi printed). Text, frames and the colour-test circles are vector.
 Known limitation: the front and back cover pictures come from small previews (600 px / 200 px),
 so they print soft. Swap in full-resolution Canva downloads before a commercial print run.
+
+## Sharp print file (recommended)
+The book is now in Canva: https://www.canva.com/d/qOT33kNXcs7Nbou (folder "Halloween Colouring Book").
+Download **PDF Print** from Canva to get full-resolution covers. The local PDF in this folder has soft covers because only small previews could be fetched from this environment.

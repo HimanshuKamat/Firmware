@@ -24,3 +24,11 @@ so rebuilding is just layout - no new image generation needed.
 MAHXK3rZ6To MAHXK-20300 MAHXKwzTwjo MAHXKwuEg7U MAHXKxd7gXU MAHXK1rYvMQ MAHXK1ru1Rg MAHXK-NbYgw
 MAHXKzKPOZ8 MAHXKyY4j7U MAHXK9kNavc MAHXKxoypXU MAHXKwJj7yA MAHXKzy-F-c MAHXK1lFqv8 MAHXKz_4S4o
 Back cover art: MAHXK2Dcsvg · Front cover art: MAHXKVtUXEg · Belongs-to line art: MAHXKdbTkMI
+
+## Status: rebuilt and saved in Canva
+
+The 20-page professional edition is now saved in Canva as design `DAHXK8HIE_4`, in the "Halloween Colouring Book" folder (`FAHXKU1vixA`).
+- Edit link: https://www.canva.com/d/qOT33kNXcs7Nbou
+- Page order: front cover, belongs-to, colour test, 16 story pages, KDP back cover (art mirrored and barcode zone kept clear).
+- Ops used: `c_a.json` (story 1-8), `c_b.json` (story 9-16), `c_c.json` (belongs, test, back cover) and `c_fmt.json` (text styles and back-art flip).
+- For a sharp print file, download from Canva: Share -> Download -> PDF Print. The local `export/cozy-spooky-corner-print.pdf` is built from 200px previews, so its colour covers are soft.
