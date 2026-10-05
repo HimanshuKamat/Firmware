@@ -1,0 +1,390 @@
+{
+ "belongs": [
+  {
+   "type": "insert_fill",
+   "page_id": "BELONGS",
+   "asset_type": "image",
+   "asset_id": "MAHXKdbTkMI",
+   "alt_text": "This book belongs to",
+   "top": 32,
+   "left": 32,
+   "width": 704,
+   "height": 704
+  },
+  {
+   "type": "add_text",
+   "page_id": "BELONGS",
+   "text": "This book belongs to",
+   "top": 410,
+   "left": 166,
+   "width": 480
+  },
+  {
+   "type": "add_text",
+   "page_id": "BELONGS",
+   "text": "____________________",
+   "top": 492,
+   "left": 166,
+   "width": 480
+  }
+ ],
+ "test": [
+  {
+   "type": "add_text",
+   "page_id": "TEST",
+   "text": "Test Your Colours Here!",
+   "top": 48,
+   "left": 40,
+   "width": 688
+  },
+  {
+   "type": "add_text",
+   "page_id": "TEST",
+   "text": "Try your pencils, pens and crayons in the circles before you start colouring.",
+   "top": 112,
+   "left": 84,
+   "width": 600
+  },
+  {
+   "type": "insert_shape",
+   "page_id": "TEST",
+   "top": 180,
+   "left": 84,
+   "width": 120,
+   "height": 120,
+   "path": "M50 2 A48 48 0 1 1 49.99 2 Z",
+   "view_box_width": 100,
+   "view_box_height": 100,
+   "color": "#FFFFFF",
+   "stroke_color": "#000000",
+   "stroke_weight": 4
+  },
+  {
+   "type": "insert_shape",
+   "page_id": "TEST",
+   "top": 180,
+   "left": 244,
+   "width": 120,
+   "height": 120,
+   "path": "M50 2 A48 48 0 1 1 49.99 2 Z",
+   "view_box_width": 100,
+   "view_box_height": 100,
+   "color": "#FFFFFF",
+   "stroke_color": "#000000",
+   "stroke_weight": 4
+  },
+  {
+   "type": "insert_shape",
+   "page_id": "TEST",
+   "top": 180,
+   "left": 404,
+   "width": 120,
+   "height": 120,
+   "path": "M50 2 A48 48 0 1 1 49.99 2 Z",
+   "view_box_width": 100,
+   "view_box_height": 100,
+   "color": "#FFFFFF",
+   "stroke_color": "#000000",
+   "stroke_weight": 4
+  },
+  {
+   "type": "insert_shape",
+   "page_id": "TEST",
+   "top": 180,
+   "left": 564,
+   "width": 120,
+   "height": 120,
+   "path": "M50 2 A48 48 0 1 1 49.99 2 Z",
+   "view_box_width": 100,
+   "view_box_height": 100,
+   "color": "#FFFFFF",
+   "stroke_color": "#000000",
+   "stroke_weight": 4
+  },
+  {
+   "type": "insert_shape",
+   "page_id": "TEST",
+   "top": 340,
+   "left": 84,
+   "width": 120,
+   "height": 120,
+   "path": "M50 2 A48 48 0 1 1 49.99 2 Z",
+   "view_box_width": 100,
+   "view_box_height": 100,
+   "color": "#FFFFFF",
+   "stroke_color": "#000000",
+   "stroke_weight": 4
+  },
+  {
+   "type": "insert_shape",
+   "page_id": "TEST",
+   "top": 340,
+   "left": 244,
+   "width": 120,
+   "height": 120,
+   "path": "M50 2 A48 48 0 1 1 49.99 2 Z",
+   "view_box_width": 100,
+   "view_box_height": 100,
+   "color": "#FFFFFF",
+   "stroke_color": "#000000",
+   "stroke_weight": 4
+  },
+  {
+   "type": "insert_shape",
+   "page_id": "TEST",
+   "top": 340,
+   "left": 404,
+   "width": 120,
+   "height": 120,
+   "path": "M50 2 A48 48 0 1 1 49.99 2 Z",
+   "view_box_width": 100,
+   "view_box_height": 100,
+   "color": "#FFFFFF",
+   "stroke_color": "#000000",
+   "stroke_weight": 4
+  },
+  {
+   "type": "insert_shape",
+   "page_id": "TEST",
+   "top": 340,
+   "left": 564,
+   "width": 120,
+   "height": 120,
+   "path": "M50 2 A48 48 0 1 1 49.99 2 Z",
+   "view_box_width": 100,
+   "view_box_height": 100,
+   "color": "#FFFFFF",
+   "stroke_color": "#000000",
+   "stroke_weight": 4
+  },
+  {
+   "type": "insert_shape",
+   "page_id": "TEST",
+   "top": 500,
+   "left": 84,
+   "width": 120,
+   "height": 120,
+   "path": "M50 2 A48 48 0 1 1 49.99 2 Z",
+   "view_box_width": 100,
+   "view_box_height": 100,
+   "color": "#FFFFFF",
+   "stroke_color": "#000000",
+   "stroke_weight": 4
+  },
+  {
+   "type": "insert_shape",
+   "page_id": "TEST",
+   "top": 500,
+   "left": 244,
+   "width": 120,
+   "height": 120,
+   "path": "M50 2 A48 48 0 1 1 49.99 2 Z",
+   "view_box_width": 100,
+   "view_box_height": 100,
+   "color": "#FFFFFF",
+   "stroke_color": "#000000",
+   "stroke_weight": 4
+  },
+  {
+   "type": "insert_shape",
+   "page_id": "TEST",
+   "top": 500,
+   "left": 404,
+   "width": 120,
+   "height": 120,
+   "path": "M50 2 A48 48 0 1 1 49.99 2 Z",
+   "view_box_width": 100,
+   "view_box_height": 100,
+   "color": "#FFFFFF",
+   "stroke_color": "#000000",
+   "stroke_weight": 4
+  },
+  {
+   "type": "insert_shape",
+   "page_id": "TEST",
+   "top": 500,
+   "left": 564,
+   "width": 120,
+   "height": 120,
+   "path": "M50 2 A48 48 0 1 1 49.99 2 Z",
+   "view_box_width": 100,
+   "view_box_height": 100,
+   "color": "#FFFFFF",
+   "stroke_color": "#000000",
+   "stroke_weight": 4
+  },
+  {
+   "type": "add_text",
+   "page_id": "TEST",
+   "text": "Tip: slip a spare sheet of paper behind the page you are colouring so markers don't bleed through.",
+   "top": 664,
+   "left": 84,
+   "width": 600
+  }
+ ],
+ "back": [
+  {
+   "type": "insert_fill",
+   "page_id": "BACK",
+   "asset_type": "image",
+   "asset_id": "MAHXK2Dcsvg",
+   "alt_text": "Back cover",
+   "top": 0,
+   "left": 0,
+   "width": 768,
+   "height": 768
+  },
+  {
+   "type": "add_text",
+   "page_id": "BACK",
+   "text": "Cozy Spooky Corner",
+   "top": 44,
+   "left": 40,
+   "width": 688
+  },
+  {
+   "type": "add_text",
+   "page_id": "BACK",
+   "text": "Pip's Pumpkin Moon Party",
+   "top": 104,
+   "left": 40,
+   "width": 688
+  },
+  {
+   "type": "add_text",
+   "page_id": "BACK",
+   "text": "Join Pip the little witch, Biscuit the cat and Boo the friendly ghost as they plan the cosiest Halloween party ever. Pick pumpkins, bake a pie, carve jack-o'-lanterns and dance under the Pumpkin Moon, colouring every step of the story as you go!",
+   "top": 152,
+   "left": 64,
+   "width": 640
+  },
+  {
+   "type": "insert_shape",
+   "page_id": "BACK",
+   "top": 300,
+   "left": 64,
+   "width": 140,
+   "height": 140,
+   "path": "M0 0 H100 V100 H0 Z",
+   "view_box_width": 100,
+   "view_box_height": 100,
+   "color": "#FFF6E8",
+   "stroke_color": "#F08A24",
+   "stroke_weight": 4,
+   "corner_rounding": 14
+  },
+  {
+   "type": "insert_fill",
+   "page_id": "BACK",
+   "asset_type": "image",
+   "asset_id": "MAHXK1ru1Rg",
+   "alt_text": "sample",
+   "top": 309,
+   "left": 73,
+   "width": 122,
+   "height": 122
+  },
+  {
+   "type": "insert_shape",
+   "page_id": "BACK",
+   "top": 300,
+   "left": 220,
+   "width": 140,
+   "height": 140,
+   "path": "M0 0 H100 V100 H0 Z",
+   "view_box_width": 100,
+   "view_box_height": 100,
+   "color": "#FFF6E8",
+   "stroke_color": "#F08A24",
+   "stroke_weight": 4,
+   "corner_rounding": 14
+  },
+  {
+   "type": "insert_fill",
+   "page_id": "BACK",
+   "asset_type": "image",
+   "asset_id": "MAHXKyY4j7U",
+   "alt_text": "sample",
+   "top": 309,
+   "left": 229,
+   "width": 122,
+   "height": 122
+  },
+  {
+   "type": "insert_shape",
+   "page_id": "BACK",
+   "top": 300,
+   "left": 376,
+   "width": 140,
+   "height": 140,
+   "path": "M0 0 H100 V100 H0 Z",
+   "view_box_width": 100,
+   "view_box_height": 100,
+   "color": "#FFF6E8",
+   "stroke_color": "#F08A24",
+   "stroke_weight": 4,
+   "corner_rounding": 14
+  },
+  {
+   "type": "insert_fill",
+   "page_id": "BACK",
+   "asset_type": "image",
+   "asset_id": "MAHXKwJj7yA",
+   "alt_text": "sample",
+   "top": 309,
+   "left": 385,
+   "width": 122,
+   "height": 122
+  },
+  {
+   "type": "add_text",
+   "page_id": "BACK",
+   "text": "\u2605 16 story pages to colour   \u2605 Bold, easy lines for little hands   \u2605 A colour idea on every page   \u2605 Colour test page included   \u2605 Ages 3+",
+   "top": 458,
+   "left": 64,
+   "width": 340
+  },
+  {
+   "type": "insert_shape",
+   "page_id": "BACK",
+   "top": 548,
+   "left": 64,
+   "width": 180,
+   "height": 84,
+   "path": "M0 0 H100 V100 H0 Z",
+   "view_box_width": 100,
+   "view_box_height": 100,
+   "color": "#FFFFFF",
+   "corner_rounding": 4
+  },
+  {
+   "type": "add_text",
+   "page_id": "BACK",
+   "text": "Barcode area",
+   "top": 575,
+   "left": 64,
+   "width": 180
+  }
+ ],
+ "cover": {
+  "image": "MAHXKVtUXEg",
+  "title": [
+   "Cozy Spooky Corner",
+   56,
+   66,
+   "#FFF1D6"
+  ],
+  "sub": [
+   "Pip's Pumpkin Moon Party",
+   138,
+   30,
+   "#FFB65C"
+  ],
+  "tag": [
+   "A Cute & Cosy Halloween Story Colouring Book",
+   184,
+   19,
+   "#FFF1D6"
+  ]
+ }
+}
