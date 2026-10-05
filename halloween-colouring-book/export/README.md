@@ -11,3 +11,11 @@ To get them:
 
 `storyboard-preview.pdf` in this folder is a local, low-resolution preview (cover, belongs-to page,
 then the 40 story pages four to a page) so you can read the story flow. It is not print quality.
+
+## cozy-spooky-corner-print.pdf (professional edition, built locally)
+20 pages, 8 x 8 in, no bleed, all fonts embedded: front cover · belongs-to · 16 story pages with a
+"Colour idea" sample in the top-right corner · colour test page · back cover.
+Built by `v2/build_pdf.py` from the Canva artwork previews (line art upscaled and re-thresholded to
+crisp black/white, ~290 dpi printed). Text, frames and the colour-test circles are vector.
+Known limitation: the front and back cover pictures come from small previews (600 px / 200 px),
+so they print soft. Swap in full-resolution Canva downloads before a commercial print run.
