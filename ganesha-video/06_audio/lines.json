@@ -1,0 +1,533 @@
+[
+ {
+  "id": "L01",
+  "shot": 2,
+  "who": "M",
+  "text": "Hello, little friend! I am Mooshak!",
+  "gap": "",
+  "voice": "Elmoe",
+  "voice_id": "1kvnzrSTos1KbmLKMLCC"
+ },
+ {
+  "id": "L02",
+  "shot": 2,
+  "who": "M",
+  "text": "Squeak-squeak!",
+  "gap": "",
+  "voice": "Elmoe",
+  "voice_id": "1kvnzrSTos1KbmLKMLCC"
+ },
+ {
+  "id": "L03",
+  "shot": 3,
+  "who": "M",
+  "text": "That is my best friend, Ganpati Bappa!",
+  "gap": "",
+  "voice": "Elmoe",
+  "voice_id": "1kvnzrSTos1KbmLKMLCC"
+ },
+ {
+  "id": "L04",
+  "shot": 4,
+  "who": "N",
+  "text": "Say it with me!",
+  "gap": "",
+  "voice": "Sahana",
+  "voice_id": "17cum4YqukEcj2pUa0hd"
+ },
+ {
+  "id": "L05",
+  "shot": 4,
+  "who": "N",
+  "text": "Ganpati Bappa… Morya!",
+  "gap": "",
+  "voice": "Sahana",
+  "voice_id": "17cum4YqukEcj2pUa0hd"
+ },
+ {
+  "id": "L06",
+  "shot": 5,
+  "who": "N",
+  "text": "High on Mount Kailash, Ganesha lived.",
+  "gap": "",
+  "voice": "Sahana",
+  "voice_id": "17cum4YqukEcj2pUa0hd"
+ },
+ {
+  "id": "L07",
+  "shot": 5,
+  "who": "N",
+  "text": "His home was warm and cosy.",
+  "gap": "",
+  "voice": "Sahana",
+  "voice_id": "17cum4YqukEcj2pUa0hd"
+ },
+ {
+  "id": "L08",
+  "shot": 6,
+  "who": "N",
+  "text": "Amma Parvati was kind and loving.",
+  "gap": "",
+  "voice": "Sahana",
+  "voice_id": "17cum4YqukEcj2pUa0hd"
+ },
+ {
+  "id": "L09",
+  "shot": 6,
+  "who": "N",
+  "text": "Baba Shiva was calm and gentle.",
+  "gap": "",
+  "voice": "Sahana",
+  "voice_id": "17cum4YqukEcj2pUa0hd"
+ },
+ {
+  "id": "L10",
+  "shot": 7,
+  "who": "N",
+  "text": "Ganesha had a brother, Kartikeya.",
+  "gap": "",
+  "voice": "Sahana",
+  "voice_id": "17cum4YqukEcj2pUa0hd"
+ },
+ {
+  "id": "L11",
+  "shot": 7,
+  "who": "N",
+  "text": "Kartikeya rode a shiny blue peacock.",
+  "gap": "",
+  "voice": "Sahana",
+  "voice_id": "17cum4YqukEcj2pUa0hd"
+ },
+ {
+  "id": "L12",
+  "shot": 8,
+  "who": "N",
+  "text": "Ganesha loved modaks, sweet and round.",
+  "gap": "",
+  "voice": "Sahana",
+  "voice_id": "17cum4YqukEcj2pUa0hd"
+ },
+ {
+  "id": "L13",
+  "shot": 8,
+  "who": "N",
+  "text": "And Mooshak loved them too!",
+  "gap": "",
+  "voice": "Sahana",
+  "voice_id": "17cum4YqukEcj2pUa0hd"
+ },
+ {
+  "id": "L14",
+  "shot": 9,
+  "who": "N",
+  "text": "Can you count the modaks?",
+  "gap": "2 s (child answers)",
+  "voice": "Sahana",
+  "voice_id": "17cum4YqukEcj2pUa0hd"
+ },
+ {
+  "id": "L15",
+  "shot": 9,
+  "who": "N",
+  "text": "One… two… three!",
+  "gap": "",
+  "voice": "Sahana",
+  "voice_id": "17cum4YqukEcj2pUa0hd"
+ },
+ {
+  "id": "L16",
+  "shot": 9,
+  "who": "M",
+  "text": "Squeak-squeak!",
+  "gap": "",
+  "voice": "Elmoe",
+  "voice_id": "1kvnzrSTos1KbmLKMLCC"
+ },
+ {
+  "id": "L17",
+  "shot": 10,
+  "who": "N",
+  "text": "One morning, Baba held a golden mango.",
+  "gap": "",
+  "voice": "Sahana",
+  "voice_id": "17cum4YqukEcj2pUa0hd"
+ },
+ {
+  "id": "L18",
+  "shot": 10,
+  "who": "N",
+  "text": "It was very special.",
+  "gap": "",
+  "voice": "Sahana",
+  "voice_id": "17cum4YqukEcj2pUa0hd"
+ },
+ {
+  "id": "L19",
+  "shot": 11,
+  "who": "N",
+  "text": "Baba said, \"Let's have a race!\"",
+  "gap": "",
+  "voice": "Sahana",
+  "voice_id": "17cum4YqukEcj2pUa0hd"
+ },
+ {
+  "id": "L20",
+  "shot": 11,
+  "who": "N",
+  "text": "Go around the world three times.",
+  "gap": "",
+  "voice": "Sahana",
+  "voice_id": "17cum4YqukEcj2pUa0hd"
+ },
+ {
+  "id": "L21",
+  "shot": 12,
+  "who": "N",
+  "text": "First one back wins the mango!",
+  "gap": "",
+  "voice": "Sahana",
+  "voice_id": "17cum4YqukEcj2pUa0hd"
+ },
+ {
+  "id": "L22",
+  "shot": 12,
+  "who": "N",
+  "text": "Kartikeya hopped onto his peacock.",
+  "gap": "",
+  "voice": "Sahana",
+  "voice_id": "17cum4YqukEcj2pUa0hd"
+ },
+ {
+  "id": "L23",
+  "shot": 13,
+  "who": "N",
+  "text": "Over rivers and forests he flew.",
+  "gap": "",
+  "voice": "Sahana",
+  "voice_id": "17cum4YqukEcj2pUa0hd"
+ },
+ {
+  "id": "L24",
+  "shot": 13,
+  "who": "N",
+  "text": "Flap, flap, flap went the peacock!",
+  "gap": "",
+  "voice": "Sahana",
+  "voice_id": "17cum4YqukEcj2pUa0hd"
+ },
+ {
+  "id": "L25",
+  "shot": 14,
+  "who": "N",
+  "text": "Can you flap your arms?",
+  "gap": "2 s (child answers)",
+  "voice": "Sahana",
+  "voice_id": "17cum4YqukEcj2pUa0hd"
+ },
+ {
+  "id": "L26",
+  "shot": 14,
+  "who": "N",
+  "text": "Flap, flap, flap!",
+  "gap": "",
+  "voice": "Sahana",
+  "voice_id": "17cum4YqukEcj2pUa0hd"
+ },
+ {
+  "id": "L27",
+  "shot": 15,
+  "who": "N",
+  "text": "Ganesha looked at his little feet.",
+  "gap": "",
+  "voice": "Sahana",
+  "voice_id": "17cum4YqukEcj2pUa0hd"
+ },
+ {
+  "id": "L28",
+  "shot": 15,
+  "who": "N",
+  "text": "He had no peacock to fly.",
+  "gap": "",
+  "voice": "Sahana",
+  "voice_id": "17cum4YqukEcj2pUa0hd"
+ },
+ {
+  "id": "L29",
+  "shot": 16,
+  "who": "N",
+  "text": "Mooshak gave him a little pat.",
+  "gap": "",
+  "voice": "Sahana",
+  "voice_id": "17cum4YqukEcj2pUa0hd"
+ },
+ {
+  "id": "L30",
+  "shot": 16,
+  "who": "M",
+  "text": "Squeak-squeak!",
+  "gap": "",
+  "voice": "Elmoe",
+  "voice_id": "1kvnzrSTos1KbmLKMLCC"
+ },
+ {
+  "id": "L31",
+  "shot": 17,
+  "who": "N",
+  "text": "Ganesha thought and thought…",
+  "gap": "",
+  "voice": "Sahana",
+  "voice_id": "17cum4YqukEcj2pUa0hd"
+ },
+ {
+  "id": "L32",
+  "shot": 17,
+  "who": "G",
+  "text": "I have an idea, Mooshak!",
+  "gap": "",
+  "voice": "Mini",
+  "voice_id": "hO2yZ8lxM3axUxL8OeKX"
+ },
+ {
+  "id": "L33",
+  "shot": 18,
+  "who": "N",
+  "text": "He looked at Amma and Baba.",
+  "gap": "",
+  "voice": "Sahana",
+  "voice_id": "17cum4YqukEcj2pUa0hd"
+ },
+ {
+  "id": "L34",
+  "shot": 18,
+  "who": "N",
+  "text": "His heart felt warm and happy.",
+  "gap": "",
+  "voice": "Sahana",
+  "voice_id": "17cum4YqukEcj2pUa0hd"
+ },
+ {
+  "id": "L35",
+  "shot": 19,
+  "who": "N",
+  "text": "Off he went, slow and steady.",
+  "gap": "",
+  "voice": "Sahana",
+  "voice_id": "17cum4YqukEcj2pUa0hd"
+ },
+ {
+  "id": "L36",
+  "shot": 19,
+  "who": "N",
+  "text": "Ganpati Bappa… Morya!",
+  "gap": "",
+  "voice": "Sahana",
+  "voice_id": "17cum4YqukEcj2pUa0hd"
+ },
+ {
+  "id": "L37",
+  "shot": 20,
+  "who": "N",
+  "text": "Can you count his circles with me?",
+  "gap": "2 s (child answers)",
+  "voice": "Sahana",
+  "voice_id": "17cum4YqukEcj2pUa0hd"
+ },
+ {
+  "id": "L38",
+  "shot": 21,
+  "who": "N",
+  "text": "One… two… three!",
+  "gap": "",
+  "voice": "Sahana",
+  "voice_id": "17cum4YqukEcj2pUa0hd"
+ },
+ {
+  "id": "L39",
+  "shot": 21,
+  "who": "N",
+  "text": "Three whole circles!",
+  "gap": "",
+  "voice": "Sahana",
+  "voice_id": "17cum4YqukEcj2pUa0hd"
+ },
+ {
+  "id": "L40",
+  "shot": 22,
+  "who": "N",
+  "text": "Kartikeya zoomed home on his peacock.",
+  "gap": "",
+  "voice": "Sahana",
+  "voice_id": "17cum4YqukEcj2pUa0hd"
+ },
+ {
+  "id": "L41",
+  "shot": 22,
+  "who": "N",
+  "text": "He looked so surprised!",
+  "gap": "",
+  "voice": "Sahana",
+  "voice_id": "17cum4YqukEcj2pUa0hd"
+ },
+ {
+  "id": "L42",
+  "shot": 23,
+  "who": "N",
+  "text": "\"How did you win?\" asked Kartikeya.",
+  "gap": "",
+  "voice": "Sahana",
+  "voice_id": "17cum4YqukEcj2pUa0hd"
+ },
+ {
+  "id": "L43",
+  "shot": 23,
+  "who": "N",
+  "text": "Ganesha smiled and held their hands.",
+  "gap": "",
+  "voice": "Sahana",
+  "voice_id": "17cum4YqukEcj2pUa0hd"
+ },
+ {
+  "id": "L44",
+  "shot": 24,
+  "who": "G",
+  "text": "I walked around Amma and Baba.",
+  "gap": "",
+  "voice": "Mini",
+  "voice_id": "hO2yZ8lxM3axUxL8OeKX"
+ },
+ {
+  "id": "L45",
+  "shot": 24,
+  "who": "G",
+  "text": "They are my whole world!",
+  "gap": "",
+  "voice": "Mini",
+  "voice_id": "hO2yZ8lxM3axUxL8OeKX"
+ },
+ {
+  "id": "L46",
+  "shot": 25,
+  "who": "N",
+  "text": "Amma and Baba smiled so proudly.",
+  "gap": "",
+  "voice": "Sahana",
+  "voice_id": "17cum4YqukEcj2pUa0hd"
+ },
+ {
+  "id": "L47",
+  "shot": 25,
+  "who": "N",
+  "text": "Baba gave Ganesha the golden mango.",
+  "gap": "",
+  "voice": "Sahana",
+  "voice_id": "17cum4YqukEcj2pUa0hd"
+ },
+ {
+  "id": "L48",
+  "shot": 26,
+  "who": "N",
+  "text": "Hooray for Ganesha!",
+  "gap": "",
+  "voice": "Sahana",
+  "voice_id": "17cum4YqukEcj2pUa0hd"
+ },
+ {
+  "id": "L49",
+  "shot": 26,
+  "who": "N",
+  "text": "Ganpati Bappa… Morya!",
+  "gap": "",
+  "voice": "Sahana",
+  "voice_id": "17cum4YqukEcj2pUa0hd"
+ },
+ {
+  "id": "L50",
+  "shot": 27,
+  "who": "N",
+  "text": "Ganesha did not eat it alone.",
+  "gap": "",
+  "voice": "Sahana",
+  "voice_id": "17cum4YqukEcj2pUa0hd"
+ },
+ {
+  "id": "L51",
+  "shot": 27,
+  "who": "N",
+  "text": "He shared it with his brother.",
+  "gap": "",
+  "voice": "Sahana",
+  "voice_id": "17cum4YqukEcj2pUa0hd"
+ },
+ {
+  "id": "L52",
+  "shot": 28,
+  "who": "N",
+  "text": "Kartikeya laughed and hugged him.",
+  "gap": "",
+  "voice": "Sahana",
+  "voice_id": "17cum4YqukEcj2pUa0hd"
+ },
+ {
+  "id": "L53",
+  "shot": 28,
+  "who": "N",
+  "text": "Mooshak got a tiny bite too!",
+  "gap": "",
+  "voice": "Sahana",
+  "voice_id": "17cum4YqukEcj2pUa0hd"
+ },
+ {
+  "id": "L54",
+  "shot": 29,
+  "who": "N",
+  "text": "That evening, the family sat together.",
+  "gap": "",
+  "voice": "Sahana",
+  "voice_id": "17cum4YqukEcj2pUa0hd"
+ },
+ {
+  "id": "L55",
+  "shot": 29,
+  "who": "N",
+  "text": "Everyone felt warm and happy.",
+  "gap": "",
+  "voice": "Sahana",
+  "voice_id": "17cum4YqukEcj2pUa0hd"
+ },
+ {
+  "id": "L56",
+  "shot": 30,
+  "who": "N",
+  "text": "Now you know Ganesha's secret.",
+  "gap": "",
+  "voice": "Sahana",
+  "voice_id": "17cum4YqukEcj2pUa0hd"
+ },
+ {
+  "id": "L57",
+  "shot": 30,
+  "who": "N",
+  "text": "Our family is our whole world.",
+  "gap": "",
+  "voice": "Sahana",
+  "voice_id": "17cum4YqukEcj2pUa0hd"
+ },
+ {
+  "id": "L62",
+  "shot": 33,
+  "who": "M",
+  "text": "Bye-bye, little friend!",
+  "gap": "",
+  "voice": "Elmoe",
+  "voice_id": "1kvnzrSTos1KbmLKMLCC"
+ },
+ {
+  "id": "L63",
+  "shot": 33,
+  "who": "M",
+  "text": "Squeak-squeak!",
+  "gap": "",
+  "voice": "Elmoe",
+  "voice_id": "1kvnzrSTos1KbmLKMLCC"
+ }
+]
