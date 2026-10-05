@@ -20,6 +20,7 @@ Read-only calls (listing models, voices, styles) cost nothing and are logged onc
 | 6 | 2026-10-05 | 3b Keyframes | Krea | google/nano-banana-pro 1K 16:9 | Redo round 2: shots 18 and 21 (jobs d0ae2a92, 9da2006a) | not shown by API | Round 1 results: shots 23 and 29 fixed and kept (v2). Shots 18 and 21 still had a thatched hut; 18 also had an extra human-haired child and an adult-looking Shiva; 21 had a patterned cloth on Shiva. This is the final allowed retry (2 per prompt). For 18 the camera framing was changed from over-the-shoulder to a profile medium shot. 3b total now 39 images (estimate 43, alert 52). |
 | 7 | 2026-10-05 | 3b Keyframes | Krea | review | Round 2 results for shots 18 and 21 | n/a | Shot 18 v3 good (kept). Shot 21 v3 characters on-model but thatched hut and dirt floor remain; out of retries, flagged to user. Final proposed set in 04_keyframes/proposed/. Stage 3b total: 39 images (estimate 43, alert 52). Overall Krea images this session: 76. |
 | 8 | 2026-10-05 | 3b Keyframes | - | Checkpoint 2 | User approved all 32 keyframes | 0 | Saved to 04_keyframes/approved/. Shot 21 accepted as is. |
+| 9 | 2026-10-05 | 3c Clips (TEST) | Krea | bytedance/seedance-2-5 draft 480p 8s (job 83a52ec8); seedance-2-5 1080p 8s (job 16449df1), both shot 04 with start image + 2 refs; google/veo-3.1 1080p 8s no audio, shot 02 (job 9e53899a) | 3 price-test clips, user said yes | not shown by API | Submitted 21:37 UTC. Cost to be read from the user's balance (balance before the tests was not provided). |
 
 ## Running total
 
