@@ -108,3 +108,7 @@ Alert the user if any stage goes 20% over (stage 3a: more than 54 images).
 - Video tests (see log #9-10): Veo 3.1 shot 02 and Seedance draft shot 04 look good, files in 05_clips/tests/. Seedance 1080p shot 04 (job 16449df1-3f57-4247-9012-bdf0ad44a90b) was still processing at 21:47 UTC; check with get_job before re-planning. Real per-clip costs are still unknown: need the user's Krea balance before and after.
 
 - Seedance 1080p test finished and looks good (job 16449df1). User balance now 6,500 units. Krea plans (show_plans): Pro 20,000 units $35 (no unlimited relaxed), Max 40,000 units $70 (unlimited relaxed generations), compute unit packs available. Waiting for the user to choose how to fund or cut the remaining 29 clips.
+
+- **CLIP RUN PAUSED (2026-10-05, 22:05 UTC), balance ~495 units.** Submitted: shots 03,05,06,07,08,09,10,11,12,13,14,15,21,32 (see 05_clips/jobs.json; finished files go to 05_clips/raw/, test finals for 02 and 04 are in 05_clips/tests/). NOT submitted: 16,17,18,19,20,22,23,24,25,26,27,28,29,30,31,33 (16 shots).
+- Real prices (units): Veo 3.1 1080p 8 s no audio = 1,185; Seedance 1080p 9 s = 3,791; Seedance 720p 9 s = 1,541. Refused requests return a free price quote.
+- Proposed plan for the 16 remaining: Veo 3.1 1080p 8 s, start image only, prompt_full (no reference_images). About 19,000 units. Shots with a longer timeline (24, 25, 27, 29, 31, 33) get the 8 s clip stretched a little or held in the edit. Needs a unit top-up first.
