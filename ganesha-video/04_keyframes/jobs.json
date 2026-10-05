@@ -1,0 +1,37 @@
+{
+ "note": "shot -> list of Krea job ids (nano-banana-pro 1K). Latest entry is the newest attempt.",
+ "3": [
+  "b3318a05-ebdc-4bc1-842f-126ebe45bce9",
+  "95e823e3-376c-4a43-8d93-146fd921be26"
+ ],
+ "11": [
+  "2ac8e818-46e2-447a-acb8-079f0aa4fb3b"
+ ],
+ "2": [
+  "0f672b55-b549-494a-85f6-a2804532ffd1"
+ ],
+ "4": [
+  "728b6c7f-a323-438a-b54b-958eb8eab9c9"
+ ],
+ "5": [
+  "82578b6c-2126-439e-8628-52c95f9bed99"
+ ],
+ "6": [
+  "a00c5af1-8fdc-4874-8e2f-e487f0f3c3b6"
+ ],
+ "7": [
+  "0efb9c79-a4f4-40d8-a5db-8eb8f80e788d"
+ ],
+ "8": [
+  "f548be24-0a88-4bf2-af25-754f728632c0"
+ ],
+ "9": [
+  "d73caca7-dfbe-428f-9f66-0c462d037d4a"
+ ],
+ "10": [
+  "c3efba66-8f94-4134-aeb4-092cdad09ae9"
+ ],
+ "12": [
+  "39123002-0f09-4dae-83a1-e4b45999e0cd"
+ ]
+}
