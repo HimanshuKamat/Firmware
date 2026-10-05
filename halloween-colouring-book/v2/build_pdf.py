@@ -40,12 +40,13 @@ def lineart(fname, px=1600):
     """Upscale a low-res line-art preview and re-threshold it to crisp pure black/white."""
     im = Image.open(T + fname).convert('L').resize((px, px), Image.LANCZOS).filter(ImageFilter.GaussianBlur(px / 530))
     a = np.asarray(im)
-    return ImageReader(Image.fromarray(np.where(a < 150, 0, 255).astype('uint8')))
+    return ImageReader(Image.fromarray(np.where(a < 150, 0, 255).astype('uint8')).convert('1'))
 
 def colour(fname, px=600, sharpen=True):
     im = Image.open(T + fname).convert('RGB').resize((px, px), Image.LANCZOS)
     if sharpen: im = im.filter(ImageFilter.UnsharpMask(2, 80, 2))
-    return ImageReader(im)
+    import io; b = io.BytesIO(); im.save(b, 'JPEG', quality=90); b.seek(0)
+    return ImageReader(b)
 
 def box(c, x, y, w, h):  # Canva top-left px -> reportlab bottom-left pt
     return x * S, 576 - (y + h) * S, w * S, h * S
