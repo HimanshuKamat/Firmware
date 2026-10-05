@@ -21,6 +21,7 @@ Read-only calls (listing models, voices, styles) cost nothing and are logged onc
 | 7 | 2026-10-05 | 3b Keyframes | Krea | review | Round 2 results for shots 18 and 21 | n/a | Shot 18 v3 good (kept). Shot 21 v3 characters on-model but thatched hut and dirt floor remain; out of retries, flagged to user. Final proposed set in 04_keyframes/proposed/. Stage 3b total: 39 images (estimate 43, alert 52). Overall Krea images this session: 76. |
 | 8 | 2026-10-05 | 3b Keyframes | - | Checkpoint 2 | User approved all 32 keyframes | 0 | Saved to 04_keyframes/approved/. Shot 21 accepted as is. |
 | 9 | 2026-10-05 | 3c Clips (TEST) | Krea | bytedance/seedance-2-5 draft 480p 8s (job 83a52ec8); seedance-2-5 1080p 8s (job 16449df1), both shot 04 with start image + 2 refs; google/veo-3.1 1080p 8s no audio, shot 02 (job 9e53899a) | 3 price-test clips, user said yes | not shown by API | Submitted 21:37 UTC. Cost to be read from the user's balance (balance before the tests was not provided). |
+| 10 | 2026-10-05 | 3c Clips (TEST) | Krea | review | Test results | n/a | Draft 480p Seedance (shot 04) done in ~1.5 min: on-model, smooth push-in, sparkles; file has an audio track (strip with -an). Veo 3.1 1080p (shot 02) done in ~1.7 min: 1920x1080, 24 fps, 8 s, no audio, on-model. Seedance 1080p (job 16449df1) still processing after 10+ min at 21:47 UTC; not cancelled. |
 
 ## Running total
 

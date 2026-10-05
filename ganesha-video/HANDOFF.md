@@ -104,3 +104,5 @@ Alert the user if any stage goes 20% over (stage 3a: more than 54 images).
 - User is on Krea Pro.
 - NEXT: stage 3c (clips). Do not spend until the user says go. Proposed first step is 3 test generations to learn real video prices: Seedance 2.5 draft 480p and 1080p of shot 04, and Veo 3.1 1080p 8 s of shot 02. Then re-plan the rest.
 - Open: HyperFrames install, channel name, Shorts approach, shot 21 omits Mooshak.
+
+- Video tests (see log #9-10): Veo 3.1 shot 02 and Seedance draft shot 04 look good, files in 05_clips/tests/. Seedance 1080p shot 04 (job 16449df1-3f57-4247-9012-bdf0ad44a90b) was still processing at 21:47 UTC; check with get_job before re-planning. Real per-clip costs are still unknown: need the user's Krea balance before and after.
