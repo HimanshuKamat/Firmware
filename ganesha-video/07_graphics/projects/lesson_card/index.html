@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1920, height=1080" />
+<title>Lesson Card</title>
+<script src="vendor/gsap.min.js"></script>
+<link rel="stylesheet" href="kit.css" />
+<script src="kit.js"></script>
+<style>
+  @font-face { font-family: "Fredoka"; src: url("fonts/Fredoka.ttf") format("truetype"); font-weight: 300 700; }
+  #root { position: relative; width: 100%; height: 100%; overflow: hidden; background: transparent; }
+
+  /* Layer stack, one animated property family per element:
+     #fader (exit fade + lift) > #lock (slow float) > #panel (entrance) > the pieces that pop in. */
+  #fader { position: absolute; inset: 0; opacity: 1; }
+  #fx    { position: absolute; inset: 0; }
+
+  /* Lower-third band. Panel border-box: x 260-1660, y 850-978; its 6 px extruded edge ends on y 984 (96 px margin).
+     Measured on the real frames: his pink trunk tip reaches y ~790 at most (+2.5 s), the lowest trunk curl ~y 870,
+     eyes/brow/mouth stay above y ~700. The band therefore only nicks the underside of the curl. */
+  #lock  { position: absolute; left: 0; right: 0; top: 850px; display: flex; justify-content: center; }
+
+  #panel {
+    position: relative; box-sizing: border-box; width: 1400px; height: 128px;
+    border: 7px solid var(--gold); border-radius: 64px;
+    background: linear-gradient(180deg, #E8523F 0%, #D63B2F 52%, #B7291F 100%);
+    box-shadow: inset 0 5px 0 rgba(255, 255, 255, 0.2), inset 0 -6px 0 rgba(110, 22, 15, 0.22),
+                0 6px 0 rgba(110, 22, 15, 0.55), 0 16px 30px var(--shadow);
+    opacity: 0;
+  }
+
+  /* ---- the sentence: six words laid out up front (opacity 0), so nothing shifts as they appear ---- */
+  #line { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; gap: 0.3em;
+          font-size: 82px; line-height: 1; white-space: nowrap;
+          -webkit-text-stroke-width: 0.12em; }
+  .slot { position: relative; display: block; }
+  .w    { display: block; opacity: 0; will-change: transform; }
+  .w.gold { color: var(--gold-light); }
+  .burst { position: absolute; left: 50%; top: 50%; width: 0; height: 0; }
+
+  /* ---- marigold swag along the top rim (flowers sit on the rim line and hang a little in the middle) ---- */
+  #garland { position: absolute; left: 0; top: 0; width: 100%; height: 0; filter: drop-shadow(0 3px 3px rgba(70, 14, 8, 0.35)); }
+  .gf { position: absolute; width: 30px; height: 30px; opacity: 0; will-change: transform; }
+  .gf svg { display: block; width: 100%; height: 100%; overflow: visible; }
+  .gl { position: absolute; width: 14px; height: 22px; opacity: 0; }
+  .gl svg { display: block; width: 100%; height: 100%; }
+
+  /* ---- big marigold rosettes on the panel ends ---- */
+  .rose { position: absolute; top: 50%; margin-top: -58px; width: 116px; height: 116px; opacity: 0; will-change: transform; }
+  .rose svg { display: block; width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 6px 8px rgba(70, 14, 8, 0.4)); }
+  .rose.l { left: -58px; }
+  .rose.r { right: -58px; }
+
+  .twk { position: absolute; opacity: 0; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="lesson_card" data-start="0" data-width="1920" data-height="1080" data-duration="6">
+  <div id="fader">
+    <div id="fx"></div>
+    <div id="lock">
+      <div id="panel">
+        <div id="garland" data-layout-allow-overflow></div>
+        <div id="line" class="display">
+          <span class="slot"><span id="w1" class="w" data-layout-allow-overflow>Our</span></span>
+          <span class="slot"><span id="w2" class="w gold" data-layout-allow-overflow>family</span></span>
+          <span class="slot"><span id="w3" class="w" data-layout-allow-overflow>is</span></span>
+          <span class="slot"><span id="w4" class="w" data-layout-allow-overflow>our</span></span>
+          <span class="slot"><span id="w5" class="w" data-layout-allow-overflow>whole</span></span>
+          <span class="slot"><span id="w6" class="w gold" data-layout-allow-overflow>world.</span><span id="burst" class="burst"></span></span>
+        </div>
+        <div id="roseL" class="rose l" data-layout-allow-overflow></div>
+        <div id="roseR" class="rose r" data-layout-allow-overflow></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const tl = gsap.timeline({ paused: true });
+
+  /* ---------- cues (seconds, relative to the overlay start; lesson_card in timing.json) ---------- */
+  const CUE = { our: 0.25, family: 0.55, is_our: 1.11, whole: 1.67, world: 2.42, out_start: 5.5, out_end: 6.0 };
+
+  /* ---------- the garland: built once from fixed numbers (panel border-box 1400 wide, 7 px rim) ---------- */
+  const garland = document.getElementById('garland');
+  const FIRST = 104, LAST = 1400 - 104, N = 43, FS = 30, RIM = 7;
+  const flowerSvg = (c1, c2) => Kit.svg.marigold(FS, c1, c2);
+  for (let i = 0; i < N; i++) {
+    const cx = FIRST + (LAST - FIRST) * (i / (N - 1)) - RIM;   // centre, in the panel's padding-box coordinates
+    const cy = -RIM / 2;                                        // the middle of the top rim
+    if (i % 3 === 1) {                                          // a short leaf peeks out above every third flower
+      const lf = document.createElement('div');
+      lf.className = 'gl'; lf.id = 'gl' + i;
+      lf.style.cssText = `left:${cx - 7}px;top:${cy - 21}px;transform-origin:50% 100%;transform:rotate(${(i % 2 ? -1 : 1) * 38}deg)`;
+      lf.innerHTML = Kit.svg.petal('#8CCB6B', 14, 22);
+      garland.appendChild(lf);
+    }
+  }
+  for (let i = 0; i < N; i++) {
+    const cx = FIRST + (LAST - FIRST) * (i / (N - 1)) - RIM, cy = -RIM / 2;
+    const fl = document.createElement('div');
+    fl.className = 'gf'; fl.id = 'gf' + i;
+    fl.style.cssText = `left:${cx - FS / 2}px;top:${cy - FS / 2}px`;
+    fl.innerHTML = i % 2 ? flowerSvg('#F6B21A', '#F28C28') : flowerSvg('#F28C28', '#F6B21A');
+    garland.appendChild(fl);
+  }
+  document.getElementById('roseL').innerHTML = Kit.svg.marigold(116);
+  document.getElementById('roseR').innerHTML = Kit.svg.marigold(116);
+
+  /* ---------- panel enters first: a soft rise from below, solid before the first word lands ---------- */
+  tl.fromTo('#panel', { y: 58, scale: 0.92, transformOrigin: '50% 100%' },
+                      { y: 0, scale: 1, duration: 0.55, ease: 'back.out(1.25)' }, 0);
+  tl.fromTo('#panel', { opacity: 0 }, { opacity: 1, duration: 0.3, ease: 'power1.out', immediateRender: false }, 0);
+
+  /* garland blooms outward from the middle, then the rosettes pop on the ends */
+  tl.fromTo('.gf', { scale: 0.2, opacity: 0, transformOrigin: '50% 50%' },
+                   { scale: 1, opacity: 1, duration: 0.45, ease: 'back.out(2)', stagger: { each: 0.012, from: 'center' } }, 0.28);
+  tl.fromTo('.gl', { opacity: 0 }, { opacity: 1, duration: 0.4, ease: 'power1.out', stagger: { each: 0.03, from: 'center' } }, 0.34);
+  tl.fromTo('#roseL', { scale: 0.2, rotation: -70, opacity: 0, transformOrigin: '50% 50%' },
+                      { scale: 1, rotation: 0, opacity: 1, duration: 0.65, ease: 'back.out(1.8)' }, 0.3);
+  tl.fromTo('#roseR', { scale: 0.2, rotation: 70, opacity: 0, transformOrigin: '50% 50%' },
+                      { scale: 1, rotation: 0, opacity: 1, duration: 0.65, ease: 'back.out(1.8)' }, 0.4);
+  // the rosettes turn very slowly while the card holds (finite, no loop)
+  tl.to('#roseL', { rotation: 16, duration: 3.6, ease: 'none' }, 1.05);
+  tl.to('#roseR', { rotation: -16, duration: 3.6, ease: 'none' }, 1.15);
+
+  /* ---------- words: each one lands exactly on its cue ---------- */
+  function popWord(sel, at, tilt, o) {
+    o = o || {};
+    tl.fromTo(sel,
+      { scale: o.from || 0.55, y: 32, rotation: tilt - 5, transformOrigin: '50% 78%' },
+      { scale: 1, y: 0, rotation: tilt, duration: o.dur || 0.55, ease: o.ease || 'back.out(1.7)' }, at);
+    tl.fromTo(sel, { opacity: 0 }, { opacity: 1, duration: 0.28, ease: 'power1.out', immediateRender: false }, at);
+  }
+  popWord('#w1', CUE.our, -1.5);
+  popWord('#w2', CUE.family, 1.2, { ease: 'back.out(2.1)' });
+  popWord('#w3', CUE.is_our, -1);               // "is our" is one cue (the narrator runs them together):
+  popWord('#w4', CUE.is_our + 0.1, 1);          // "is" on the cue, "our" 0.1 s behind it
+  popWord('#w5', CUE.whole, -1.2);
+  popWord('#w6', CUE.world, 1.5, { ease: 'back.out(2.4)', dur: 0.62 });
+
+  /* small sparkle on "world." as it lands (soft, one burst) */
+  Kit.sparkBurst(tl, '#burst', { x: 0, y: 0, at: CUE.world + 0.14, n: 8, r: 92, size: 38, seed: 31 });
+
+  /* the two gold words get a tiny second breath once they have landed (finite, ends at rest) */
+  tl.to('#w2', { y: -5, duration: 0.7, ease: 'sine.inOut', yoyo: true, repeat: 1 }, CUE.family + 0.9);
+  tl.to('#w6', { y: -5, duration: 0.7, ease: 'sine.inOut', yoyo: true, repeat: 1 }, CUE.world + 0.9);
+
+  /* ---------- slow twinkles on the outer ends of the panel (each eases in and out over ~1.5 s, never strobes) ---------- */
+  const tw = [
+    { x: 176, y: 826, s: 38, at: 1.2 }, { x: 1744, y: 826, s: 36, at: 1.6 },
+    { x: 282, y: 806, s: 28, at: 2.3 }, { x: 1638, y: 808, s: 30, at: 2.7 },
+  ];
+  const fx = document.getElementById('fx');
+  tw.forEach((t, i) => {
+    const d = document.createElement('div');
+    d.className = 'twk'; d.id = 'twk' + i;
+    d.style.cssText = `left:${t.x - t.s / 2}px;top:${t.y - t.s / 2}px;width:${t.s}px;height:${t.s}px`;
+    d.innerHTML = Kit.svg.sparkle(i % 2 ? '#FFF3DC' : '#FFD866', t.s);
+    fx.appendChild(d);
+    tl.fromTo(d, { opacity: 0, scale: 0.35, rotation: 0 }, { opacity: 0.92, scale: 1, rotation: 45, duration: 0.75, ease: 'sine.inOut' }, t.at);
+    tl.to(d, { opacity: 0, scale: 0.35, rotation: 90, duration: 0.75, ease: 'sine.inOut' }, t.at + 0.75);
+  });
+
+  /* ---------- hold: a very slow float of the whole card (1.0 -> 4.0, finite, back at rest) ---------- */
+  tl.to('#lock', { y: -4, duration: 1.5, ease: 'sine.inOut', yoyo: true, repeat: 1 }, 1.0);
+
+  /* ---------- 5.5 -> 6.0: soft fade with a tiny lift ---------- */
+  tl.to('#fader', { opacity: 0, y: -12, duration: CUE.out_end - CUE.out_start, ease: 'power1.inOut' }, CUE.out_start);
+
+  window.__timelines['lesson_card'] = tl;
+</script>
+</body>
+</html>

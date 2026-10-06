@@ -28,7 +28,7 @@
             mask-image: radial-gradient(circle 1400px at 960px 470px, #000 0%, rgba(0,0,0,0.85) 22%, rgba(0,0,0,0) 62%);
   }
   .disc { position: absolute; border-radius: 50%; }
-  #halo1 { left: 460px; top: -40px; width: 1000px; height: 1000px; background: radial-gradient(circle, rgba(255,246,214,0.62) 0%, rgba(255,240,190,0.46) 62%, rgba(255,236,170,0.0) 100%); }
+  #halo1 { left: 460px; top: 0px; width: 1000px; height: 1000px; background: radial-gradient(circle, rgba(255,246,214,0.62) 0%, rgba(255,240,190,0.46) 62%, rgba(255,236,170,0.0) 100%); }
   #halo2 { left: 300px; top: -200px; width: 1320px; height: 1320px; background: radial-gradient(circle, rgba(255,243,200,0) 54%, rgba(255,243,200,0.26) 70%, rgba(255,243,200,0) 100%); }
   #dawn {
     position: absolute; inset: 0; opacity: 0;
@@ -45,28 +45,28 @@
   /* ---------- bell sparkle ---------- */
   #bell { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
   .ring { position: absolute; width: 640px; height: 640px; box-sizing: border-box; border-radius: 50%; border: 14px solid rgba(255,246,214,0.85); opacity: 0; }
-  #starGlow { position: absolute; left: 700px; top: 160px; width: 520px; height: 520px; border-radius: 50%; opacity: 0;
+  #starGlow { position: absolute; left: 700px; top: 100px; width: 520px; height: 520px; border-radius: 50%; opacity: 0;
     background: radial-gradient(circle, rgba(255,250,228,1) 0%, rgba(255,240,190,0.75) 30%, rgba(255,230,150,0) 70%); }
-  #star { position: absolute; left: 820px; top: 280px; width: 280px; height: 280px; opacity: 0; }
+  #star { position: absolute; left: 820px; top: 220px; width: 280px; height: 280px; opacity: 0; }
   #star svg { display: block; width: 280px; height: 280px; filter: drop-shadow(0 0 14px rgba(255,236,170,0.95)); }
 
   /* ---------- Mooshak (peeks over the banner) ---------- */
-  #moo-clip { position: absolute; left: 0; top: 0; width: 1920px; height: 700px; overflow: hidden; }
-  #moo { position: absolute; left: 727px; top: 103px; width: 527px; height: 607px; transform-origin: 233px 532px; }
+  #moo-clip { position: absolute; left: 0; top: 0; width: 1920px; height: 720px; overflow: hidden; }
+  #moo { position: absolute; left: 715px; top: 115px; width: 555px; height: 639px; transform-origin: 245px 560px; }
   #moo img { position: absolute; display: block; }
-  #moo-body { left: 0; top: 0; width: 527px; height: 607px; filter: drop-shadow(0 10px 14px rgba(110,30,10,0.28)); }
+  #moo-body { left: 0; top: 0; width: 555px; height: 639px; filter: drop-shadow(0 10px 14px rgba(110,30,10,0.28)); }
   #moo-tail {
-    left: 353px; top: 420px; width: 174px; height: 161px;
-    --a: 360deg;
-    -webkit-mask-image: conic-gradient(from 180deg at 117px 46px, transparent 0deg, transparent calc(var(--a) - 6deg), #000 var(--a), #000 360deg);
-            mask-image: conic-gradient(from 180deg at 117px 46px, transparent 0deg, transparent calc(var(--a) - 6deg), #000 var(--a), #000 360deg);
+    left: 372px; top: 442px; width: 183px; height: 169px;
+    --a: 372deg;
+    -webkit-mask-image: conic-gradient(from 180deg at 123px 48px, transparent 0deg, transparent calc(var(--a) - 6deg), #000 var(--a), #000 360deg);
+            mask-image: conic-gradient(from 180deg at 123px 48px, transparent 0deg, transparent calc(var(--a) - 6deg), #000 var(--a), #000 360deg);
   }
-  #moo-tailwrap { position: absolute; left: 0; top: 0; width: 527px; height: 607px; transform-origin: 389px 562px; }
+  #moo-tailwrap { position: absolute; left: 0; top: 0; width: 555px; height: 639px; transform-origin: 410px 592px; }
   #moo-tailwrap > img { position: absolute; }
 
   /* ---------- banner ---------- */
   #banner {
-    position: absolute; left: 180px; top: 640px; width: 1560px; height: 280px; box-sizing: border-box;
+    position: absolute; left: 180px; top: 660px; width: 1560px; height: 270px; box-sizing: border-box;
     display: flex; align-items: center; justify-content: center; gap: 36px;
     box-shadow: 0 -8px 26px rgba(110,28,12,0.30), 0 14px 0 rgba(110,22,15,0.55), 0 26px 44px var(--shadow);
     transform-origin: 50% 50%;
@@ -96,8 +96,8 @@
     <div id="petals-back" class="drift"></div>
 
     <div id="bell">
-      <div id="ring1" class="ring" data-layout-allow-overflow style="left:640px; top:100px;"></div>
-      <div id="ring2" class="ring" data-layout-allow-overflow style="left:640px; top:100px;"></div>
+      <div id="ring1" class="ring" data-layout-allow-overflow style="left:640px; top:40px;"></div>
+      <div id="ring2" class="ring" data-layout-allow-overflow style="left:640px; top:40px;"></div>
       <div id="starGlow"></div>
       <div id="star"></div>
     </div>
@@ -109,6 +109,7 @@
       </div>
     </div>
 
+    <div id="lockup" class="layer">
     <div id="banner" class="panel">
       <div class="clipbox"><div id="shine" data-layout-allow-overflow></div></div>
       <div class="gloss"></div>
@@ -117,10 +118,11 @@
       <div id="w3" class="word display">Time</div>
     </div>
 
-    <div id="fl-tl" class="fl" style="left:115px; top:565px; width:150px; height:150px;"></div>
-    <div id="fl-tr" class="fl" style="left:1655px; top:565px; width:150px; height:150px;"></div>
-    <div id="fl-bl" class="fl" style="left:128px; top:870px; width:104px; height:104px;"></div>
-    <div id="fl-br" class="fl" style="left:1688px; top:870px; width:104px; height:104px;"></div>
+    <div id="fl-tl" class="fl" style="left:152px; top:595px; width:130px; height:130px;"></div>
+    <div id="fl-tr" class="fl" style="left:1638px; top:595px; width:130px; height:130px;"></div>
+    <div id="fl-bl" class="fl" style="left:170px; top:852px; width:92px; height:92px;"></div>
+    <div id="fl-br" class="fl" style="left:1658px; top:852px; width:92px; height:92px;"></div>
+    </div>
 
   </div>
 </div>
@@ -149,7 +151,8 @@
       const d = o.minDur + rnd() * (o.maxDur - o.minDur);
       const t0 = late ? 0.4 + rnd() * 3.2 : 0;
       const u0 = late ? 0 : rnd() * 0.8;
-      const x0 = o.xmin + rnd() * (o.xmax - o.xmin), dx = (rnd() - 0.5) * 320;
+      const left = rnd() < 0.5;   // left or right of Mooshak, never behind him
+      const x0 = left ? o.l0 + rnd() * (o.l1 - o.l0) : o.r0 + rnd() * (o.r1 - o.r0), dx = (rnd() - 0.5) * 220;
       const spin = (rnd() - 0.5) * 520, r0 = rnd() * 360;
       const y0 = -100, y1 = H + 100;
       tl.fromTo(outer,
@@ -168,9 +171,9 @@
   const leafSvg = (px, ang) => {
     const r = ang * Math.PI / 180, c = Math.cos(r), s = Math.sin(r);
     const P = (x, y) => `${(x * c - y * s).toFixed(2)} ${(x * s + y * c).toFixed(2)}`;
-    const body = `M${P(0, -20)} C${P(19, -40)} ${P(19, -66)} ${P(0, -84)} C${P(-19, -66)} ${P(-19, -40)} ${P(0, -20)}Z`;
-    const half = `M${P(0, -20)} C${P(8, -40)} ${P(9, -64)} ${P(0, -84)} C${P(14, -66)} ${P(13, -40)} ${P(0, -20)}Z`;
-    const vein = `M${P(0, -32)} L${P(0, -70)}`;
+    const body = `M${P(0, -18)} C${P(16, -34)} ${P(16, -58)} ${P(0, -73)} C${P(-16, -58)} ${P(-16, -34)} ${P(0, -18)}Z`;
+    const half = `M${P(0, -18)} C${P(7, -34)} ${P(8, -56)} ${P(0, -73)} C${P(12, -58)} ${P(11, -34)} ${P(0, -18)}Z`;
+    const vein = `M${P(0, -28)} L${P(0, -61)}`;
     return `<svg viewBox="-100 -100 200 200" width="${px}" height="${px}"><path d="${body}" fill="#7DBE62"/><path d="${half}" fill="#6AAA52"/><path d="${vein}" stroke="rgba(255,255,255,0.42)" stroke-width="6" stroke-linecap="round" fill="none"/></svg>`;
   };
   function buildFlower(id, size, leafA, leafB) {
@@ -190,10 +193,10 @@
     f.innerHTML = Kit.svg.marigold(size, '#FFCB3C', '#EE7F1E');
     host.appendChild(f);
   }
-  buildFlower('fl-tl', 150, -62, -118);
-  buildFlower('fl-tr', 150, 62, 118);
-  buildFlower('fl-bl', 104, -70, 200);
-  buildFlower('fl-br', 104, 70, 160);
+  buildFlower('fl-tl', 130, -62, -118);
+  buildFlower('fl-tr', 130, 62, 118);
+  buildFlower('fl-bl', 92, -70, 200);
+  buildFlower('fl-br', 92, 70, 160);
 
   /* ---------- static start states ---------- */
   document.getElementById('star').innerHTML = Kit.svg.sparkle('#FFF8E4', 280);
@@ -218,8 +221,8 @@
   tl.fromTo('#dawn', { opacity: 0 }, { opacity: 0.6, duration: 1.5, ease: 'sine.inOut' }, 5.0); // brighter, calm end for the crossfade
 
   /* --- petals / marigolds drifting --- */
-  drift('#petals-back', { n: 22, seed: 11, minSize: 38, maxSize: 74, flowers: 0.26, far: 0.35, late: 0.35,
-    minDur: 8, maxDur: 12, xmin: 0, xmax: W, alpha: 0.92,
+  drift('#petals-back', { n: 26, seed: 11, minSize: 38, maxSize: 74, flowers: 0.26, far: 0.35, late: 0.35,
+    minDur: 8, maxDur: 12, l0: 130, l1: 520, r0: 1400, r1: 1790, alpha: 0.92,
     colors: ['#FFF3DC', '#F4A6B8', '#D63B2F', '#FFE9A0', '#FFF3DC', '#E85F4A'] });
 
   /* --- 0.90 bell sparkle: one soft star + ring ripples --- */
@@ -260,7 +263,10 @@
   tl.to('#shine', { opacity: 0, duration: 0.3, ease: 'none' }, 3.15);
 
   /* --- 1.45 Mooshak rises over the banner --- */
-  tl.fromTo('#moo', { y: 610, scaleX: 1.04, scaleY: 0.94 }, { y: -30, scaleX: 0.97, scaleY: 1.05, duration: 0.55, ease: 'power3.out' }, 1.45);
+  tl.fromTo('#moo', { y: 650, scaleX: 1.04, scaleY: 0.94 }, { y: -16, scaleX: 0.975, scaleY: 1.045, duration: 0.55, ease: 'power3.out' }, 1.45);
+  // banner takes a tiny bounce as he lands (flowers + text travel with it)
+  tl.to('#lockup', { y: 7, duration: 0.14, ease: 'sine.out' }, 2.06);
+  tl.to('#lockup', { y: 0, duration: 0.45, ease: 'back.out(3)' }, 2.2);
   tl.to('#moo', { y: 0, scaleX: 1.04, scaleY: 0.95, duration: 0.25, ease: 'sine.inOut' }, 2.0);   // settle / squash
   tl.to('#moo', { scaleX: 1, scaleY: 1, duration: 0.3, ease: 'sine.out' }, 2.25);
   // little hello tilt (pivot hidden behind the banner)
@@ -270,7 +276,7 @@
   tl.to('#moo', { rotation: 0, duration: 0.4, ease: 'sine.inOut' }, 3.53);
 
   /* --- tail curls in (conic reveal around the loop) + a flick --- */
-  tl.fromTo('#moo-tail', { '--a': '360deg' }, { '--a': '0deg', duration: 0.95, ease: 'power2.inOut' }, 1.95);
+  tl.fromTo('#moo-tail', { '--a': '372deg' }, { '--a': '0deg', duration: 0.95, ease: 'power2.inOut' }, 1.95);
   tl.to('#moo-tailwrap', { rotation: -9, duration: 0.3, ease: 'sine.inOut' }, 2.85);
   tl.to('#moo-tailwrap', { rotation: 6, duration: 0.4, ease: 'sine.inOut' }, 3.15);
   tl.to('#moo-tailwrap', { rotation: 0, duration: 0.4, ease: 'sine.inOut' }, 3.55);
@@ -278,10 +284,16 @@
   /* --- idle breathing + tail sway while the lockup holds (finite) --- */
   tl.to('#moo', { scaleY: 1.014, scaleX: 0.994, duration: 1.2, ease: 'sine.inOut', yoyo: true, repeat: 1 }, 3.9);
   tl.to('#moo-tailwrap', { rotation: 3.5, duration: 0.9, ease: 'sine.inOut', yoyo: true, repeat: 3 }, 4.0);
-  tl.to('#moo', { rotation: 0, duration: 0.01 }, 6.4);
+  tl.to('#moo', { rotation: 2.2, duration: 0.45, ease: 'sine.inOut' }, 4.5);
+  tl.to('#moo', { rotation: -2.2, duration: 0.6, ease: 'sine.inOut' }, 4.95);
+  tl.to('#moo', { rotation: 0, duration: 0.45, ease: 'sine.inOut' }, 5.55);
+
+  /* --- last 0.5 s overlaps the crossfade into shot 02: lockup dissolves softly, bright background remains --- */
+  tl.to('#lockup', { opacity: 0, duration: 0.5, ease: 'sine.inOut' }, 6.0);
+  tl.to('#moo-clip', { opacity: 0, duration: 0.5, ease: 'sine.inOut' }, 6.0);
 
   /* --- very gentle push-in on the finished lockup --- */
-  tl.fromTo('#stage', { scale: 1, transformOrigin: '960px 520px' }, { scale: 1.035, duration: 3.5, ease: 'sine.inOut' }, 3.0);
+  tl.fromTo('#stage', { scale: 1, transformOrigin: '960px 540px' }, { scale: 1.02, duration: 3.5, ease: 'sine.inOut' }, 3.0);
 
   window.__timelines['intro'] = tl;
 </script>

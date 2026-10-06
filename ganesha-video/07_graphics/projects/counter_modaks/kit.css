@@ -1,0 +1,62 @@
+/* Ganesha's Big Race - shared graphics kit (HyperFrames compositions).
+   Palette comes from 01_script/bible.md so graphics match the 3D look.
+   Rules for toddlers: big rounded high-contrast type, soft motion, nothing flashes (no fade shorter than 0.2 s). */
+@font-face {
+  font-family: "Fredoka";
+  src: url("fonts/Fredoka.ttf") format("truetype");
+  font-weight: 300 700;
+  font-stretch: 75% 125%;
+}
+
+:root {
+  --saffron: #F28C28;
+  --red: #D63B2F;
+  --red-deep: #B02A20;
+  --gold: #F6B21A;
+  --gold-light: #FFD866;
+  --teal: #1AA6A0;
+  --cream: #FFF3DC;
+  --sky: #8FD3F4;
+  --green: #8CCB6B;
+  --pink: #F4A6B8;
+  --ink: #7A1F16;        /* dark-red outline colour for cream type */
+  --shadow: rgba(70, 14, 8, 0.38);
+}
+
+html, body { margin: 0; padding: 0; background: transparent; }
+body { font-family: "Fredoka", system-ui, sans-serif; }
+
+/* Display type: cream fill, dark-red outline, soft drop shadow. Set font-size on the element. */
+.display {
+  font-family: "Fredoka", sans-serif;
+  font-weight: 700;
+  color: var(--cream);
+  line-height: 1.04;
+  letter-spacing: 0.01em;
+  -webkit-text-stroke: 0.16em var(--ink);
+  paint-order: stroke fill;
+  text-shadow: 0 0.07em 0 rgba(122, 31, 22, 0.55), 0 0.14em 0.22em var(--shadow);
+}
+.display.gold { color: var(--gold-light); }
+.display.red  { color: var(--red); -webkit-text-stroke-color: var(--cream); }
+
+/* Rounded red panel with a gold rim (lesson card, banners). */
+.panel {
+  background: linear-gradient(180deg, #E5503F 0%, var(--red) 55%, var(--red-deep) 100%);
+  border: 8px solid var(--gold);
+  border-radius: 56px;
+  box-shadow: 0 14px 0 rgba(110, 22, 15, 0.55), 0 26px 44px var(--shadow);
+}
+
+/* Cream rounded card (end-screen frames). */
+.cream-card {
+  background: rgba(255, 243, 220, 0.16);
+  border: 8px solid var(--cream);
+  border-radius: 40px;
+  box-shadow: 0 0 0 6px rgba(122, 31, 22, 0.55), 0 18px 40px var(--shadow);
+}
+
+.layer { position: absolute; inset: 0; }
+.abs { position: absolute; }
+.center { display: flex; align-items: center; justify-content: center; }
+.nowrap { white-space: nowrap; }

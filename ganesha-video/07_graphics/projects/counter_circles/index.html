@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1920, height=1080" />
+<title>Counter Circles</title>
+<script src="vendor/gsap.min.js"></script>
+<link rel="stylesheet" href="kit.css" />
+<script src="kit.js"></script>
+<style>
+  @font-face { font-family: "Fredoka"; src: url("fonts/Fredoka.ttf") format("truetype"); font-weight: 300 700; }
+  #root { position: relative; width: 100%; height: 100%; overflow: hidden; background: transparent; }
+
+  /* Layers: fader (exit) > fx (sparkles, behind the numerals) > cells (pop + hop) > bob (slow float) > glyph + bloom */
+  #fader { position: absolute; inset: 0; opacity: 1; }
+  #fx { position: absolute; inset: 0; }
+  .cell { position: absolute; opacity: 0; will-change: transform; }
+  .bob { position: absolute; inset: 0; }
+
+  /* One numeral = two stacked layers: an ink outline layer behind, a cream-to-gold gradient face in front. */
+  .glyph {
+    position: absolute; left: 0; top: 0; width: 100%;
+    font-family: "Fredoka", sans-serif; font-weight: 700; font-size: 300px; line-height: 1;
+    text-align: center; white-space: nowrap;
+  }
+  .glyph.back {
+    color: var(--ink);
+    /* Outline = a ring of zero-blur ink copies (32 directions, 0.08em). Chrome's text-stroke leaves pin-holes where this
+       variable font's contours overlap, so the outline is built from shadows instead. Then a lip and a soft drop shadow. */
+    text-shadow: 0.0800em 0.0000em 0 var(--ink), 0.0785em 0.0156em 0 var(--ink), 0.0739em 0.0306em 0 var(--ink), 0.0665em 0.0444em 0 var(--ink), 0.0566em 0.0566em 0 var(--ink), 0.0444em 0.0665em 0 var(--ink), 0.0306em 0.0739em 0 var(--ink), 0.0156em 0.0785em 0 var(--ink), 0.0000em 0.0800em 0 var(--ink), -0.0156em 0.0785em 0 var(--ink), -0.0306em 0.0739em 0 var(--ink), -0.0444em 0.0665em 0 var(--ink), -0.0566em 0.0566em 0 var(--ink), -0.0665em 0.0444em 0 var(--ink), -0.0739em 0.0306em 0 var(--ink), -0.0785em 0.0156em 0 var(--ink), -0.0800em 0.0000em 0 var(--ink), -0.0785em -0.0156em 0 var(--ink), -0.0739em -0.0306em 0 var(--ink), -0.0665em -0.0444em 0 var(--ink), -0.0566em -0.0566em 0 var(--ink), -0.0444em -0.0665em 0 var(--ink), -0.0306em -0.0739em 0 var(--ink), -0.0156em -0.0785em 0 var(--ink), -0.0000em -0.0800em 0 var(--ink), 0.0156em -0.0785em 0 var(--ink), 0.0306em -0.0739em 0 var(--ink), 0.0444em -0.0665em 0 var(--ink), 0.0566em -0.0566em 0 var(--ink), 0.0665em -0.0444em 0 var(--ink), 0.0739em -0.0306em 0 var(--ink), 0.0785em -0.0156em 0 var(--ink), 0 0.075em 0 rgba(122, 31, 22, 0.62), 0 0.15em 0.2em var(--shadow);
+  }
+  .glyph.face {
+    background: linear-gradient(180deg, #FFFDF6 0%, #FFF3DC 38%, #FFD866 100%);
+    -webkit-background-clip: text; background-clip: text;
+    color: transparent; -webkit-text-fill-color: transparent;
+  }
+
+  /* Marigold bloom tucked on the numeral's shoulder */
+  .bloom { position: absolute; width: 80px; height: 80px; opacity: 0; will-change: transform; }
+  .bloom svg { display: block; width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 6px 8px rgba(70, 14, 8, 0.4)); }
+  .twk { position: absolute; opacity: 0; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="counter_circles" data-start="0" data-width="1920" data-height="1080" data-duration="8.5">
+  <div id="fader">
+    <div id="fx"></div>
+    <div id="n1" class="cell" style="left:1190px;top:80px;width:114px;height:300px">
+      <div class="bob">
+        <div class="bloom" style="left:68px;top:24px" data-layout-allow-overflow data-layout-allow-orbit></div>
+        <div class="glyph back" aria-hidden="true" data-layout-allow-occlusion>1</div>
+        <div class="glyph face">1</div>
+      </div>
+    </div>
+    <div id="n2" class="cell" style="left:1366px;top:80px;width:170px;height:300px">
+      <div class="bob">
+        <div class="bloom" style="left:124px;top:24px" data-layout-allow-overflow data-layout-allow-orbit></div>
+        <div class="glyph back" aria-hidden="true" data-layout-allow-occlusion>2</div>
+        <div class="glyph face">2</div>
+      </div>
+    </div>
+    <div id="n3" class="cell" style="left:1598px;top:80px;width:169px;height:300px">
+      <div class="bob">
+        <div class="bloom" style="left:123px;top:24px" data-layout-allow-overflow data-layout-allow-orbit></div>
+        <div class="glyph back" aria-hidden="true" data-layout-allow-occlusion>3</div>
+        <div class="glyph face">3</div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  const tl = gsap.timeline({ paused: true });
+
+  // ---- pre-calculated layout (px, 1920x1080 frame) ----
+  const CUES = [0.48, 1.78, 3.07];            // n1, n2, n3 (seconds, relative to the overlay start)
+  const HOLD_UNTIL = 8.0, OUT_END = 8.5;
+  const FS = 300;                // numeral size
+  const ROW = [{"id": "n1", "ch": "1", "left": 1190, "top": 80, "w": 114, "h": 300, "cx": 1247, "cy": 231}, {"id": "n2", "ch": "2", "left": 1366, "top": 80, "w": 170, "h": 300, "cx": 1451, "cy": 231}, {"id": "n3", "ch": "3", "left": 1598, "top": 80, "w": 169, "h": 300, "cx": 1682, "cy": 231}];              // [{id, ch, left, top, w, h, cx, cy}]
+  // Sparkle burst (4-point stars flying out from behind a numeral). Same motion as the kit's burst, but any spark whose end point
+  // would leave the safe zone BOUNDS is flipped to the open side, so nothing is clipped by the frame edge or lands on the modaks/hand/faces.
+  const BOUNDS = {"x0": 1010, "x1": 1824, "y0": 100, "y1": 362};       // {x0, x1, y0, y1}
+  function burst(x, y, at, o) {
+    const rnd = Kit.rng(o.seed), fxl = document.getElementById('fx');
+    for (let i = 0; i < o.n; i++) {
+      const size = o.size * (0.55 + rnd() * 0.7), h = size / 2;
+      const ang = (Math.PI * 2 * i) / o.n + rnd() * 0.5, dist = o.r * (0.6 + rnd() * 0.6);
+      let dx = Math.cos(ang) * dist, dy = Math.sin(ang) * dist;
+      if (x + dx < BOUNDS.x0 + h) dx = Math.abs(dx);
+      if (x + dx > BOUNDS.x1 - h) dx = -Math.abs(dx);
+      if (y + dy < BOUNDS.y0 + h) dy = Math.abs(dy);
+      if (y + dy > BOUNDS.y1 - h) dy = -Math.abs(dy);
+      dx = Math.min(BOUNDS.x1 - h - x, Math.max(BOUNDS.x0 + h - x, dx));
+      dy = Math.min(BOUNDS.y1 - h - y, Math.max(BOUNDS.y0 + h - y, dy));
+      const el = document.createElement('div');
+      el.style.cssText = `position:absolute;left:${x - h}px;top:${y - h}px;opacity:0;width:${size}px;height:${size}px`;
+      el.innerHTML = Kit.svg.sparkle(o.color || '#FFD866', size);
+      fxl.appendChild(el);
+      tl.fromTo(el, { x: 0, y: 0, scale: 0.2, opacity: 0, rotation: 0 }, { x: dx, y: dy, scale: 1, opacity: 1, rotation: 90, duration: 0.45, ease: 'power2.out' }, at);
+      tl.to(el, { opacity: 0, scale: 0.3, duration: 0.55, ease: 'power1.in' }, at + 0.45);
+    }
+  }
+
+  const BLOOM_COLORS = [['#F6B21A', '#F28C28'], ['#F28C28', '#F6B21A'], ['#F6B21A', '#E8741A']];
+
+  ROW.forEach((n, i) => {
+    const cell = '#' + n.id, bob = '#' + n.id + ' .bob', bloom = '#' + n.id + ' .bloom';
+    const t = CUES[i];
+    document.querySelector(bloom).innerHTML = Kit.svg.marigold(80, BLOOM_COLORS[i][0], BLOOM_COLORS[i][1]);
+
+    // --- pop on the cue: grows from its baseline with a soft stretch-and-settle, floats up into place ---
+    tl.fromTo(cell, { opacity: 0 }, { opacity: 1, duration: 0.3, ease: 'power1.out' }, t);
+    tl.fromTo(cell, { scaleX: 0.3, transformOrigin: '50% 72%' }, { scaleX: 1, duration: 0.7, ease: 'back.out(1.3)' }, t);
+    tl.fromTo(cell, { scaleY: 0.18 }, { scaleY: 1, duration: 0.7, ease: 'back.out(1.9)' }, t);
+    tl.fromTo(cell, { y: 64, rotation: -7 }, { y: 0, rotation: 0, duration: 0.8, ease: 'back.out(1.7)' }, t);
+
+    // --- marigold bloom pops on a hair later and turns very slowly while the row holds ---
+    tl.fromTo(bloom, { scale: 0.15, rotation: -80, opacity: 0, transformOrigin: '50% 50%' },
+                     { scale: 1, rotation: 0, opacity: 1, duration: 0.65, ease: 'back.out(1.4)' }, t + 0.14);
+    tl.to(bloom, { rotation: 30 * (i % 2 ? -1 : 1), duration: Math.max(1, HOLD_UNTIL - (t + 0.8)), ease: 'none' }, t + 0.8);
+
+    // --- slow float while it holds (finite, each numeral on its own phase) ---
+    const per = 2.3 + i * 0.35, start = t + 0.85, len = Math.max(0.5, HOLD_UNTIL - start);
+    tl.to(bob, { y: -7, duration: per / 2, ease: 'sine.inOut', yoyo: true, repeat: Math.max(1, Math.floor(len / (per / 2)) - 1) }, start);
+
+    // --- sparkle burst from behind the numeral (two soft layers: gold + cream) ---
+    burst(n.cx, n.cy, t + 0.06, { n: 8, r: 235, size: 56, seed: 11 + i * 17 });
+    burst(n.cx, n.cy, t + 0.12, { n: 6, r: 190, size: 38, color: '#FFF3DC', seed: 71 + i * 13 });
+
+    // --- counting beat: the numerals already on screen give one small happy hop when the next one lands ---
+    if (i > 0) {
+      for (let j = 0; j < i; j++) {
+        const prev = '#' + ROW[j].id;
+        tl.to(prev, { y: -16, duration: 0.2, ease: 'power2.out' }, t + 0.02);
+        tl.to(prev, { y: 0, duration: 0.5, ease: 'bounce.out' }, t + 0.22);
+      }
+    }
+  });
+
+  // --- slow twinkles while the row holds (each eases in and out over ~1.4 s, never strobes) ---
+  const TW = [{"x": 1796, "y": 215, "s": 34, "at": 4.6}, {"x": 1790, "y": 335, "s": 30, "at": 5.2}, {"x": 1455, "y": 345, "s": 30, "at": 5.8}];
+  const fx = document.getElementById('fx');
+  TW.forEach((s, i) => {
+    const d = document.createElement('div');
+    d.className = 'twk'; d.id = 'twk' + i;
+    d.style.cssText = `left:${s.x - s.s / 2}px;top:${s.y - s.s / 2}px;width:${s.s}px;height:${s.s}px`;
+    d.innerHTML = Kit.svg.sparkle(i % 2 ? '#FFF3DC' : '#FFD866', s.s);
+    fx.appendChild(d);
+    tl.fromTo(d, { opacity: 0, scale: 0.35, rotation: 0 }, { opacity: 0.92, scale: 1, rotation: 45, duration: 0.7, ease: 'sine.inOut' }, s.at);
+    tl.to(d, { opacity: 0, scale: 0.35, rotation: 90, duration: 0.7, ease: 'sine.inOut' }, s.at + 0.7);
+  });
+
+  // --- exit: the whole row fades softly with a tiny lift ---
+  // (finishes on the last frame's timestamp, one frame before OUT_END, so the final frame is fully transparent)
+  tl.to('#fader', { opacity: 0, y: -14, duration: OUT_END - 1 / 24 - HOLD_UNTIL, ease: 'power1.inOut' }, HOLD_UNTIL);
+
+  window.__timelines['counter_circles'] = tl;
+</script>
+</body>
+</html>

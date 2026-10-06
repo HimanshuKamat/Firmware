@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<title>Shorts end card</title>
+<script src="vendor/gsap.min.js"></script>
+<link rel="stylesheet" href="kit.css" />
+<script src="kit.js"></script>
+<style>
+  #root { position: relative; width: 100%; height: 100%; overflow: hidden;
+    background: radial-gradient(circle at 50% 46%, #FFF1B8 0%, #FFD866 24%, #F6B21A 46%, #F28C28 74%, #D63B2F 100%); }
+  .rays { position: absolute; left: 50%; top: 46%; width: 3200px; height: 3200px; margin: -1600px 0 0 -1600px;
+    background: repeating-conic-gradient(from 0deg, rgba(255,255,255,.22) 0deg 7deg, rgba(255,255,255,0) 7deg 18deg);
+    -webkit-mask-image: radial-gradient(circle, #000 0%, rgba(0,0,0,.5) 36%, transparent 68%); mask-image: radial-gradient(circle, #000 0%, rgba(0,0,0,.5) 36%, transparent 68%); }
+  .t1 { position: absolute; left: 0; width: 1080px; top: 150px; text-align: center; font-size: 150px; transform: rotate(-3deg); }
+  .t2 { position: absolute; left: 0; width: 1080px; top: 296px; text-align: center; font-size: 196px; transform: rotate(-3deg); }
+  #mooshak { position: absolute; left: 50%; top: 720px; height: 620px; margin-left: -265px; transform-origin: 50% 100%; filter: drop-shadow(0 20px 22px rgba(80,18,8,.45)); }
+  .msg { position: absolute; left: 90px; width: 900px; top: 1370px; height: 250px; display: flex; align-items: center; justify-content: center; text-align: center; border-radius: 80px; border-width: 8px; }
+  .msg span { font-size: 78px; line-height: 1.06; }
+  .play { position: absolute; left: 50%; top: 1660px; width: 150px; height: 150px; margin-left: -75px; border-radius: 50%; background: #fff; border: 8px solid #7A1F16; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 0 rgba(110,22,15,.55), 0 18px 30px rgba(60,10,5,.35); }
+  .gar { position: absolute; left: 0; width: 1080px; height: 110px; }
+  #fx, #pet { position: absolute; inset: 0; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="shorts-endcard" data-start="0" data-width="1080" data-height="1920" data-duration="4">
+  <div class="rays"></div>
+  <div id="pet"></div>
+  <div class="gar" id="gar1" data-layout-allow-overflow style="top:20px"></div>
+  <div class="t1 display" id="t1" data-layout-allow-overlap>Ganesha's</div>
+  <div class="t2 display gold" id="t2">Big Race!</div>
+  <img id="mooshak" src="img/mooshak_front_trim.png" />
+  <div class="msg panel" id="msg"><span class="display" style="-webkit-text-stroke:0.1em #7A1F16">Watch the full story on the channel!</span></div>
+  <div class="play" id="play"><svg viewBox="0 0 100 100" width="84" height="84"><path d="M30 18 L84 50 L30 82 Z" fill="#D63B2F" stroke="#7A1F16" stroke-width="7" stroke-linejoin="round"/></svg></div>
+  <div class="gar" id="gar2" data-layout-allow-overflow style="top:1810px"></div>
+  <div id="fx"></div>
+</div>
+<script>
+  for (const id of ['gar1', 'gar2']) {
+    let g = '';
+    for (let i = 0; i < 11; i++) g += `<div style="position:absolute;left:${i * 100 - 20}px;top:${(i % 2) * 12}px">${Kit.svg.marigold(96)}</div>`;
+    document.getElementById(id).innerHTML = g;
+  }
+  const tl = gsap.timeline({ paused: true });
+  Kit.petalFall(tl, '#pet', { n: 14, seed: 21, t0: 0, t1: 2.0, w: 1080, h: 1920, minDur: 4.5, maxDur: 6.5, minSize: 34, maxSize: 60, flowers: 0.25 });
+  tl.fromTo('#gar1', { y: -140 }, { y: 0, duration: 0.8, ease: 'power3.out' }, 0);
+  tl.fromTo('#gar2', { y: 140 }, { y: 0, duration: 0.8, ease: 'power3.out' }, 0);
+  Kit.pop(tl, '#t1', 0.25, { dur: 0.6 });
+  Kit.pop(tl, '#t2', 0.45, { dur: 0.7 });
+  tl.fromTo('#mooshak', { y: 520, rotation: -6 }, { y: 0, rotation: 0, duration: 0.9, ease: 'back.out(1.5)' }, 0.5);
+  tl.to('#mooshak', { rotation: 4, duration: 0.55, ease: 'sine.inOut', yoyo: true, repeat: 3 }, 1.5);
+  Kit.pop(tl, '#msg', 1.0, { dur: 0.6 });
+  Kit.pop(tl, '#play', 1.5, { dur: 0.6 });
+  tl.to('#play', { scale: 1.1, duration: 0.5, ease: 'sine.inOut', yoyo: true, repeat: 3, transformOrigin: '50% 50%' }, 2.2);
+  Kit.sparkBurst(tl, '#fx', { x: 540, y: 1500, at: 1.05, n: 8, seed: 9, r: 140, size: 52 });
+  tl.to('#root', { opacity: 1, duration: 0.01 }, 3.99);
+  window.__timelines['shorts-endcard'] = tl;
+</script>
+</body>
+</html>
