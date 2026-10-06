@@ -1,0 +1,1048 @@
+====================================================================================================
+PROJECT REVIEW REPORT
+"Ganesha's Big Race"  -  a 4:40 animated children's video, made end to end by an AI assistant
+====================================================================================================
+
+Prepared:   2026-10-06
+Prepared by: Claude (AI assistant), working for the project owner
+Repository: HimanshuKamat/Firmware, branch claude/amazing-pasteur-y5im4h, folder ganesha-video/
+Purpose:    A self-contained account of everything that was done, so that a third party can review
+            it and find (a) credit / cost savings, (b) better animation, (c) better audio and
+            editing, (d) process improvements, and (e) risks.
+
+How to read this report
+-----------------------
+You do not need any other file to follow it. File paths are given so you can check claims.
+Every number is tagged where it matters:
+   [M] measured by a tool (ffprobe, ffmpeg loudness meter, file sizes, tool output)
+   [E] estimated (for example Krea credit use, which the Krea API does not report per job)
+   [A] an assumption I made and the owner did not explicitly confirm
+   [U] unverified: I could not check it from the working environment
+IMPORTANT LIMIT: the assistant cannot watch video play or listen to audio. Picture quality was
+judged from still frames and contact sheets; audio was judged from measurements and from
+calculation, never by ear. Section 14 lists exactly what was and was not checked.
+
+
+TABLE OF CONTENTS
+-----------------
+  1. Executive summary
+  2. The brief: requirements and constraints
+  3. What was delivered
+  4. Pipeline and tools (with versions)
+  5. Phase-by-phase account
+  6. Per-shot table (33 shots, source, timing, slowdown)
+  7. Audio: voices, music, sound effects, mix
+  8. Graphics (HyperFrames overlays)
+  9. Edit and final assembly
+ 10. Shorts, captions, thumbnails, YouTube package
+ 11. Credits and cost
+ 12. Decisions and assumptions
+ 13. Problems met and how they were solved
+ 14. Quality checks done, and not done
+ 15. Review findings and recommendations
+       15A. Credit and cost optimisations
+       15B. Animation improvements
+       15C. Audio improvements
+       15D. Editing, graphics and delivery improvements
+       15E. Process and tooling lessons
+       15F. What worked well and should be kept
+ 16. Prioritised action list
+ 17. Compliance, safety and respect notes
+ 18. Known defects register
+ 19. Where things are, and how to reproduce
+ 20. Open questions for the reviewer
+ Appendix A. Prompt recipe
+ Appendix B. Key numbers at a glance
+
+
+====================================================================================================
+1. EXECUTIVE SUMMARY
+====================================================================================================
+
+What was asked: act as producer, writer and editor of a 4 to 5 minute (never over 5:00) animated
+children's video for toddlers (4 to 5 years old), 16:9, 1920x1080, with the lesson "Our family is our
+whole world." Also a 60 s vertical (9:16) Shorts teaser, captions, thumbnails and a YouTube package.
+
+What was made: "Ganesha's Big Race", a gentle story in which Shiva offers a golden mango to whichever
+son circles the world three times first. Kartikeya flies off on his peacock; little Ganesha instead
+walks three times around his parents, "because they are my whole world", and wins. A small mouse,
+Mooshak, is the child-facing guide and comic relief. The video has counting games (modaks, circles),
+a "flap your arms" prompt, the chant "Ganpati Bappa... Morya!", an original sung goodbye song and a
+20 s end screen.
+
+Result [M]: 280.0 s (4:40), 1920x1080, 24 fps, H.264 High, AAC 320 kbps 48 kHz, loudness -14.0 LUFS
+integrated, true peak -1.5 dBTP, loudness range 8.2 LU, no black frames and no frozen frames found by
+ffmpeg scans. Plus a 56 s Shorts teaser, 63-cue SRT captions, three 1280x720 thumbnails and a YouTube
+title / description / tags / chapters package. Delivered as a 91 MB one-file MP4, a 408 MiB master
+(split in five parts for GitHub) and a 73 MB extras zip.
+
+Cost [E]: Krea about 66,000 credit units (about USD 115 at the Max plan's USD 0.00175 per unit),
+ElevenLabs about 12,250 credits (about USD 2.45), Canva 0, HyperFrames 0 (run locally). Over 97 percent
+of the money went to AI video clips on Krea. Wall-clock time: about 10 hours of elapsed time, including
+waits for the owner and a container restart.
+
+The five findings a reviewer should read first
+----------------------------------------------
+ 1. MODEL CHOICE COST ABOUT USD 55. Seedance 2.5 clips cost about 3.2x more than Veo 3.1 clips at 1080p
+    (3,791 vs 1,185 units; quoted by Krea). Twelve clips used Seedance, about 31,000 units more than
+    the same twelve on Veo. The plan assumed the opposite and nobody had a price until the balance ran
+    out mid-batch. The cheapest fix is a free price quote BEFORE planning (Section 15A).
+ 2. ABOUT 9 PERCENT OF THE RUNTIME IS NOT ANIMATED. Shots 23, 27 and 28 (the "how did you win",
+    mango-sharing and hug beats) are slow zooms on still pictures because Veo's content filter refused
+    to animate them. They were originally planned for Seedance and were moved to Veo to save credits.
+    Re-doing them on Seedance would cost about 11,400 units (about USD 20) at 1080p (Section 15B).
+ 3. NOTHING WAS HEARD BY A HUMAN. Narration, music, the sung song and 41 sound effects were placed by
+    calculation and measured, never auditioned. Pronunciation of "Ganpati Bappa Morya", "Kartikeya",
+    "modak" has not been checked by an Indian-English listener (Section 15C).
+ 4. 16 OF 17 VEO CLIPS WERE SLOWED DOWN (by 6 to 20 percent) to fill the narration, and two end with
+    held frames. The slow-down duplicates frames (no interpolation), so motion can feel floaty or
+    slightly juddery. Designing each shot to 7.5 s of net time, or interpolating, avoids it (15B).
+ 5. THE ONE-FILE DOWNLOAD IS A CONVENIENCE COPY (2.6 Mbps). For upload to YouTube the 12 Mbps master
+    should be used. The master exists only as five 90 MiB parts in the repository (Section 15D).
+
+Overall verdict (my own, to be challenged): the project meets every hard requirement in the brief and is
+a complete, uploadable package. It is "good and consistent", not yet "premium": characters are
+on-model and the look is unified, but there is no lip-sync, three beats are static, the audio has not
+been heard, and the cut is uniformly slow with 32 identical 0.5 s crossfades.
+
+
+====================================================================================================
+2. THE BRIEF: REQUIREMENTS AND CONSTRAINTS
+====================================================================================================
+(The full brief is in ganesha-video/BRIEF.md. This is a summary.)
+
+ - Video: animated children's story for toddlers 4 to 5, 4 to 5 minutes, NEVER over 5:00. 16:9, 1920x1080.
+ - Lesson: "Our family is our whole world."
+ - Story and script: original, gentle, positive. Script guide of 450 to 550 words at 110 to 120 words
+   per minute. (Delivered 310 words, see Section 12.)
+ - On-screen text stays at least 3 s. No flashing; gentle motion; nothing loud or sudden.
+ - Interaction: counting, "flap your arms", chant, sing-along. Child-safe humour.
+ - Audio: narrator plus character voices, soft Indian instrumental music ducked under speech, gentle
+   sound effects. Loudness -14 LUFS integrated, true peak under -1 dBTP.
+ - Export: H.264 High, AAC 320 kbps 48 kHz.
+ - Extras: 60 s 9:16 Shorts teaser (delivered 56 s), SRT captions, thumbnails (to be made in Canva),
+   YouTube title / description / tags / chapters.
+ - Process: checkpoints for approval (script; references and keyframes; clips; voice). The owner later
+   said they would be unavailable and asked the assistant to finish autonomously.
+ - Tool stack named in the brief: Krea (images, video), ElevenLabs (voice, music, effects), Vivideo
+   (video prompt builder), HyperFrames (graphics), Canva (thumbnails).
+ - Respect: Hindu sacred figures (Ganesha, Shiva, Parvati, Kartikeya) treated reverently; comedy only
+   from the mouse.
+
+
+====================================================================================================
+3. WHAT WAS DELIVERED
+====================================================================================================
+Folder ganesha-video/09_final/ on the branch (sizes [M]):
+
+ Ganesha_Big_Race_1080p_download.mp4     91 MB   Whole video, one file, 1080p, about 2.6 Mbps video
+ parts/Ganesha_Big_Race_1080p.mp4.part00..04   5 x 90 MiB   The 1080p MASTER (427,425,765 bytes, about
+                                                 12 Mbps), join instructions in parts/JOIN.md,
+                                                 checksums in SHA256SUMS.txt
+ Ganesha_Big_Race_package.zip            73 MB   Shorts, thumbnails, captions, YouTube metadata, summary
+ Ganesha_Big_Race_Shorts_9x16.mp4        69 MB   56 s, 1080x1920
+ Ganesha_Big_Race_preview_540p.mp4       24 MB   Quick-look copy
+ Ganesha_Big_Race_Shorts_preview_540x960.mp4  6 MB
+ captions.srt                                    63 cues, English
+ thumbnail_A_ganesha_close_up.jpg/.png, thumbnail_B_who_will_win.jpg, thumbnail_C_golden_mango.jpg
+ youtube_metadata.md                             3 titles, description with 22 chapters, 15 tags, settings
+ FINAL_SUMMARY.md, DOWNLOAD_ME.md                owner-facing notes
+ Thumbnail A is also an editable Canva design (https://www.canva.com/d/2Mph8NZN_IFpVjK).
+
+Technical results of the master [M]:
+   duration 280.0 s (6 s intro + 274 s story)      resolution 1920x1080, 24 fps, progressive
+   video H.264 High, about 12 Mbps, BT.709         audio AAC 320 kbps, 48 kHz, stereo
+   loudness -14.0 LUFS integrated                  true peak -1.5 dBTP      LRA 8.2 LU
+   black-frame scan: none                          freeze-frame scan: none
+   audio and picture both start at 0 s
+
+Chapters (as in the YouTube description): 0:00 intro, 0:06 Hello I am Mooshak, 0:20 chant, 0:27 Life on
+Mount Kailash, 0:59 count the modaks, 1:09 the golden mango, 1:17 the race, 1:34 Kartikeya flies, 1:42
+flap your arms, 1:51 no peacock, 2:07 an idea, 2:23 around Amma and Baba, 2:39 three circles, 2:47
+Kartikeya surprised, 3:03 "my whole world", 3:12 the mango, 3:21 hooray, 3:28 sharing, 3:45 evening,
+3:54 the secret, 4:02 sing-along, 4:20 goodbye / end screen.
+
+
+====================================================================================================
+4. PIPELINE AND TOOLS (WITH VERSIONS)
+====================================================================================================
+
+ Stage            Tool and model                                          Notes
+ ---------------  ------------------------------------------------------  -----------------------------
+ Script           Written by the assistant                                310 words, 63 lines, 33 shots
+ Prompt building  Vivideo MCP, style animation_3d_character, image-to-    Free, text only
+                  video mode, destination youtube
+ Reference art    Krea MCP: google/nano-banana-pro, 1K, 16:9              6 character sheets + 3 locations
+ Keyframes        Krea MCP: google/nano-banana-pro, 1K, refs passed as    One approved still per shot
+                  image_urls
+ Video clips      Krea MCP: google/veo-3.1 (1080p, 8 s, audio off, start  16 clips
+                  image only); bytedance/seedance-2-5 (1080p, start       12 clips
+                  image + reference images, audio stripped)
+                  ElevenLabs hosted Veo 3.1 Fast (1080p, 8 s, no audio)   1 clip (shot 31 redo)
+ Still-image      ffmpeg zoompan-style push-in (1.14x ease-in)            Shots 23, 27, 28
+ shots
+ Voices           ElevenLabs eleven_v3: narrator Sahana, Mooshak = Elmoe, Ganesha = Mini
+ Music and song   ElevenLabs eleven_music_v2_5 (instrumental beds, sung song with custom lyrics);
+                  Scribe v1 to check the sung lyrics
+ Sound effects    ElevenLabs eleven_text_to_sound_v2 (v1 batch of 12, v2 batch of 16), mixed with a
+                  Python/numpy script
+ Graphics         HyperFrames CLI 0.8.136 run LOCALLY (no HeyGen credits); GSAP 3.14.2; Fredoka font (OFL).
+                  Overlays rendered as ProRes 4444 with alpha (.mov); intro and Shorts end card as MP4
+ Thumbnails       HyperFrames stills, one editable Canva design; background removal with u2net_human_seg
+ Edit and mix     ffmpeg 6.1.1 (xfade, overlay, sidechaincompress, loudnorm two-pass, libx264, aac);
+                  Python 3 with numpy, scipy, Pillow, fonttools
+ Environment      Cloud container, Node 22, Chromium; GitHub for storage (100 MB per-file limit)
+
+Pricing facts gathered during the work [M unless noted]:
+   Krea plans: Pro 20,000 units USD 35; Max 40,000 units USD 70 (about USD 0.00175 per unit; Max adds
+   "unlimited relaxed" generation). Krea shows NO per-job price anywhere; a REFUSED request (for
+   insufficient balance) returns a free price quote. Quotes: Veo 3.1 1080p 8 s no audio = 1,185 units
+   (about 148 per second); Seedance 1080p 9 s = 3,791 (about 421 per second); Seedance 720p 9 s = 1,541
+   (about 171 per second), 6 s = 1,027.
+   ElevenLabs: about 0.02 US cents per credit; narration is about 1 credit per character; SFX about 17
+   to 50 credits each; Veo 3.1 Fast 1080p 8 s no audio = 4,848 credits (about USD 0.97).
+   ElevenLabs "estimate_only" ran HIGH against actual charges: music 7,075 estimated vs 4,245 actual;
+   SFX v2 1,419 estimated vs 513 actual [M].
+
+
+====================================================================================================
+5. PHASE-BY-PHASE ACCOUNT
+====================================================================================================
+Dates are UTC. Project start 2026-10-05 20:58; final encode finished 2026-10-06 07:08.
+
+PHASE 0  Setup check
+   Confirmed that Vivideo has the style animation_3d_character, that Krea has Seedance 2.5, Veo 3.1,
+   Kling 3.0 and Nano Banana Pro, and that ElevenLabs has Indian-English voices and eleven_v3. Network
+   to the Krea and ElevenLabs file hosts was blocked at first and had to be opened by the owner.
+
+PHASE 1  Script, shot list, bible  (CHECKPOINT 1, approved)
+   - 01_script/script.md: 63 lines (L01 to L63), 310 words, 33 shots, 4:40.
+   - 01_script/shotlist.md: per shot action, camera, emotion, tool, notes.
+   - 01_script/bible.md: character, location and iconography text blocks (used word for word in every
+     prompt so characters stay on-model).
+   - Choices the owner approved: Ganesha has two arms; Kartikeya has one face; Shiva has a tiny friendly
+     cobra and a closed third eye; the prize is a golden mango; Ganesha shares it with his brother.
+
+PHASE 2  Prompts  (no credits)
+   - 02_prompts/prompts.json: for each shot, a Vivideo-built motion prompt plus the bible blocks,
+     location, props and negatives (recipe in Appendix A). Defaults: 16:9, 1920x1080, 24 fps, audio off,
+     2 versions per shot, 2 retries per prompt (the 2-versions rule was later dropped to save credits).
+
+PHASE 3a  References  (CHECKPOINT 2a)
+   - 36 Nano Banana Pro images (4 options each for 6 character sheets and 3 locations), plus one Parvati
+     re-render (accidentally submitted at 2K instead of 1K). 9 references approved (03_refs/PICKS.md).
+
+PHASE 3b  Keyframes  (CHECKPOINT 2)
+   - One 1K image per shot (32) using the references. Drift was found in several shots (Ganesha's crown
+     and skin tone, a thatched hut that does not exist in the world, Shiva in leopard print, one shot far
+     too dark, an extra child). Fixed with extra preamble clauses and up to two redo rounds (shots 18,
+     21, 23, 29). Shot 21 kept with a residual hut mismatch (the owner accepted it). 76 Krea images in
+     total, 41 of which are in the final reference/keyframe set.
+
+PHASE 3c  Clips  (CHECKPOINT 3)
+   - Three price tests (Seedance 480p draft, Seedance 1080p, Veo 1080p; two were reused in the cut).
+   - The owner upgraded Pro to Max, asked for no more test runs. 14 clips were submitted as one batch
+     (11 Seedance, 3 Veo). Balance then hit about 495 units and the next requests were refused with
+     INSUFFICIENT_BALANCE. The refused requests returned the real prices (Section 4); work stopped.
+   - After a top-up, the remaining 16 shots were submitted as Veo 3.1 1080p 8 s, start image only
+     (about 3x cheaper). Veo's content filter rejected three shots (23, 27, 28: all show Kartikeya with
+     Ganesha; not charged). Those three became ffmpeg push-ins on the approved stills (owner's "option 3").
+   - Shot 31 came back with an unwanted extra girl at the frame edge; it was regenerated through
+     ElevenLabs' Veo 3.1 Fast with a locked five-person cast and a static camera (clean first time).
+
+PHASE 4  Voice, SFX, music  (CHECKPOINT 4)
+   - Narrator audition: 3 voices read the same 38 words (Ria 108 wpm, Arjun 126, Sahana 134). Sahana was
+     chosen. 59 lines were generated, one take each (49 narrator, 7 Mooshak, 3 Ganesha). The 4 sung lines
+     come from the song. Total speech 124.4 s.
+   - The placeholder 6 s intro was removed from the working timeline at the owner's request, so the whole
+     working timeline ran 6 s earlier (shot 02 at 0:00) and +6 s was added back at final assembly.
+   - Sound effects v1 (12 files) came out only 1 to 2 s long each, so the owner asked for better effects.
+     Sound effects v2 (16 files incl. three 30 s ambience beds) replaced them.
+   - Music: a 225 s story bed, a 20 s evening bed, a 38 s sung song. The song was cut (7.5 s = 10 beats
+     removed between the two "Morya" lines) so it reads verse, Morya, Morya.
+
+PHASE 5  Graphics  (autonomous)
+   - 11 HyperFrames projects (Section 8). Nine author agents launched through a workflow tool hit the
+     account's session limit and failed; the assistant wrote and reviewed the overlays by hand using
+     contact sheets (07_graphics/preview.py).
+
+PHASE 6  Final assembly (autonomous)
+   - Picture timeline (build_base.py), numeral removal in shot 21 (fix_shot21.py), shot 31 swap, shot 33
+     extension to 20 s, overlays composited (build_final.py), audio mix and two-pass loudness
+     normalisation (build_audio_final.py), final encode, black / freeze / loudness checks.
+
+PHASE 7  Extras and delivery
+   - Shorts teaser (10 moments + end card, 9:16), captions, three thumbnails, Canva design, YouTube
+     metadata, summary. GitHub rejects files over 100 MB, so: master split in 90 MiB parts, a 91 MB
+     one-file copy and a 73 MB zip were added so the owner could download to a laptop.
+
+
+====================================================================================================
+6. PER-SHOT TABLE
+====================================================================================================
+Columns: Final start = time in the finished 280 s video. Net s = seconds the shot occupies on the
+timeline (0.5 s crossfades overlap neighbours). Source = what produced the picture. Clip s = length of
+the generated or still clip. Slow = playback slow-down factor (1 = none). Hold = seconds of frozen last
+frame appended. Veo can only make 4, 6 or 8 s clips.
+
+Shot Final start Net s Source                     Clip s  Slow            Hold  Notes
+-------------------------------------------------------------------------------------
+02   0:06        8     Veo 3.1 (test)             8.0     1.0625          -     Hook: Mooshak greets. Test clip reused. Title card overlay
+03   0:14        6     Seedance 2.5               7.08    1               -     Pull-back reveals Ganesha. Keyframe re-done once (crown / skin drift)
+04   0:20        7     Seedance 2.5 (test)        8.08    1               -     "Say it with me". 1080p test clip reused. Chant overlay
+05   0:27        8     Seedance 2.5               9.08    1               -     Kailash wide view. Source was 1928x1074 (cropped)
+06   0:35        8     Seedance 2.5               9.08    1               -     Amma and Baba on the terrace
+07   0:43        8     Seedance 2.5               9.08    1               -     Kartikeya and the blue peacock
+08   0:51        8     Seedance 2.5               9.08    1               -     Ganesha loves modaks; Mooshak nibbles
+09   0:59        10    Seedance 2.5               11.08   1               -     Count the modaks. Counter overlay. Tightest narration fit
+10   1:09        8     Seedance 2.5               9.08    1               -     The golden mango appears
+11   1:17        9     Seedance 2.5               10.1    1               -     Baba proposes the race
+12   1:26        8     Seedance 2.5               9.08    1               -     Kartikeya takes off
+13   1:34        8     Veo 3.1                    8.0     1.0625          -     Flight over the world (hero shot)
+14   1:42        9     Seedance 2.5               10.1    1               -     Flap prompt overlay. Side view of peacock flight
+15   1:51        8     Seedance 2.5               9.08    1               -     Ganesha has no peacock
+16   1:59        8     Veo 3.1                    8.0     1.0625          -     Mooshak pats Ganesha
+17   2:07        8     Veo 3.1                    8.0     1.0625          -     "I have an idea" (lip-sync candidate)
+18   2:15        8     Veo 3.1                    8.0     1.0625          -     Ganesha looks at his parents. Keyframe re-done 2x (hut, extra child)
+19   2:23        8     Veo 3.1                    8.0     1.0625          -     First steps around the parents. Chant overlay
+20   2:31        8     Veo 3.1                    8.0     1.0625          -     First circle
+21   2:39        8     Veo 3.1                    8.0     1.0625          -     Circles 2-3. Numerals Veo drew were removed (fix_shot21.py). Counter overlay
+22   2:47        8     Veo 3.1                    8.0     1.0625          -     Kartikeya lands, surprised
+23   2:55        8     Still + push-in            9.0     1               -     "How did you win?" Veo refused (content policy). Keyframe re-done once
+24   3:03        9     Veo 3.1                    8.0     1.1875          -     "They are my whole world" (lip-sync candidate)
+25   3:12        9     Veo 3.1                    8.0     1.1875          -     Hug; Baba gives the mango
+26   3:21        7     Veo 3.1                    8.0     1 (trim to 7.5) -     Hooray; petals. Chant overlay
+27   3:28        9     Still + push-in            10.0    1               -     Sharing the mango. Veo refused (content policy)
+28   3:37        8     Still + push-in            9.0     1               -     Kartikeya hugs Ganesha. Veo refused (content policy)
+29   3:45        9     Veo 3.1                    8.0     1.1875          -     Evening on the terrace. Keyframe re-done (was too dark)
+30   3:54        8     Veo 3.1                    8.0     1.0625          -     "Our family is our whole world". Lesson card overlay
+31   4:02        10    Veo 3.1 Fast (ElevenLabs)  8.0     1.2             0.9   Song verse. Redo after extra girl. Lyrics overlay
+32   4:12        8     Veo 3.1                    8.0     1.0625          -     "Morya!" x2, everyone raises hands. Lyrics overlay
+33   4:20        20    Veo 3.1                    8.0     1.2             10.4  Goodbye and end screen (20 s). Held frame + push-in. Overlay
+
+Shot 01 of the original shot list was the 6 s channel intro (a HyperFrames graphic, final 0:00-0:06).
+
+Counts [M]: Veo 3.1 on Krea 16 shots; Seedance 2.5 12 shots; stills with push-in 3 shots; Veo 3.1 Fast
+(ElevenLabs) 1 shot. Footage with real animation: 29 of 32 shots, 249 of 274 net seconds (about 91
+percent). Veo shots slowed: 16 of 17 (11 at 1.0625, 3 at 1.1875, 2 at 1.2).
+
+Why 1.0625? Each shot must show 8 s of net time plus 0.5 s that overlaps the crossfade into the next
+shot, so 8.5 s of picture are needed from an 8 s clip: 8.5 / 8 = 1.0625. Longer narration beats
+(9 and 10 s) push this to 1.1875 and 1.2.
+
+
+====================================================================================================
+7. AUDIO: VOICES, MUSIC, SOUND EFFECTS, MIX
+====================================================================================================
+
+7.1 Voices (ElevenLabs eleven_v3, one take per line)
+   - Narrator "Sahana - Expressive & Warm Storyteller" (voice id 17cum4YqukEcj2pUa0hd), 49 lines.
+   - Mooshak: "Elmoe" (1kvnzrSTos1KbmLKMLCC), 7 lines ("Squeak-squeak!" and short greetings).
+   - Ganesha: "Mini" (hO2yZ8lxM3axUxL8OeKX), 3 lines.
+   - Audition voices not chosen: Ria (M6udCbeLpbqc4ZtMMDGJ), Arjun (dahpPHJ9zA9ckbsyrVfz).
+   - Raw narrator pace is fast (about 134 to 147 words per minute). Narrator lines (not character lines)
+     are slowed with ffmpeg atempo=0.92, giving about 135 wpm [E, by my calculation]. The brief asked for
+     110 to 120. Placement of every line (start second, tempo, speaker) is in
+     06_audio/placement_v2_noIntro.json; durations in line_durations.json.
+   - Each of the 59 lines is loudness-normalised separately (loudnorm I=-19, TP=-2, LRA=7, single pass)
+     and mixed with amix (08_edit/narration_filter_v2.txt). The mix is then rebuilt on the final timeline
+     from narration_review_v2_noIntro.mp3, i.e. an MP3 that was itself made from the MP3 line files.
+     See Section 15C for why this matters.
+
+7.2 Music (ElevenLabs eleven_music_v2_5, one take each, actual credits [M])
+   - A_story_bed.mp3: 225 s instrumental (flute, tabla, gentle bells), 3,375 credits; placed at 0 s, -13 dB.
+   - B_evening_bed.mp3: 20 s, 300 credits; used at 219 s (evening) and reprised at 262 s under the end
+     screen (trimmed 7 to 20 s of the same file).
+   - C_song.mp3: 38 s sung song, custom lyrics, 570 credits. Scribe check returned the lyrics exactly
+     (209 credits). Edited into C_song_edit.wav as verse + "Morya" + "Morya" (10 beats removed).
+     Lyrics: "Hold your family, hold them near, / They are your whole world, dear! / Ganpati Bappa...
+     Morya! / Ganpati Bappa... Morya!"
+
+7.3 Sound effects
+   - v1: 12 clips, 200 credits, discarded because each was only 1 to 2 s long whatever length was asked.
+   - v2: 16 clips (three 30 s ambience beds: morning, sky, evening; wing flaps, footsteps, mouse scamper,
+     claps, cheer, giggle, mango shimmer, hop, fruit split, three squeak variants, a 6 s intro sting),
+     513 credits actual. Built by 06_audio/build_sfx_v2.py: seamless crossfaded loops of the beds, wing
+     flaps slowed to half speed to sound like a bigger bird, counting pops pitch-stepped (1, 2, 3), every
+     cue level set from measured peak and loudness. 41 cues listed in 06_audio/sfx_cues_v2.json.
+   - Cues were timed from the SCRIPT and NARRATION (not from visual events in the clips).
+   - The SFX track is mono and placed dead-centre (pan=stereo|c0=c0|c1=c0).
+
+7.4 Final mix (06_audio/build_audio_final.py; filter graph in 08_edit/audio_final_filter.txt)
+   - Narration (centred), SFX (centred), music beds (stereo), song (stereo, -6 dB), intro sting.
+   - Music beds are ducked by the narration with sidechaincompress (threshold 0.03, ratio 3, attack
+     20 ms, release 600 ms). The sung song and the SFX are not ducked.
+   - alimiter at 0.89, then two-pass loudnorm with linear=true to -14 LUFS / -1 dBTP.
+   - Result [M]: -14.0 LUFS integrated, -1.5 dBTP, LRA 8.2. Intermediate WAV 48 kHz 24-bit stereo.
+
+
+====================================================================================================
+8. GRAPHICS (HYPERFRAMES OVERLAYS)
+====================================================================================================
+Look: palette from the bible (saffron, sunset red, marigold gold, peacock teal, cream), Fredoka type,
+rounded shapes, gold rims, marigold flowers and petals, 4-point sparkles. Motion: soft ease, back.out
+pops, nothing flashes, no fade shorter than 0.25 s, text on screen at least 3 s, overlays must not cover
+character faces. Everything is deterministic (GSAP on one paused timeline, seeded random numbers).
+Each overlay is its own project in 07_graphics/projects/<name>/index.html with a shared kit.
+
+ Overlay          Final start  Length  Where                           What
+ ---------------  -----------  ------  ------------------------------  ----------------------------
+ intro            0.0 s        6.5 s   before shot 02 (opaque MP4)     "Mooshak's Story Time" banner,
+                                                                       Mooshak rises, bell sparkle
+ title_card       6.0 s        4.6 s   shot 02                         "Ganesha's Big Race"
+ chant (x3)       21.6 / 146.16 / 203.48  4.7 s each  shots 04, 19, 26   "Ganpati Bappa... Morya!"
+ counter_modaks   59.0 s       10.5 s  shot 09                         numerals 1-2-3 on the beat
+ flap_prompt      102.0 s      9.0 s   shot 14                         prompt pill + three "Flap!"
+ counter_circles  159.0 s      8.5 s   shot 21                         numerals 1-2-3 (same style)
+ lesson_card      236.6 s      6.0 s   shot 30                         "Our family is our whole world."
+ lyrics           245.4 s      13.0 s  shots 31-32                     word-by-word sing-along
+ end_screen       260.0 s      20.0 s  shot 33                         "Thanks for watching!", frames
+ shorts_endcard   (Shorts)     4.0 s   end of the Shorts (opaque MP4)  "Watch the full story..."
+ shorts_frame     (Shorts)     still   Shorts background frame
+
+End-screen rectangles (1920x1080) for YouTube's end-screen editor: video 1 at x108 y108 480x270; video 2
+at x640 y108 480x270; subscribe circle at x108 y766, diameter 200. Cue times for all overlays are in
+07_graphics/timing.json (the single source of truth for overlay timing).
+Render folders are git-ignored (1.1 GB); they re-render with npx hyperframes render.
+
+
+====================================================================================================
+9. EDIT AND FINAL ASSEMBLY
+====================================================================================================
+Picture (08_edit/build_base.py): every clip is conformed (24 fps, scale and crop to 1920x1080, audio
+stripped), slowed by the factor in Section 6 with setpts, padded with held last frames where needed,
+trimmed, and joined with 0.5 s xfade crossfades. Shot-specific rules read from rough_filter_v3.txt.
+   - Shot 05's source was 1928x1074 (scaled and cropped).
+   - Shot 21: Veo drew its own floating numerals "3" and "2" in the sky. fix_shot21.py colour-keys the
+     orange digits, dilates the mask and patches in a clean sky plate from t=4.5 s (region X 1100-1400,
+     Y 110-392, to keep Shiva's topknot safe). A few specks of the melting digit remain for about two
+     frames near 2:46 to 2:47 [M by frame inspection].
+   - Shot 31: replaced by the ElevenLabs Veo 3.1 Fast redo.
+   - Shot 33: 8 s clip slowed 1.2x (9.6 s), then a 10.4 s held last frame with a slow push-in to fill the
+     20 s end screen. The extension (work/shot33_ext.mp4) was made with ffmpeg commands that were NOT
+     saved as a script (only intermediates in the git-ignored work folder).
+   - No colour grade was applied to unify Veo and Seedance clips (the only "eq" in the project is the
+     Shorts' blurred background).
+
+Final (08_edit/build_final.py): intro xfade into the picture at 6.0 s; the eight overlay renders are
+composited with the overlay filter (enable between times, from timing.json); audio from
+09_final/audio_final_48k.wav; encode H.264 High about 12 Mbps, AAC 320 kbps, BT.709. The one-file
+download copy was re-encoded at about 2.6 Mbps to fit GitHub's 100 MB limit.
+
+Timebase to remember: the no-intro timeline is 274 s; the final is +6 s = 280 s. Overlay "start" in
+timing.json is no-intro time; "start_final" adds 6 s.
+
+
+====================================================================================================
+10. SHORTS, CAPTIONS, THUMBNAILS, YOUTUBE PACKAGE
+====================================================================================================
+Shorts (08_edit/build_shorts.py): ten moments cut from the FINAL 16:9 video, shown inside a branded 9:16
+frame over a blurred, saturated copy of the same picture, big Fredoka captions from captions.srt, 0.25 s
+crossfades, a 4 s end card "Watch the full story on the channel!", audio from the final mix. Length 56 s
+(brief said 60 s). Not generated natively in 9:16, so the picture occupies only the middle third of the
+frame.
+
+Captions (09_final/build_srt.py): 63 cues built from the narration placements and the Scribe timing of
+the song; each cue held about 0.3 s past the voice but never into the next cue. Fixes made: in the
+Shorts' burned-in captions the musical-note glyph was dropped (Fredoka drew it as a box; the .srt keeps
+the notes around sung lines), and cue ends are no longer extended into the next cue.
+
+Thumbnails: three 1280x720 designs (A close-up of Ganesha with a modak and Mooshak; B "Who will win?";
+C the golden mango). A is the recommendation. Ganesha's cut-out for A used u2net_human_seg and
+morphological clean-up (fill holes, largest component, erode, feather, colours from the original) after
+the first mask lost the tusk and kept garland fragments. Canva's AI design ignored the supplied artwork,
+so the finished artwork was placed into a Canva design full-bleed instead.
+
+YouTube package (09_final/youtube_metadata.md): three titles (recommended "Ganesha's Big Race | A
+Ganesha Story for Kids", 46 characters), description with chapters and lyrics and an AI-tools credit
+line, 15 tags, playlist idea, upload settings (made for kids: yes; altered / synthetic content: no,
+with a caveat; category: Education), Shorts title and description.
+
+
+====================================================================================================
+11. CREDITS AND COST
+====================================================================================================
+
+11.1 Krea [E]  (the API reports no per-job cost; figures come from balance changes and quoted prices)
+   Estimated total about 66,000 units (about USD 115 at USD 0.00175 per unit).
+   By balance changes: images about 4,000; three price tests about 5,300; the 14-clip batch about 46,000;
+   the final 16-clip batch about 10,400 (8 Veo clips cost 4,481 units, not 9,481, and 5 more cost about
+   5,925; three were refused and not charged). At LIST quotes the same footage would be about 70,000
+   units (Seedance 110 s x 421 = 46,300; 17 Veo clips x 1,185 = 20,100; images about 4,000). The gap
+   is unexplained, probably Max's relaxed queue [U]. A reviewer should read the true figure from the
+   Krea billing page.
+   Counts: 76 images (41 used); 30 clips charged (28 used, 1 discarded draft, 1 discarded shot-31 clip);
+   3 refused by content policy (not charged); 3 refused for balance (not charged, re-submitted).
+   The plan fees actually paid (Pro, then Max, then a top-up of about 10,000 units) are not itemised here.
+
+11.2 ElevenLabs [M, from the account's credit counter; log.md]
+   Narration 2,233 (includes 594 for three voice auditions) + first sound effects 200 + music 4,245
+   + Scribe 209 + shot-31 redo 4,848 + sound effects v2 513 = about 12,248 credits, about USD 2.45.
+   Largest single line: the shot-31 redo (40 percent of all ElevenLabs credits, USD 0.97).
+
+11.3 Canva 0, HyperFrames 0 (local CLI), GitHub storage 0.
+
+11.4 Cost shape
+   Krea video clips are about 90 percent of all the money (Krea overall about 98 percent). By model: Seedance 12 clips = about 46,000 units for 110 s of
+   footage (70 percent of clip spend for 45 percent of the footage); Veo 17 clips = about 20,000 units for
+   136 s. Roughly USD 0.41 per second of finished video. Waste inside the clip stage was small (about
+   1,300 to 1,800 units: the 480p draft and the discarded shot-31 clip).
+
+11.5 Estimates given to the owner at the start vs outcome
+   Scenario A (two versions per shot, Kling backups): about USD 120 to 230. Scenario B (lean): about USD
+   70 to 125. Actual about USD 115 on the lean path. The early clip estimate (about 1,800 units per 8 s
+   clip) was wrong for Seedance 1080p (it was based on a cheap 480p draft).
+
+
+====================================================================================================
+12. DECISIONS AND ASSUMPTIONS
+====================================================================================================
+ D1  Script 310 words, not 450 to 550. A 5:00 cap with slow narration and counting pauses makes 450 words
+     impossible. Owner approved. Runtime 4:40.
+ D2  Channel name "Mooshak's Story Time" [A]. The owner asked for a suggestion; never explicitly
+     confirmed. It appears only in the intro graphic and the description; trademark not checked [U].
+ D3  Keyframe-first workflow: every clip starts from an approved still, which is why characters stay
+     on-model. Veo clips used the start image only (no reference images).
+ D4  Veo (cheap) for 16 of the last 28 clips after the price discovery; Seedance for the first 12.
+ D5  Three shots shown as push-ins on stills after Veo refused them (owner picked this option).
+ D6  Slow-down instead of re-generation to fit narration length (Section 6).
+ D7  Narrator pace slowed to 0.92 instead of re-recording.
+ D8  Owner dropped the placeholder intro early, so everything was built on a no-intro timeline.
+ D9  Dropped "2 versions per shot" and test clips after the owner said quality was fine and to save credits.
+ D10 Iconography (bible.md): Ganesha orange, two arms, right tusk broken; Kartikeya one face, blue
+     peacock; Shiva with a small cobra and closed third eye; no Narada. Owner approved.
+ D11 YouTube settings advice: "made for kids: yes"; "altered or synthetic content: no" (stylised cartoon),
+     with a note to confirm the live wording [U].
+ D12 Shorts built from the 16:9 cut rather than native 9:16 (no extra credits).
+ D13 Thumbnail made with HyperFrames and placed in Canva (Canva AI would not use the supplied image).
+ D14 Autonomous finish after the owner became unavailable: every remaining phase done without
+     checkpoints, with a notes list of doubts (FINAL_SUMMARY.md, section 4).
+
+
+====================================================================================================
+13. PROBLEMS MET AND HOW THEY WERE SOLVED
+====================================================================================================
+ P1  Krea credits ran out mid-batch (balance 495). Cause: no price known; two more batches were
+     submitted before checking the first one's cost. Fix: owner top-up; used refused requests as free
+     price quotes; moved the rest to Veo. LESSON: get a price quote first, submit one clip, check balance.
+ P2  Keyframe drift (crown, skin tone, hut, leopard print, dark shot, extra child). Fix: preamble
+     clauses for clothing / location / Ganesha; two redo rounds; one shot accepted with a known flaw.
+ P3  Veo refused shots 23, 27, 28 (content policy, probably because of two child-like characters
+     together [U]). Fix: stills with push-in. A better fix is Seedance (Section 15B).
+ P4  Veo drew numerals into shot 21's sky (the prompt had asked for "space" for the counting numbers).
+     Fix: frame-by-frame colour-key removal; a few specks remain.
+ P5  Shot 31 had an extra girl on the edge. Fix: redo on ElevenLabs Veo 3.1 Fast, locked cast.
+ P6  Seedance files carry an audio track. Fix: strip with -an.
+ P7  Shot 05 was 1928x1074. Fix: scale and crop to 1920x1080.
+ P8  Workflow-tool author agents hit the account session limit (9 overlay authors; reviews failed). Fix:
+     the assistant wrote and reviewed overlays itself using contact sheets; Shorts end card written by
+     hand.
+ P9  Shorts build killed by the kernel (out of memory) from one huge filter graph. Fix: build one 9:16
+     clip per segment into .mov files, then crossfade the segments.
+ P10 xfade timebase mismatch (1/12288 vs 1/24). Fix: fps=24,settb=1/24,setpts=PTS-STARTPTS on every input.
+ P11 Shorts caption glyph for the musical note drew as a box; cues overlapped by 0.15 s. Fix: removed the
+     glyph; stopped extending cue ends.
+ P12 A +3 LU loudness misreading (compared mono to dual-mono). Fix: compare stereo to stereo; music was
+     not too loud.
+ P13 Shot 21 numeral removal first clipped Shiva's topknot. Fix: tightened the key region.
+ P14 Ganesha cut-out lost the tusk. Fix: morphological clean-up (Section 10).
+ P15 Canva AI design ignored the supplied image; an edit transaction was lost in a container restart.
+     Fix: re-opened a transaction, replaced the elements with the artwork, committed.
+ P16 ElevenLabs status polls returned about 14,000 tokens each. Fix: poll creative_get_flow instead;
+     save big responses to files.
+ P17 add_flow_node rejected a label argument; pkill -f killed the assistant's own shell; foreground sleep
+     is blocked. Fixes: drop the argument and track node ids by order; use bracketed patterns; use
+     background jobs and monitors.
+ P18 GitHub rejects files over 100 MB; the file-send tool limit is 30 MiB. Fix: master split in 90 MiB
+     parts; a 91 MB single copy; 540p previews.
+ P19 The session was cut by context limits twice; HANDOFF.md and log.md let work resume.
+
+
+====================================================================================================
+14. QUALITY CHECKS DONE, AND NOT DONE
+====================================================================================================
+
+Done [M]
+   - ffprobe: duration 280.0 s, 1920x1080, 24 fps, codecs and bitrates.
+   - ffmpeg ebur128 and loudnorm measurements: -14.0 LUFS, -1.5 dBTP, LRA 8.2.
+   - blackdetect and freezedetect scans: nothing found.
+   - Audio and picture start together.
+   - Frame extraction and contact sheets at each overlay cue and at the first and last 0.5 s of each
+     overlay; check by eye that no overlay covers a face, that safe margins (96 px) are kept and text is at least
+     64 px.
+   - Approved keyframes and the clips reviewed by the assistant as stills / strips (identity, cast
+     count, artifacts); keyframes and clips were also approved by the owner at checkpoints.
+   - Shot-by-shot check that every narration line fits inside its shot (tightest slack 0.7 s in shot 9).
+   - Lyrics checked by transcription (Scribe): exact match.
+   - Captions: 63 cues, no overlaps.
+
+NOT done / unverified
+   - No human listening of any audio. Placement, balance, effect timing, the song splice and the sound
+     of the slowed narration are all unheard.
+   - No continuous playback of the video was watched; motion quality (judder from slowed clips, wing
+     flaps, crossfade feel) is judged from stills only.
+   - Pronunciation by an Indian-English listener, and the child-appeal of the voices, not tested.
+   - No test with real toddlers or parents.
+   - YouTube behaviour (end screens on made-for-kids videos, disclosure rules, claims / Content ID on AI
+     music) not checked; the assistant had no access to YouTube.
+   - Licence / commercial-use terms of the AI outputs on the owner's actual plans not checked.
+   - Accessibility: captions exist; no audio description; colour contrast of overlays only eyeballed.
+   - True Krea cost (Section 11.1).
+
+
+====================================================================================================
+15. REVIEW FINDINGS AND RECOMMENDATIONS
+====================================================================================================
+Each item has: what, why it matters, estimated impact, effort. Items are ordered within each section
+by value. Quantities marked [E] are estimates a reviewer should re-check.
+
+----------------------------------------------------------------------------------------------------
+15A. CREDIT AND COST OPTIMISATIONS
+----------------------------------------------------------------------------------------------------
+C1  Default to Veo 3.1; use Seedance only where Veo cannot do the job.
+    Veo 1080p 8 s = 1,185 units; Seedance 1080p 9 s = 3,791 (3.2x). The 12 Seedance clips cost about
+    46,000 units; as 8 s Veo clips they would cost about 14,200. Saving about 31,000 units (about USD 55,
+    nearly half the Krea bill). Trade-offs: Veo is capped at 8 s (so the slow-down issue, 15B item B2); Veo
+    takes a start image only (in this project the start image was enough to keep characters on-model);
+    Veo refused three shots. Effort: none, a planning rule. Confidence: high on the price, medium on the
+    quality equivalence.
+
+C2  Get the price before planning.
+    Krea shows no price, but a refused request returns a free quote. Do a deliberately under-funded
+    request for each model at the start of the project and write the prices into the plan. This alone
+    would have avoided: the wrong early estimate (about 1,800 per clip), the mid-batch stop, three
+    extra owner round-trips for top-ups and the Max upgrade timing. Effort: 5 minutes.
+
+C3  Test Seedance at 720p.
+    720p 9 s = 1,541 units vs 3,791 at 1080p: about 59 percent cheaper. At 110 s of Seedance footage
+    that is about 27,500 units (about USD 48). The final video is 1080p, so the 720p clips would need
+    upscaling; whether that is acceptable for flat-shaded 3D cartoon art is untested [U]. Run one shot
+    both ways and compare before deciding. Also test Krea's upscaler / "enhance" on the 720p result
+    (price it first).
+
+C4  Try cheaper video routes for part of the film.
+    ElevenLabs' hosted Veo 3.1 Fast produced the shot-31 redo for USD 0.97, while Krea Veo 3.1 costs
+    1,185 units, about USD 2.07 at the Max rate. If quality is equal (never compared side by side), the 16
+    Veo clips would have cost about USD 17.6 less. Caveat: credits in different plans are not
+    interchangeable, and the real marginal cost depends on what the owner has already prepaid. Also check
+    whether Krea itself offers a Veo Fast or Lite tier [U, not checked] and whether Kling 3.0 (never
+    used) is cheaper per second.
+
+C5  Trim exploration images.
+    76 images were made for 41 used (54 percent). Nine reference sheets x 4 options = 36 images; 2
+    options each would save 18 images (about 2 to 4 percent of the bill; per-image cost is not measured).
+    Six keyframe re-rolls and a 2K Parvati re-render could have been avoided by putting the clothing /
+    location / Ganesha-identity clauses in the shared preamble BEFORE the first keyframe batch. Do the
+    "preamble hardening" test on two difficult shots (Ganesha with Shiva; the dark evening shot) first.
+
+C6  Design shots to the model's clip length.
+    Both models are priced by the second (Seedance about 421 units per second at 1080p, Veo about 148),
+    but Veo only comes in 4, 6 or 8 s. Most Seedance clips were generated 0.5 to 1.1 s longer than the
+    net shot (crossfade handles), and Veo clips were stretched to fill. Write each beat to a length the
+    model makes natively (7.5 s net for Veo; any length from 4 s for Seedance) so no seconds are paid
+    for and thrown away or time-stretched.
+
+C7  Use cheap, non-AI motion for genuinely static moments.
+    Establishing or scenic shots (for example shot 05, a wide view with a drifting cloud) could be 2.5D
+    parallax from the keyframe (a free local depth-map tool plus ffmpeg or HyperFrames), saving about
+    1,185 units each. Do this only where nothing needs to act; it lowers animation quality, so treat it
+    as a budget lever, not a recommendation.
+
+C8  ElevenLabs hygiene.
+    - Always pass generations_count=1 (the default is 4 takes) [done in this project].
+    - estimate_only runs high (music 7,075 vs 4,245; SFX 1,419 vs 513): budget from past actuals.
+    - estimate_only left seven empty flows in the workspace (clutter, no cost); reuse one flow id.
+    - Poll creative_get_flow, not the run-status call that returns about 14,000 tokens.
+    - Audition at most two voices, with 15 s samples (the 3-voice audition cost 594 credits, USD 0.12).
+    - Generate a 60 to 90 s loopable music bed rather than a 225 s one (saves about 2,000 credits, USD 0.40).
+    These amounts are small. ElevenLabs is only 2 percent of the spend, so the real recommendation is
+    the opposite: spend some of the Krea savings on MORE audio takes (see 15C).
+
+C9  Re-spend savings where quality shows. The savings from C1 to C4 (USD 55 to 100) would pay for:
+    animating shots 23, 27, 28 on Seedance (about USD 20), a lip-sync pass (price unknown, see B3), three
+    native 9:16 clips for the Shorts (about USD 6 on Veo), several music takes, and a better 20 s end
+    background.
+
+C10 LLM-side cost (not credits): long image reviews and the 14,000-token status polls were the heavy
+    items. Write small contact-sheet and measurement helpers early (preview.py was added late).
+
+----------------------------------------------------------------------------------------------------
+15B. ANIMATION IMPROVEMENTS
+----------------------------------------------------------------------------------------------------
+B1  Animate shots 23, 27 and 28 (about 25 s, 9 percent of the runtime).
+    They carry the emotional payoff: Kartikeya's "How did you win?", the sharing of the mango, the hug.
+    They were PLANNED for Seedance and only moved to Veo to save credits; Veo then refused them. Seedance
+    accepted all 12 of its shots. Cost at 1080p about 3 x 3,791 = 11,400 units (about USD 20); at 720p
+    about 4,600 (USD 8). Alternatives: Kling 3.0 (never tried; a prompting guide exists); split each shot
+    into two single-character shots that Veo may accept; reword the prompt (the refusal reason is not
+    given by the API). Keep the existing push-in as a fallback.
+
+B2  Remove the slow-down.
+    16 of 17 Veo clips are time-stretched (6.25 to 20 percent) with frame duplication (setpts), plus
+    held frames in shots 31 (0.9 s) and 33 (10.4 s). Symptoms to look for in playback: slight judder on
+    moving subjects, floaty motion, characters appearing slower than their voices. Fixes, cheapest first:
+      (a) write each Veo beat for 7.5 s net (8.0 s minus the 0.5 s crossfade) so the clip is used at
+          1.0x (or at most 1.0625x);
+      (b) use motion interpolation when stretching (ffmpeg minterpolate, or an AI frame interpolator
+          such as RIFE; both untested here) instead of duplicating frames;
+      (c) for beats of 9 to 10 s, make two Veo clips (first 4 s + last 4 s with the last frame of the
+          first as the next start image) or use Seedance, which can make any length from 4 to 30 s.
+
+B3  Lip-sync for the 10 character lines (7 Mooshak, 3 Ganesha) and the narrated "I have an idea" and
+    "They are my whole world" beats (shots 02, 17, 24 were flagged in the shot list).
+    ElevenLabs lists lip-sync models (sync-lipsync-v3, veed-lipsync-v2). Price was never obtained;
+    run estimate_only first. For 4 to 5 year olds this is a polish item, but mouths that move without
+    matching the words are the clearest "AI-made" tell in the film.
+
+B4  Grade and match the look.
+    Veo and Seedance clips and the three stills were joined with no colour matching; the owner-visible
+    difference seemed small, but it was not measured. Add a light per-shot grade (match black point,
+    saturation, white balance to a hero shot) in ffmpeg (curves, colorbalance) or in DaVinci Resolve.
+    Shot 21's thatched hut (not in other shots) cannot be fixed by grading; re-generate it with a
+    cleaner keyframe if the shot is re-done.
+
+B5  Fix shot 21 properly.
+    Re-generate with prompt wording that names no numbers or counting ("clear open blue sky, nothing
+    in the sky"); do not ask for "space for numerals" in the sky. Veo has no negative-prompt field, so
+    use positive phrasing. This removes the residual digit specks near 2:46 to 2:47. Combine with the
+    cleaner hut.
+
+B6  Vary the editing rhythm.
+    All 32 cuts are 0.5 s crossfades and shots last 6 to 10 s. For toddlers this is calm, but it is also
+    monotonous. Use cuts on action for the race and the circling, dip to a warm colour for the move
+    from morning to evening, and some 4 to 5 s shots. Add one or two hold-and-reaction shots (for
+    example Kartikeya's surprise).
+
+B7  Add life to any remaining still or held frame.
+    A light HyperFrames layer (drifting petals, slow sparkles, soft vignette breathing) over the stills
+    and over shot 33's held frame costs no credits and hides the "frozen" feel.
+
+B8  End-screen background (20 s).
+    Currently an 8 s clip slowed 1.2x plus a 10.4 s held frame with a slow push-in. Make one 20 s
+    Seedance clip (about 8,400 units at 1080p, 3,400 at 720p) or a seamless 8 s Veo loop (reverse and
+    blend the last frame onto the first) so the characters keep waving for the full 20 s.
+
+B9  Native 9:16 for the Shorts.
+    Currently a 16:9 picture on a blurred background (about 31 percent of the 1080x1920 canvas shows the
+    story). Generate 3 or 4 hero moments natively in 9:16 from re-framed keyframes (about 4 x 1,185 units
+    on Veo) and cut them with the existing captions and end card.
+
+B10 Consistency checks as a pipeline step.
+    Characters stayed on-model mostly because keyframes were approved by eye one by one. An automatic
+    check (count faces / characters per frame, compare to the expected cast; flag extra people like the
+    shot-31 girl) would catch drift earlier and cheaper.
+
+B11 Consider 4K Veo for the master (optional).
+    Krea lists 4K on Veo 3.1 [per the model schema read at the start; price not checked]. Uploading
+    a 4K file gives YouTube's higher-bitrate encodes even to a 1080p viewer; but the cost and the file
+    sizes rise a lot. Low priority.
+
+----------------------------------------------------------------------------------------------------
+15C. AUDIO IMPROVEMENTS
+----------------------------------------------------------------------------------------------------
+A1  HUMAN LISTEN-THROUGH (highest value, free). Check with headphones and with phone speaker:
+      - the narration pace and whether the 0.92 time-stretch sounds natural;
+      - the music level under the voice and at the transitions (219 s, 262 s);
+      - the splice in the sung song ("Morya" joined after 10 beats were removed) and its vocal quality;
+      - the counting pops, wing flaps, footsteps and cheer (the wing flaps were slowed to half speed);
+      - whether any effect or the song start is too loud for a child (nothing exceeds -1.5 dBTP, but
+        loudness at -14 LUFS is not "quiet").
+A2  Pronunciation and accent. Have an Indian-English speaker check: "Ganpati Bappa Morya", "Kartikeya"
+    (Kar-ti-KAY-ya), "modak", "Kailash", "Amma", "Baba", "Shiva". Fix with phonetic respelling in the
+    script text or a pronunciation dictionary and regenerate only the affected lines (about 1 credit
+    per character, a few cents).
+A3  Direct the performance. Narration was one take per line with default voice settings and no emotion
+    direction. eleven_v3 accepts audio tags such as [softly], [warmly], [pause]; use them for the
+    count-along pauses, the whisper at "Ganesha thought and thought...", and a bigger lift at
+    "Hooray for Ganesha!". Generate 2 to 3 takes and pick (4 takes is the default; cost per line is
+    cents).
+A4  Pace. The brief asked for 110 to 120 wpm; the delivered narrator is about 135. The slow-down is
+    done with atempo=0.92 after generation. Prefer asking for a slower read (voice speed setting or
+    punctuation / tags) and keep atempo as a last resort, or use a better time-stretch (rubberband).
+    The shot lengths were built around the stretched timings, so changing pace moves the whole cut.
+A5  Rebuild the narration without generation loss. The final mix uses narration_review_v2_noIntro.mp3,
+    which was itself built from MP3 line files: MP3 (ElevenLabs) -> atempo and loudnorm -> MP3 ->
+    final mix -> AAC. Build the narration bus straight from the original line files into a 24-bit WAV.
+    Also, loudnorm is applied separately to each of the 59 lines, in its dynamic one-pass mode, on clips
+    of 1 to 3 s; that can pump and set slightly different levels per line. Use a fixed gain per speaker
+    (measure the average, apply one number) plus one overall compressor and the final two-pass
+    loudnorm.
+A6  Music. One take per track. Generate 2 to 3 takes of the story bed (a 60 to 90 s version is
+    cheaper) and the song, compare, pick. Score to the picture: a gentle rise on "Off he went", a
+    lighter feel for the flight (chapter at 1:34), a warmer cue at the lesson. Check licence
+    terms for commercial use and for YouTube Content ID claims on AI music [U].
+A7  Sung song. A synthetic singer is the least testable part of the film. Options: a human singer,
+    or a new generation with a child-friendly vocal timbre and a repeat of the "Morya" call-and-response
+    that the child can follow; verify the cut sounds musical at the splice.
+A8  Event-driven sound effects. The 41 cues were timed from the script and narration. Re-time the key
+    ones (wing flaps, footsteps, landing, mango split, claps, hop) from the visible events in the
+    clips (frame numbers can be read with ffmpeg and a contact sheet) so sounds land on the action.
+A9  Stereo image and tone. SFX are mono and centred; narration is dual-mono centred; only music is
+    stereo. Pan movement (peacock fly-over left-to-right), add a touch of room reverb on voices, and
+    a gentle EQ (cut low rumble below 80 Hz on voices, a small presence lift around 3 to 4 kHz,
+    de-ess) for a more finished sound.
+A10 Dynamics for small ears. LRA is 8.2 LU. For toddler viewing, a narrower range (about 5 to 6 LU) and
+    a lower peak ceiling for the cheer / claps cues is friendlier; the brief fixes the overall level at
+    -14 LUFS, which is reasonable for YouTube.
+A11 Consider a quieter bed under the counting segments so children can hear their own answers; and add
+    1 to 2 s of silence ("space for the child") after each question in the tails of lines L14, L25, L37.
+    (The script already has about 2 s pauses; check that music does not fill them.)
+
+----------------------------------------------------------------------------------------------------
+15D. EDITING, GRAPHICS AND DELIVERY IMPROVEMENTS
+----------------------------------------------------------------------------------------------------
+D1  Upload the MASTER, not the one-file download. The 91 MB copy is 2.6 Mbps; the master is 12 Mbps.
+    YouTube re-encodes everything, so a low-bitrate source gives softer results. The master is in five
+    90 MiB parts in 09_final/parts/ (join: cat part00..part04 > file; PowerShell: copy /b). Better
+    delivery routes than splitting: GitHub Releases (2 GB per asset), Git LFS, or cloud storage. The
+    assistant's GitHub tool set could not create releases, and no cloud drive was connected.
+D2  Make the build fully reproducible. Missing from version control: the extension of shot 33
+    (work/shot33_ext.mp4 was made with an ad-hoc ffmpeg command), and the large intermediate files
+    (work/ and renders/ are git-ignored). Add a `make`-style top-level script (render overlays, fix
+    shot 21, build base, build audio, build final) and save the shot-33 command.
+D3  Replace the long ffmpeg filter graphs with a timeline file (EDL / OpenTimelineIO) or move final
+    finishing into DaVinci Resolve (grading, Fairlight audio, transitions) while keeping the AI assets
+    and the HyperFrames overlays. This is the biggest step toward a "professional" finish.
+D4  Overlays. All are readable and safe-margined, but check them on a real phone at arm's length;
+    increase lyric size if any line is hard to read. The Shorts frame uses large captions already.
+    Consider lowering the amount of gold glitter on the lesson card (the one place the screen must feel
+    still).
+D5  Intro and channel branding: confirm the channel name, then re-render intro (one line in
+    07_graphics/projects/intro/index.html). Check "Mooshak" and "Mooshak's Story Time" are free to use.
+D6  Captions. SRT only; consider also a Hindi caption track and Hinglish transliteration of the chant
+    for the family audience; and add the description chapters as written.
+D7  Quality gate before upload: view the 4:40 in full once with sound, and run the checklist in
+    Section 20.
+D8  Thumbnail A/B/C: use YouTube's "Test & compare" if the account has it. The text on A is readable
+    at phone size by eye only.
+D9  End screen: if YouTube disables end screens on made-for-kids videos, the 20 s frames-and-circle
+    layout still reads as "more stories" but nothing is clickable. A pinned link to a playlist in the
+    description is the fallback.
+
+----------------------------------------------------------------------------------------------------
+15E. PROCESS AND TOOLING LESSONS
+----------------------------------------------------------------------------------------------------
+E1  Price first, plan second, batch third. (C2.)
+E2  Use hand-over files. HANDOFF.md and log.md let the project survive two context losses and a
+    container restart. Keep doing this; add a tiny status JSON updated by every script.
+E3  Workflow / multi-agent runs consume the account's usage limit quickly (nine parallel overlay
+    authors failed at the limit). Prefer one agent with a precise brief and contact-sheet previews, or
+    fewer agents, and always write each agent's output to a file so a failure loses nothing.
+E4  Parallelism limit: submit Krea jobs in waves of 12 or fewer (noted in the plan); this was respected.
+E5  Large files: GitHub 100 MB per file; the assistant's file-send limit 30 MiB. Plan the delivery
+    route (cloud storage or Releases) at the start, not at the end.
+E6  Container limits: a single ffmpeg graph with many inputs ran out of memory (Shorts); build in
+    segments or lower thread counts.
+E7  Tool quirks to remember: Krea returns no cost; Veo has no negative-prompt field; Seedance outputs
+    carry audio; ElevenLabs sound-effect lengths ignore the requested length (about 1 to 2 s unless
+    the v2 model is used); refused requests are the only way to see Krea prices.
+E8  Evidence discipline: record what is measured vs assumed (this report's tags) and keep a "not
+    verified" list from the start.
+
+----------------------------------------------------------------------------------------------------
+15F. WHAT WORKED WELL AND SHOULD BE KEPT
+----------------------------------------------------------------------------------------------------
+ - Keyframe-first generation with approved stills as start images and bible text copied word for word:
+   consistent characters across 32 shots.
+ - Approving references, keyframes and clips in separate checkpoints before spending on the next stage.
+ - Logging every generation (log.md) with model, purpose, credits, outcome.
+ - A short, positive, well-paced script that fits 4:40 and gives the child jobs to do (count, flap, chant,
+   sing).
+ - HyperFrames overlays as transparent ProRes: crisp, reusable, deterministic, editable.
+ - Scripted, repeatable ffmpeg assembly and two-pass loudness normalisation to the exact target.
+ - Frame-level QA helpers (contact sheets, freeze/black scans), and honest "not verified" notes.
+ - Cost discipline once prices were known: switch to Veo, redo only one clip, no extra versions.
+
+
+====================================================================================================
+16. PRIORITISED ACTION LIST
+====================================================================================================
+Impact: H/M/L on perceived quality or money. Effort: S (under an hour), M (a few hours), L (a day+).
+Rough cost in USD at today's rates [E].
+
+  #  Action                                                          Impact  Effort  Cost
+ ---  --------------------------------------------------------------  ------  ------  --------------
+  1  Watch the full cut with sound; listen on headphones and phone   H       S       0
+  2  Pronunciation check by an Indian-English listener; fix lines    H       S       < 1
+  3  Upload the 12 Mbps master (not the 91 MB copy)                  M       S       0
+  4  Confirm channel name; trademark check; AI disclosure answer     H       S       0
+  5  Animate shots 23, 27, 28 (Seedance 1080p, or 720p test)         H       M       8 to 20
+  6  Rebuild narration bus from original files (no MP3 re-encode,    M       M       0
+     fixed per-speaker gain, better time-stretch or slower reads)
+  7  Re-time key sound effects to visible actions; stereo / EQ pass  M       M       0
+  8  Lip-sync pass on the character lines (price first)              M       M       unknown
+  9  Reduce the Veo slow-downs (7.5 s beats, interpolation, 2-clip)  M       M       0 to 10
+ 10  Colour match across Veo, Seedance and stills                    M       S       0
+ 11  Re-do shot 21 with clean sky and hut; remove residual specks    L       S       2
+ 12  Proper 20 s end-screen background (loop or Seedance)            M       S       3 to 8
+ 13  Native 9:16 hero moments for the Shorts                         M       M       6
+ 14  Two or three music takes; choose; score to picture              M       S       2 to 3
+ 15  Vary the cut (action cuts, 4-5 s shots, dips)                   M       M       0
+ 16  Save the shot-33 command; add a one-command rebuild script     L       S       0
+ 17  Next project: Veo-first, price-first, preamble-hardened         H       -       save ~55 to 100
+
+
+====================================================================================================
+17. COMPLIANCE, SAFETY AND RESPECT NOTES
+====================================================================================================
+ - Made for kids (COPPA). Mark the upload "made for kids: yes". This disables comments, personalised
+   ads and some features, and, to the assistant's knowledge, end screens and cards [U].
+ - AI disclosure. The description states which AI tools were used. The advice to answer "No" to the
+   altered/synthetic-content question rests on the stylised animation being unrealistic; the rule's
+   wording should be confirmed in the live upload form [U]. Answering "Yes" is harmless.
+ - YouTube policy on mass-produced / repetitive content: a channel that publishes many near-identical AI
+   videos can be flagged. This is one original story with human direction, but a series should keep
+   clear variation and original narration and writing [U, policy details change].
+ - Licences: check the commercial-use terms for Krea (Veo and Seedance outputs; Veo adds an invisible
+   SynthID mark), ElevenLabs (voices, music, sound effects; voice licences vary by plan), Canva, GSAP
+   (free licence terms for commercial use) and Fredoka (SIL Open Font License) [U].
+ - Child content safety: no frightening or sudden sound or image; no flashing; no fade under 0.25 s;
+   comedy from the mouse only; loudness -14 LUFS, true peak -1.5 dBTP; no external links in the video.
+ - Religious sensitivity. The deities are shown kindly and are never laughed at. The visual conventions
+   (Ganesha orange with two arms and a broken right tusk; Kartikeya with one face on a blue peacock;
+   Shiva with a small friendly cobra and a closed third eye) are recorded in 01_script/bible.md and were
+   approved by the owner. Traditions differ (for example Kartikeya's six faces in some South Indian
+   traditions; Ganesha's colour and arm count). A family or cultural reviewer should confirm before
+   publication. Mooshak speaking and the story's modern retelling should likewise be checked.
+ - Privacy: no real person's face or voice is used; voices are stock ElevenLabs voices.
+ - Data: no personal data was collected. The repository holds only project files.
+
+
+====================================================================================================
+18. KNOWN DEFECTS REGISTER
+====================================================================================================
+ ID   Where                  Defect                                                       Severity
+ ---  ---------------------  ----------------------------------------------------------   --------
+ K1   Shots 23, 27, 28       Still-image push-ins, characters do not move (about 25 s)      Medium
+ K2   Whole film             No lip-sync on character or narrated lines                     Medium
+ K3   16 Veo shots           Slowed 6 to 20 percent by duplicating frames (judder / float)  Low-Med
+ K4   Shot 21               Residual specks of removed numeral near 2:46-2:47; off-model    Low
+                            thatched hut (accepted by the owner)
+ K5   Shots 31, 33           Held last frames (0.9 s and 10.4 s) with a slow push-in        Low
+ K6   Audio                  Never heard by a human; pronunciation, song splice, effect     Medium
+                            timing, wing-flap pitch unverified
+ K7   Narration              About 135 wpm vs 110-120 target; atempo 0.92; per-line         Low-Med
+                            loudnorm; MP3-on-MP3 encoding
+ K8   Sound effects          Mono and centred; timed from script, not from visuals          Low
+ K9   Cuts                   32 identical 0.5 s crossfades                                  Low
+ K10  Colour                 No cross-model colour match                                    Low
+ K11  Shorts                 16:9 picture on a blurred background; 56 s not 60 s            Low
+ K12  Channel name           "Mooshak's Story Time" is an assumption; trademark unchecked   Medium
+ K13  YouTube                End screens may be unavailable on made-for-kids content        Low
+ K14  Delivery               One-file download is a 2.6 Mbps copy; master is in 5 parts     Low
+ K15  Reproducibility        Shot-33 extension not scripted; large work files not in git    Low
+ K16  Script length          310 words vs guide 450-550 (deliberate, approved)              None
+
+
+====================================================================================================
+19. WHERE THINGS ARE, AND HOW TO REPRODUCE
+====================================================================================================
+All paths are under ganesha-video/ in the repository.
+
+  BRIEF.md, HANDOFF.md, log.md, FINAL_SUMMARY (09_final/), PROJECT_REVIEW_REPORT.txt (this file)
+  01_script/        script.md, shotlist.md, bible.md (approved; treat as read-only)
+  02_prompts/       prompts.json (per-shot prompts, 32 shots + 6 graphics briefs), keyframe_requests.json,
+                    clip_requests_*.json
+  03_refs/          9 approved reference sheets (PICKS.md), options/ (all 37 candidates)
+  04_keyframes/     approved/ (32 stills), options/, proposed/, jobs.json
+  05_clips/         raw/ (all clips), tests/ (shot 02 Veo, shot 04 Seedance 1080p and 480p draft), jobs.json
+  06_audio/         lines/ (59 voice lines), music/, sfx/ (v1), sfx_v2/ (v2), narrator_samples/, build
+                    scripts, placement and cue JSON files
+  07_graphics/      shared/ kit (fonts, GSAP, css/js), projects/ (11), timing.json, DESIGN_BRIEF.md,
+                    preview.py, sync_shared.sh; renders/ is git-ignored
+  08_edit/          build_base.py, fix_shot21.py, build_final.py, build_shorts.py, filter files,
+                    rough cuts v1-v5; work/ is git-ignored
+  09_final/         deliverables (Section 3)
+  10_thumbnail/     thumb_a, thumb_b, thumb_c HyperFrames projects; work/ is git-ignored
+
+Rebuild order (needs ffmpeg 6.1.1+, Python 3 with numpy, scipy, Pillow; Node 22 and the HyperFrames CLI
+0.8.136 (npx hyperframes); Chromium):
+  1. Graphics:  cd 07_graphics && ./sync_shared.sh projects/<name> && npx hyperframes render projects/<name>
+                --format mov --fps 24 -o renders/<name>.mov   (intro and shorts_endcard: --format mp4
+                -q delivery). Copy renders to 07_graphics/renders/.
+  2. Picture:   python3 08_edit/fix_shot21.py ; (create 08_edit/work/shot33_ext.mp4: NOT scripted) ;
+                python3 08_edit/build_base.py   -> 08_edit/work/base_picture_1080_v1.mp4
+  3. Audio:     python3 06_audio/build_sfx_v2.py ; python3 06_audio/build_audio_final.py
+                -> 09_final/audio_final_48k.wav
+  4. Final:     python3 08_edit/build_final.py   (add --preview 30 for a fast 30 s check)
+  5. Shorts:    python3 08_edit/build_shorts.py
+  6. Captions:  python3 09_final/build_srt.py
+  7. Join master from parts:  cat 09_final/parts/Ganesha_Big_Race_1080p.mp4.part* > master.mp4
+                (verify against 09_final/SHA256SUMS.txt).
+Regenerating AI assets needs Krea and ElevenLabs credits (Section 11); job ids are recorded in
+05_clips/jobs.json, 04_keyframes/jobs.json, 06_audio/jobs.json, 03_refs/options/jobs.md.
+Direct download of this report:
+  https://github.com/HimanshuKamat/Firmware/raw/claude/amazing-pasteur-y5im4h/ganesha-video/PROJECT_REVIEW_REPORT.txt
+
+
+====================================================================================================
+20. OPEN QUESTIONS FOR THE REVIEWER
+====================================================================================================
+ 1. Is Seedance worth 3.2x Veo for this art style? A side-by-side of one shot generated both ways, at
+    1080p and 720p, would settle it. Is the "start image only" Veo workflow enough for character
+    consistency in new shots?
+ 2. Is ElevenLabs-hosted Veo 3.1 Fast (USD 0.97 per 8 s clip) equal in quality to Krea's Veo 3.1? Does
+    Krea sell a Veo Fast or Lite tier?
+ 3. Can the three refused shots be animated by Seedance or Kling 3.0 without drift? What does Veo's
+    filter reject: two child-like characters together, or the word "hug"? (Not disclosed by the API.)
+ 4. Which lip-sync model gives acceptable results on stylised 3D mice and elephant-headed characters,
+    and at what price per second?
+ 5. Does the narration sound natural at 0.92 time-stretch and 135 wpm? Would a human narrator or a
+    different voice / setting give a warmer, slower read?
+ 6. Are pronunciations acceptable to Indian-English listeners? Is the Ganesha voice (Mini) right for a
+    child character, and Elmoe for Mooshak?
+ 7. Does the sung song sound pleasant and clear, and does the splice sound musical?
+ 8. Is the total cut too slow? Would the target audience (and their parents) benefit from some
+    quicker, action-led cuts, while keeping the gentle feel?
+ 9. Do the iconography choices match the owner's family tradition? Any detail to change?
+10. Is "Mooshak's Story Time" an acceptable and available channel name?
+11. Does YouTube allow the end-screen elements on a made-for-kids upload, and does the disclosure
+    answer need to be "Yes"?
+12. Are the commercial licences of every generated asset valid on the owner's current subscription
+    plans (Krea Max, ElevenLabs plan), including music and voices?
+
+Suggested review checklist (about 30 minutes)
+   [ ] Play 09_final master in full with headphones; note any loud, harsh or odd sound.
+   [ ] Check shots 23 (2:55 to 3:03), 27 and 28 (3:28 to 3:45) for the "frozen" feel.
+   [ ] Check 2:46 to 2:47 for remaining specks in shot 21.
+   [ ] Check mouths during Mooshak's and Ganesha's lines.
+   [ ] Check overlay readability on a phone (counters, flap prompt, lyrics, lesson card, end screen).
+   [ ] Check the cut for judder in the slowed Veo shots (1:34, 2:07 to 2:47, 3:03 to 3:21).
+   [ ] Play the Shorts on a phone; check captions and the end card.
+   [ ] Check the thumbnails at phone size.
+   [ ] Read the YouTube description and tags for accuracy.
+
+
+====================================================================================================
+APPENDIX A. PROMPT RECIPE
+====================================================================================================
+Image-to-video prompt per shot (02_prompts/prompts.json):
+   prompt_full = STYLE + Vivideo motion prompt + CHAR_* blocks + LOC_* block + props + negatives
+   - STYLE: stylised 3D character animation, warm golden light, rounded shapes, bright, friendly.
+   - Vivideo prompt: built with style animation_3d_character, mode image_to_video, 16:9, destination
+     youtube, motion_strength balanced, shot duration; negative prompt "no text, no captions, no
+     watermark, no distorted anatomy, no warped geometry, no duplicate objects, no jittery motion, no
+     flicker, no blur, no identity drift, no morphing, no fast cuts, no flashing lights".
+   - CHAR_* and LOC_* are copied word for word from 01_script/bible.md.
+   - Seedance uses prompt_seedance (Krea's guide: "slow/gentle/soft" can make whole clips run in slow
+     motion, so those words are replaced by "steady, smooth"). Veo uses prompt_full without reference
+     images. Negatives are written into the prompt text because neither model has a negative field.
+Keyframes: Nano Banana Pro 1K 16:9 with character and location sheets passed as image_urls and a
+preamble that fixes clothing, location, and Ganesha's identity.
+Settings: 1080p, 24 fps, audio off (Seedance's audio ignored), Seedance waves of 12 or fewer jobs.
+
+
+====================================================================================================
+APPENDIX B. KEY NUMBERS AT A GLANCE
+====================================================================================================
+ Runtime 280.0 s (intro 6 s + story 274 s)      Words in script 310        Shots 33 (32 animated/stills + intro)
+ Script lines 63 (59 voiced + 4 sung)           Speech duration 124.4 s    Narrator 49 lines, Mooshak 7, Ganesha 3
+ Clips: Veo 16, Seedance 12, still 3, Veo Fast 1   Krea images 76 (41 used)   Krea clips charged 30 (28 used)
+ Sound effects 41 cues, 16 files                Music 3 tracks             Graphics 11 projects (9 in the film, 2 in the Shorts)
+ Loudness -14.0 LUFS / TP -1.5 dBTP / LRA 8.2   Master 12 Mbps, 427,425,765 bytes   Download copy 91 MB
+ Krea about 66,000 units (about USD 115) [E]    ElevenLabs about 12,250 credits (about USD 2.45)
+ Elapsed time about 10 hours (2026-10-05 20:58 to 2026-10-06 07:08 UTC) including waits
+
+====================================================================================================
+END OF REPORT
+====================================================================================================
