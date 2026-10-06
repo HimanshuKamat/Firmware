@@ -49,3 +49,9 @@ Read-only calls (listing models, voices, styles) cost nothing and are logged onc
 
 | 26 | 2026-10-06 | ElevenLabs shot 31 redo: Veo 3.1 Fast 1080p 8 s no audio from approved keyframe 31, locked cast, static camera (4,848 credits). Result has exactly the five characters, no extra girl: 05_clips/raw/shot31_redo_veo31fast.mp4. |
 | 27 | 2026-10-06 | ElevenLabs SFX v2: 3 looping 30 s ambience beds (100 cr each), wing flaps, footsteps, mouse scamper, claps, cheer, giggle, mango shimmer, hop, fruit split, 3 squeak variants, 6 s intro sting (90 cr): 1,419 credits total. Files 06_audio/sfx_v2/. Track built by 06_audio/build_sfx_v2.py (41 cues). |
+
+| 28 | 2026-10-06 | HyperFrames (local CLI, no credits) | Intro, title card, counters x2, flap prompt, chant caption, lesson card, lyrics, end screen, Shorts end card, Shorts frame | 0 | Rendered to 07_graphics/renders; checked on the real picture. |
+| 29 | 2026-10-06 | ffmpeg final assembly | 09_final/Ganesha_Big_Race_1080p.mp4 (427 MB, 280 s, -14.0 LUFS, TP -1.5), Shorts 56 s | 0 | Black/freeze scan clean. |
+| 30 | 2026-10-06 | Canva | upload of thumbnail A, one design created from AI candidate then replaced with the finished artwork (design DAHXNZz1NAU) | 0 | The AI design ignored the supplied image, so the artwork was inserted full-bleed instead. |
+
+Final running total: ElevenLabs about 12,248 credits (about $2.45): narration 2,233, SFX v1 200, music 4,245, Scribe 209, shot 31 redo 4,848, SFX v2 513. Krea about 66,000 units (estimated). Canva 0. HyperFrames 0.

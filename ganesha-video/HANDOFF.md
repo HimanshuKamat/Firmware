@@ -127,3 +127,14 @@ Alert the user if any stage goes 20% over (stage 3a: more than 54 images).
 
 - **MUSIC DONE (2026-10-05):** 06_audio/music/A_story_bed.mp3 (0-225 s, fades out by ~220 s), B_evening_bed.mp3 (used at 219 s and reprised at 262 s for the end screen), C_song.mp3 + C_song_edit.wav (vocal song, edit has verse then Morya x2). Placement on the 274 s no-intro timeline: A at 0 (-13 dB, sidechain-ducked by narration), B at 219 (-16 dB), song edit at 235.42 (-6 dB; verse at 240.0, Morya at 246.0 and 249.0, hum tail to 263), B reprise from 262 (-10 dB). Mix: 06_audio/mix_narr_sfx_music_v1.mp3 (stereo, -17.3 LUFS before final normalisation), rough cut 08_edit/rough_stitch_v5_music.mp4. Lyrics verified with Scribe. When the 6 s intro is added, shift all audio +6 s.
 - **USER (2026-10-06): not available. Wants a FINISHED PROFESSIONAL video. Continue autonomously through every remaining phase (SFX upgrade, HyperFrames-style graphics, final assembly 1080p -14 LUFS, SRT, Shorts, thumbnail, YouTube metadata).**
+
+---
+## FINAL (2026-10-06): PROJECT COMPLETE
+
+All phases done. Deliverables are in `09_final/` (see `FINAL_SUMMARY.md`): the 1080p master (4:40, -14 LUFS, true peak -1.5 dBTP) stored as 5 parts in `09_final/parts/` (join with `parts/JOIN.md`), a 540p preview, the 56 s Shorts teaser (+ preview), `captions.srt`, three thumbnails (also thumbnail A as a Canva design), and `youtube_metadata.md`.
+
+- Picture: `08_edit/build_base.py` (shots 02-33, 1080p) + `08_edit/fix_shot21.py` (numerals removed) + redo of shot 31 (`05_clips/raw/shot31_redo_veo31fast.mp4`) + shot 33 push-in hold.
+- Graphics: `07_graphics/projects/*` (HyperFrames) rendered to `07_graphics/renders/` (git-ignored; re-render with `npx hyperframes render projects/<name> --format mov` or mp4 for intro and Shorts end card). Timing in `07_graphics/timing.json`.
+- Audio: `06_audio/build_sfx_v2.py` (41 cues), `06_audio/build_audio_final.py` (mix + two-pass loudnorm). Music and song in `06_audio/music/`.
+- Final assembly: `python3 08_edit/build_final.py` (needs `08_edit/work/base_picture_1080_v1.mp4`, `07_graphics/renders/*`, `09_final/audio_final_48k.wav`; all regenerable). Shorts: `python3 08_edit/build_shorts.py`.
+- Open items for a human: listen through once; confirm channel name ("Mooshak's Story Time" is an assumption); decide on a lip-sync pass; YouTube may disable end screens on made-for-kids videos.
