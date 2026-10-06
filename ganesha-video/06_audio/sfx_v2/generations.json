@@ -1,0 +1,98 @@
+{
+ "AMB_MORNING": {
+  "generation_id": "P8EoVPRdPS6uqZSH6MRM",
+  "duration_secs": 30,
+  "credits": 100,
+  "file": "AMB_MORNING.mp3"
+ },
+ "AMB_SKY": {
+  "generation_id": "WCgp08QZbqRC8JhxLGyu",
+  "duration_secs": 30,
+  "credits": 100,
+  "file": "AMB_SKY.mp3"
+ },
+ "AMB_EVENING": {
+  "generation_id": "hTL4Mm8OIFNmk4C2fy46",
+  "duration_secs": 30,
+  "credits": 100,
+  "file": "AMB_EVENING.mp3"
+ },
+ "WING_FLAPS": {
+  "generation_id": "XOSZgqJvKwuU7ic2mIfW",
+  "duration_secs": 4,
+  "credits": 13.333333333333334,
+  "file": "WING_FLAPS.mp3"
+ },
+ "FOOTSTEPS": {
+  "generation_id": "eRtC267pDct7AYVynBNe",
+  "duration_secs": 8,
+  "credits": 26.666666666666668,
+  "file": "FOOTSTEPS.mp3"
+ },
+ "MOUSE_SCAMPER": {
+  "generation_id": "DKCFHfHIULszsinntjTA",
+  "duration_secs": 3,
+  "credits": 10,
+  "file": "MOUSE_SCAMPER.mp3"
+ },
+ "CLAPS": {
+  "generation_id": "R1hVRTLJ5lMTLpm4ylQI",
+  "duration_secs": 8,
+  "credits": 26.666666666666668,
+  "file": "CLAPS.mp3"
+ },
+ "CHEER": {
+  "generation_id": "v3slNI2WnBVetaX7UE1i",
+  "duration_secs": 3,
+  "credits": 10,
+  "file": "CHEER.mp3"
+ },
+ "GIGGLE": {
+  "generation_id": "SpNqQ5M5HWkTHJKIBJ7C",
+  "duration_secs": 1.48,
+  "credits": 5,
+  "file": "GIGGLE.mp3"
+ },
+ "MANGO_SHIMMER": {
+  "generation_id": "l5QM50cY5jQaAAGRDSsD",
+  "duration_secs": 3,
+  "credits": 10,
+  "file": "MANGO_SHIMMER.mp3"
+ },
+ "HOP_FEATHER": {
+  "generation_id": "twmwc33T8I8shoAuEr8e",
+  "duration_secs": 1.48,
+  "credits": 5,
+  "file": "HOP_FEATHER.mp3"
+ },
+ "FRUIT_SPLIT": {
+  "generation_id": "OGDgXmmFBUk8aG0kSsHm",
+  "duration_secs": 1.48,
+  "credits": 5,
+  "file": "FRUIT_SPLIT.mp3"
+ },
+ "SQUEAK_A": {
+  "generation_id": "rV18bwdAcCpYh5GcNEg9",
+  "duration_secs": 1,
+  "credits": 3.3333333333333335,
+  "file": "SQUEAK_A.mp3"
+ },
+ "SQUEAK_B": {
+  "generation_id": "ONo8yvJ3fSg1NNfOGL4W",
+  "duration_secs": 1.2,
+  "credits": 4,
+  "file": "SQUEAK_B.mp3"
+ },
+ "SQUEAK_C": {
+  "generation_id": "vajsmGVRwox05IWqG0tS",
+  "duration_secs": 1.2,
+  "credits": 4,
+  "file": "SQUEAK_C.mp3"
+ },
+ "INTRO_STING": {
+  "generation_id": "tThUrtbKPURNxfU5XFUx",
+  "duration_secs": 6,
+  "credits": 90,
+  "file": "INTRO_STING.mp3"
+ }
+}

@@ -46,3 +46,6 @@ Read-only calls (listing models, voices, styles) cost nothing and are logged onc
 | Canva | 0 | n/a | n/a |
 
 | 25 | 2026-10-05 | ElevenLabs music (eleven_music_v2_5, 1 take each): A story bed 225 s instrumental (3,375 cr), B evening bed 20 s (300 cr), C sung song 38 s custom lyrics (570 cr); Scribe transcript of C (209 cr). Lyrics came back exact. Total about 4,454 credits. Files in 06_audio/music/. Song spliced (C_song_edit.wav: trim 2.9 s of silence, cut 7.5 s = 10 beats between Morya 1 and Morya 2 so verse, Morya, Morya). Mix: 08_edit/music_filter_v1.txt, 06_audio/mix_narr_sfx_music_v1.mp3, rough_stitch_v5_music.mp4 |
+
+| 26 | 2026-10-06 | ElevenLabs shot 31 redo: Veo 3.1 Fast 1080p 8 s no audio from approved keyframe 31, locked cast, static camera (4,848 credits). Result has exactly the five characters, no extra girl: 05_clips/raw/shot31_redo_veo31fast.mp4. |
+| 27 | 2026-10-06 | ElevenLabs SFX v2: 3 looping 30 s ambience beds (100 cr each), wing flaps, footsteps, mouse scamper, claps, cheer, giggle, mango shimmer, hop, fruit split, 3 squeak variants, 6 s intro sting (90 cr): 1,419 credits total. Files 06_audio/sfx_v2/. Track built by 06_audio/build_sfx_v2.py (41 cues). |

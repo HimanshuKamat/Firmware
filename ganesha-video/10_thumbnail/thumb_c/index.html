@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1280, height=720" />
+<title>Thumbnail C</title>
+<script src="vendor/gsap.min.js"></script>
+<link rel="stylesheet" href="kit.css" />
+<script src="kit.js"></script>
+<style>
+  #root { position: relative; width: 100%; height: 100%; overflow: hidden; background: #3A1410; }
+  #bg { position: absolute; left: -60px; top: 96px; width: 1400px; height: 788px; object-fit: cover; filter: saturate(1.15) contrast(1.05); }
+  .banner { position: absolute; left: 0; top: 0; width: 1280px; height: 168px; border-radius: 0 0 64px 64px; border-width: 0 0 10px 0; display: flex; align-items: center; justify-content: center; gap: 26px; }
+  .banner .display { font-size: 98px; white-space: nowrap; }
+  #fx { position: absolute; inset: 0; }
+  .glow { position: absolute; left: 560px; top: 330px; width: 300px; height: 300px; border-radius: 50%; background: radial-gradient(circle, rgba(255,230,140,.75), rgba(255,200,60,0) 68%); }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="thumb-c" data-start="0" data-width="1280" data-height="720" data-duration="1">
+  <img id="bg" src="img/bg25.png" />
+  <div class="glow"></div>
+  <div class="banner panel">
+    <div id="mango"></div>
+    <div class="display gold">THE GOLDEN MANGO!</div>
+  </div>
+  <div id="fx"></div>
+</div>
+<script>
+  document.getElementById('mango').innerHTML = Kit.svg.marigold(0) && '<svg viewBox="0 0 100 110" width="96" height="106"><defs><radialGradient id="g" cx="40%" cy="35%" r="75%"><stop offset="0" stop-color="#FFE98A"/><stop offset="1" stop-color="#F29A1A"/></radialGradient></defs><path d="M52 8 C74 4 92 24 90 52 C88 82 66 104 44 100 C20 96 8 72 12 48 C16 24 32 12 52 8Z" fill="url(#g)" stroke="#7A1F16" stroke-width="5"/><path d="M52 8 C56 -2 70 -6 80 2 C72 10 62 12 52 8Z" fill="#8CCB6B" stroke="#7A1F16" stroke-width="4"/></svg>';
+  const tl = gsap.timeline({ paused: true });
+  Kit.sparkBurst(tl, '#fx', { x: 790, y: 540, at: 0, n: 9, seed: 6, r: 80, size: 50 });
+  window.__timelines['thumb-c'] = tl;
+</script>
+</body>
+</html>
