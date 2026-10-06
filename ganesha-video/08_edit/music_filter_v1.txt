@@ -1,0 +1,9 @@
+[0:a]aresample=48000,pan=stereo|c0=c0|c1=c0[dry];
+[1:a]aresample=48000,pan=stereo|c0=c0|c1=c0[key];
+[2:a]aresample=48000,aformat=channel_layouts=stereo,afade=t=in:d=1.5,volume=-13dB[A];
+[3:a]aresample=48000,aformat=channel_layouts=stereo,afade=t=in:d=1.2,afade=t=out:st=14:d=4,volume=-16dB,adelay=219000|219000[B1];
+[5:a]aresample=48000,aformat=channel_layouts=stereo,atrim=7:20,asetpts=PTS-STARTPTS,afade=t=in:d=3,afade=t=out:st=9:d=3,volume=-10dB,adelay=262000|262000[B2];
+[A][B1][B2]amix=inputs=3:normalize=0:duration=longest[bed];
+[bed][key]sidechaincompress=threshold=0.03:ratio=3:attack=20:release=600:makeup=1[bedd];
+[4:a]aresample=48000,aformat=channel_layouts=stereo,afade=t=in:d=0.3,volume=-6dB,volume=eval=frame:volume='if(lt(t,16.2),1,if(lt(t,18.2),1-0.25*(t-16.2),0.5))',adelay=235420|235420[song];
+[dry][bedd][song]amix=inputs=3:normalize=0:duration=first,alimiter=limit=0.89:level=disabled[out]

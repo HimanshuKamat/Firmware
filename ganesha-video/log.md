@@ -44,3 +44,5 @@ Read-only calls (listing models, voices, styles) cost nothing and are logged onc
 | Krea | 76 images (units not reported by API) | 3a: 45 images | 54 images |
 | ElevenLabs | 2,433 | TBD | TBD |
 | Canva | 0 | n/a | n/a |
+
+| 25 | 2026-10-05 | ElevenLabs music (eleven_music_v2_5, 1 take each): A story bed 225 s instrumental (3,375 cr), B evening bed 20 s (300 cr), C sung song 38 s custom lyrics (570 cr); Scribe transcript of C (209 cr). Lyrics came back exact. Total about 4,454 credits. Files in 06_audio/music/. Song spliced (C_song_edit.wav: trim 2.9 s of silence, cut 7.5 s = 10 beats between Morya 1 and Morya 2 so verse, Morya, Morya). Mix: 08_edit/music_filter_v1.txt, 06_audio/mix_narr_sfx_music_v1.mp3, rough_stitch_v5_music.mp4 |
