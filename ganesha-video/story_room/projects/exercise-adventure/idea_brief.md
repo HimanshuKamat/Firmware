@@ -35,3 +35,25 @@
 1. **Age range:** 3 to 6 (default), or older?
 2. **World:** Mooshak's world with Ganesha and family (default, saves credits), or a brand-new world (jungle, space, ocean)?
 3. **Who shows the moves:** animated characters (default), or a real person shown on screen?
+
+---
+
+## Update 2026-10-07: the owner's answers
+- **Audience:** ages 3 to 6 (confirmed).
+- **Cast:** two new sisters, **Tisha (4 to 5)** and **Raahi (2 to 3)**. Mooshak is no longer assumed; a new world is open (the Spark will propose worlds).
+- **Who shows the moves:** animated characters. The owner will consider a real person only if the Facilitator judges it more engaging, and then as an AI avatar.
+- **Video provider:** Google's Gemini API directly (Veo 3.1), not Krea.
+
+## Facilitator findings on the provider (checked 2026-10-07 against Google's pricing page, last updated 2026-10-07)
+| Veo 3.1 tier on the Gemini API | 720p | 1080p | 4K | Per 8 s clip at 1080p |
+|---|---|---|---|---|
+| Standard | $0.40 / s | $0.40 / s | $0.60 / s | $3.20 |
+| Fast | $0.10 / s | $0.12 / s | $0.30 / s | $0.96 |
+| Lite | $0.05 / s | $0.08 / s | not supported | $0.64 |
+
+Audio is included in the price (it cannot be switched off; strip it in the edit). You are charged only for videos that generate successfully. Paid tier only; no batch discount for Veo.
+- **Compared with Krea:** the first film's Veo 3.1 clips cost 1,185 Krea units per 8 s, about $2.07 at the Max plan rate, or about $0.26 per second. So **Google Standard ($0.40 / s) is about 54 percent MORE expensive than Krea.** Google Fast is about 54 percent cheaper and Lite about 69 percent cheaper. ElevenLabs' hosted Veo 3.1 Fast was $0.97 per 8 s, the same as Google Fast. **The saving comes from using the Fast or Lite tier, not from going direct.** Whether Fast or Lite is good enough is untested; the shot-31 redo on Fast was clean.
+- **Images (keyframes):** Google lists Nano Banana Pro at $0.134 per 1K or 2K image ($0.067 in batch), Nano Banana 2 at $0.067 (1K), and newer cheaper models from about $0.034.
+- **Rough cost of the 20-minute plan** (about 47 clips of 8 s = 376 s of video) [E]: Lite about $30, Fast about $45, Standard about $150, Krea about $97. Add about 40 percent for redo clips and images.
+- **Practical:** `generativelanguage.googleapis.com` is reachable from this environment, but no Gemini API key is set here and this session has no Google video connector. To generate through Google directly, the owner needs a paid-tier API key added as an environment secret (see the session's environment settings). Until then the plan stays on paper.
+- **Not verified:** the exact Veo rules on depicting children (this session could not read Google's Veo guide page). Earlier on Krea, the same Veo 3.1 model refused three shots with two child-like characters together. Two small girls in most shots is the biggest production risk; test two or three typical shots before committing.
