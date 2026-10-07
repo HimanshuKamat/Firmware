@@ -57,3 +57,15 @@ Audio is included in the price (it cannot be switched off; strip it in the edit)
 - **Rough cost of the 20-minute plan** (about 47 clips of 8 s = 376 s of video) [E]: Lite about $30, Fast about $45, Standard about $150, Krea about $97. Add about 40 percent for redo clips and images.
 - **Practical:** `generativelanguage.googleapis.com` is reachable from this environment, but no Gemini API key is set here and this session has no Google video connector. To generate through Google directly, the owner needs a paid-tier API key added as an environment secret (see the session's environment settings). Until then the plan stays on paper.
 - **Not verified:** the exact Veo rules on depicting children (this session could not read Google's Veo guide page). Earlier on Krea, the same Veo 3.1 model refused three shots with two child-like characters together. Two small girls in most shots is the biggest production risk; test two or three typical shots before committing.
+
+## Update 2026-10-07 (2): one child to start
+- **Cast now:** one girl, aged 3 to 4, working name **Tisha** (change if the owner prefers another). **Raahi** is parked as a possible little sister in a later episode.
+- **Companion:** none human. Optional non-speaking animal or creature friend per world. The viewer is Tisha's buddy: she speaks to the camera and waits for the child, as in participatory shows.
+- **Effect on production:** one child per shot (no child-pair shots), one character to keep on-model, simpler tests.
+
+## Findings from the market research that change this brief (market_trends.md, verified later)
+- **Made for Kids switches off cards, end screens, comments and notifications** [S]. Next-watch prompts must be inside the picture.
+- **"Inauthentic content" rule:** character series with a different story problem and ending per episode are allowed; templated, repeated scenarios are at risk [S]. So each chapter of this film needs its own problem and twist; "story beat + three exercises" must not feel stamped out.
+- **Fully animated work needs no AI disclosure label, but YouTube has been under pressure** over AI content in kids' feeds (Fairplay letter, April 2026; YouTube says AI in YouTube Kids is limited to "a small set of high-quality channels") [S, one point conflicting]. Trust signals: low cadence, consistent characters, named human reviewer, no scary beats, a plain "made with AI tools" note.
+- **Calendar:** Children's Day is 14 Nov 2026 (go-live about 24 Oct); Makar Sankranti and Pongal 15 Jan 2027 (go-live about 25 Dec). Diwali (8 Nov 2026) is too close for a new 20-minute film.
+- **Brand flag:** "Bal Ganesh" (Shemaroo) already features Ganesha with a mouse called Mooshak [S, weak]. This new film uses new characters, so it is unaffected, but the channel name "Mooshak's Story Time" for the first film should be checked before publishing.
