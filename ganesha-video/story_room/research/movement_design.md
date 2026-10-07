@@ -5,8 +5,8 @@ Researched 2026-10-07. Tags: [S] source-backed, [I] my inference, [U] unverified
 ## 0. What the evidence supports
 
 - WHO 2019: ages 3-4 need 180+ min of activity daily (60+ moderate-to-vigorous) and at most 1 hour of sedentary screen time [S] https://www.who.int/news/item/24-04-2019-to-grow-up-healthy-children-need-to-sit-less-and-play-more . A film with 60-90 s of movement is under 3% of the 60 min [I]: an invitation to play and co-view, not a workout.
-- Video-led movement for preschoolers is unproven: the AAP found no preschool studies of GoNoodle-style breaks, and mixed results in school-age children [S] https://www.aap.org/en/patient-care/media-and-children/center-of-excellence-on-social-media-and-youth-mental-health/qa-portal/qa-portal-library/qa-portal-library-questions/brain-breaks-in-the-classroom/ . One touchscreen trial (n=12, no control) raised vigorous activity [S weak] https://pmc.ncbi.nlm.nih.gov/articles/PMC12468095/ . Rules below are craft [I].
-- Toddlers copy screens less than live people, though 24-month-olds matched live learning in favourable conditions (2008) [S] https://pmc.ncbi.nlm.nih.gov/articles/PMC2610533 . Ages 4-6: not found [U].
+- Video-led movement for preschoolers is unproven: the AAP found no preschool studies of GoNoodle-style breaks, and mixed results in school-age children [S] https://www.aap.org/en/patient-care/media-and-children/center-of-excellence-on-social-media-and-youth-mental-health/qa-portal/qa-portal-library/qa-portal-library-questions/brain-breaks-in-the-classroom/ . Rules below are craft, not outcome data [I].
+- Toddlers copy screens less than live people, though 24-month-olds matched live learning in good conditions (2008) [S] https://pmc.ncbi.nlm.nih.gov/articles/PMC2610533 . Ages 4-6: not found [U].
 - Pretend imagery helps: children aged 3-6 learned dance moves faster when taught as "be a..." (2006, n=32) [S weak] https://link.springer.com/doi/10.1007/s10643-006-0103-1 . Hence story verbs.
 
 ## 1. Catalogue: 26 moves
@@ -59,21 +59,21 @@ Full beat 18-28 s; mini beat (echo clap) 8-12 s. Hold poses 10 s at most (Indian
 ## 3. Frequency and energy
 
 - For 240-300 s: 3-4 full beats plus 3-4 mini beats; 70-100 s active (25-35%); first invitation by 0:20, since children worked out whether the show waited within the first several prompts [S, Disney paper]; no story-only stretch over 60 s [I].
-- Alternate: high beats at most 20 s, then 8+ s settling; never two H beats adjacent; end with 45+ s calm [I]. Fast, loud music excites; slower, quiet rhythmical music calms [S] https://www.cahs.health.wa.gov.au/~/media/HSPs/CAHS/Documents/Community-Health/ChildDevelopment/Play-and-Learning-6-music-songs-and-movement.pdf . Cosmic Kids splits Yoga Disco Party from Zen Den [S weak] https://www.yogamatters.com/blogs/movement/yoga-for-kids-cosmic-kids-yoga
+- Alternate: high beats at most 20 s, then 8+ s settling; never two H beats adjacent; end with 45+ s calm [I]. Fast, loud music excites; slower, quiet rhythmical music calms [S] https://www.cahs.health.wa.gov.au/~/media/HSPs/CAHS/Documents/Community-Health/ChildDevelopment/Play-and-Learning-6-music-songs-and-movement.pdf
 - Myth check: "fast pacing damages attention" rests on one 60-child study (2011); a 2024 review of 15 studies finds the evidence contradictory [S] https://pmc.ncbi.nlm.nih.gov/articles/PMC11044375/ . Vary energy for story, not fear [I].
-- Sample 4:40 curve [I]: L (wave) M (clap-count) H (fly) M (row) L (tiptoe) H (stomp) M (round shape) L (sway) L (song, hug).
+- Sample 4:40 curve [I]: L M H M L H M L L (wave, clap-count, fly, row, tiptoe, stomp, round shape, sway, song).
 
 ## 4. Safety and access
 
 - Falls: about 2.3 million US emergency visits for under-5s from soft furniture (beds, sofas), 2007-2016; beds act as "indoor trampolines" [S] https://www.healio.com/news/pediatrics/20181108/millions-of-children-injured-in-falls-from-soft-furniture . So: floor only, seated twins for sofas, no characters jumping on furniture [I]. YouTube bars putting minors in "harmful situations that may lead to injury" (a bar for child characters too) [S] https://support.google.com/youtube/answer/2801999
-- Space: "stand where your arms touch nothing", said once in the description [I].
+- Space: say "stand where your arms touch nothing" once, in the description [I].
 - Spinning: an NHS therapy leaflet advises against spinning a child (can over-excite or nauseate; signs: pallor, sweating, large pupils, sickness) and calls linear movement calmer [S] https://www.swbh.nhs.uk/wp-content/uploads/2021/11/Childrens-Therapies-Vestibular-Overview-and-Activities.pdf . Rule: one slow turn (4 s or less) then freeze; no whip-pans [I].
 - Balance: hopping on one foot is a milestone at 5 (75%+ of children) [S] https://www.cdc.gov/act-early/milestones/5-years.html ; catching a large ball at 4 [S] https://www.cdc.gov/act-early/milestones/4-years.html . Use two-foot jumps and pretend tosses; give balance poses a focal point or a chair [S weak] https://www.uaex.uada.edu/publications/pdf/FSFCS70.pdf . No breath-holding [S weak, Vikaspedia link above].
-- Access: Special Olympics programmes for ages 2-7 adapt to ability [S] https://specialolympicspa.org/young-athletes/ ; NCHPAD lists pre-K inclusion variations [S] https://www.nchpad.org/resources/inclusive-games-for-early-childhood-education/ ; a 2025 co-designed cerebral palsy dance guide stresses Universal Design for Learning and visual schedules [S] https://pmc.ncbi.nlm.nih.gov/articles/PMC12116933/ . Rules [I]: "use hands, feet or shoulders, whichever you like"; the twin keeps the same rhythm; describe moves in words; caption action words.
+- Access: NCHPAD lists pre-K inclusion variations [S] https://www.nchpad.org/resources/inclusive-games-for-early-childhood-education/ ; a 2025 co-designed cerebral palsy dance guide stresses Universal Design for Learning and visual schedules [S] https://pmc.ncbi.nlm.nih.gov/articles/PMC12116933/ . Rules [I]: "use hands, feet or shoulders, whichever you like"; the twin keeps the same rhythm; describe moves in words; caption action words.
 
 ## 5. Rhythm and tempo
 
-- Children 4+ tap spontaneously at 400-500 ms (120-150 BPM); 3-year-olds near 500 ms with a narrow range they can synchronise to; ages 1.5-4 synchronised only near 400 ms; yet with a social partner 2.5-4.5-year-olds matched a 600 ms (100 BPM) beat [S, as reviewed] https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2014.01048/full
+- Children 4+ tap spontaneously at 400-500 ms (120-150 BPM); 3-year-olds near 500 ms with a narrow range they can synchronise to; ages 1.5-4 synchronised only near 400 ms; with a partner, 2.5-4.5-year-olds matched a 600 ms (100 BPM) beat [S, as reviewed] https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2014.01048/full
 - Action songs: Super Simple "This Is the Way" 80, "If You're Happy" 110, "Skeleton Dance" 120 BPM; another publisher's "Wheels on the Bus" 120 [S weak: AI-estimated, arrangement-dependent] https://www.musiciwant.com/song/head-shoulders-knees-and-toes-super-simple-songs https://www.musiciwant.com/album/cedarmont-kids/toddler-action-songs
 - Rules [I]: active 100-120 BPM, new moves at half-time (one per two beats); calm 60-80 BPM; phrases in fours; stomps and claps on beat 1. Call-and-response: 4-beat call by the character, 4-beat reply by the child, repeat, finish "together".
 
@@ -84,11 +84,11 @@ Full beat 18-28 s; mini beat (echo clap) 8-12 s. Hold poses 10 s at most (Indian
 - Garba: be-thali ("two claps") travels round a circle [S] https://dance-teacher.com/?p=5234 ; tran tali is three claps [S weak] https://godsballroom.com/misc/how-to-dance-garba.html . UNESCO listed Garba of Gujarat in 2023; a devotional circle dance for the goddess [S] https://www.governancenow.com/news/regular-story/garba-of-gujarat-now-a-unesco-intangible-cultural-heritage . Use "walk in a circle, clap, clap", named honestly; no dandiya sticks; no parody [I].
 - Bhangra: Punjab harvest dance of Sikh and Muslim farming communities, with dhol [S weak] https://ebsco.com/research-starters/music/bhangra . Safe: knee bounce, shoulder shrug, arms-up "balle balle" [S weak] https://skillnation.in/posts/easiest-way-to-learn-bhangra-beginners/ . Never "generic Indian dance"; no caricature [I].
 - Mudras: abhaya (raised right palm, "do not be afraid") appears in Ganesha images [S weak] https://en.wikipedia.org/wiki/Abhayamudra ; Bharatanatyam has 28 single-hand and 23 double-hand gestures [S weak] https://onlinebharatanatyam.com/2007/09/02/hand-gestures-nritta-hastas-or-hasta-bhedas/ . Use 2-3 (abhaya, anjali for thanks, elephant trunk), 3 s holds, call them gestures, make no healing claims [I]; tradition variants not verified [U], so a human family reviewer signs off.
-- Ganesha demonstrates only calm moves; Mooshak and the children do the silly ones [I].
+- Ganesha shows only calm moves; Mooshak and the children do the silly ones [I].
 
 ## 7. Writing the cue and the demonstrator
 
-- Cue formula [I]: one verb, one body part, one size or sound word; 4-8 words; one breath (about 3 s). Short sentences with full stops for TTS; pauses are silence in the edit, never "..." in text. No left/right, negatives, numbers above three, or Sanskrit.
+- Cue formula [I]: one verb, one body part, one size or sound word; 4-8 words; one breath (about 3 s). Short sentences with full stops for TTS; pauses are silence in the edit, never "..." in text. No left/right, negatives, numbers above three, Sanskrit.
 - Mirror: young children tend to copy mirror-fashion, using the same side of space as a model facing them (1968 study, as reviewed) [S] https://pmc.ncbi.nlm.nih.gov/articles/PMC8738096 . Favour symmetrical two-arm moves; if one-sided, the demonstrator faces camera as a mirror [I].
 - Animation [I]: full body in frame; static or slow camera; one clip per demo (4-10 s), no cut mid-move; big silhouettes; one or two body parts; an idle loop for the pause; the demonstrator stays silent, so weak lip-sync is irrelevant.
 - Demonstrator: familiar characters help toddlers copy video [S, cited in the Disney paper]; Mooshak faces camera; a seated friend shows the twin on alternate beats [I].
@@ -120,6 +120,6 @@ Works if the child does nothing: Y / N
 3. Hold the pause 6-8 s with the music looping, repeat once, accept any response; the film must work if the child does nothing.
 4. No two high-energy beats together; high beats 20 s at most, then 8+ s settling; spin only mid-film, one slow turn, never before the lesson line.
 5. Safety gate: floor only, no sofa jumping, no one-foot hops, holds 10 s at most, no breath-holding, no left/right words.
-6. Tempo: active 100-120 BPM, new moves at half-time, calm 60-80 BPM; call-and-response in 4+4 beats.
+6. Tempo: active 100-120 BPM, new moves at half-time, calm 60-80 BPM; call and reply in 4+4 beats.
 7. Cultural gate: at most one Indian form per film, named honestly, flagged for the human family reviewer; no deity as slapstick demonstrator or under feet; no film songs.
-8. Test the pause: watch the cut with three children aged 3-5 (one on the seated twin), time their responses and adjust; motor pause lengths here are [I].
+8. Test the pause with three children aged 3-5 (one on the seated twin), time their responses and adjust; motor pauses here are [I].
