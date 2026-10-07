@@ -1,0 +1,435 @@
+{
+ "3": {
+  "model": "bytedance/seedance-2-5",
+  "input": {
+   "prompt": "The camera steadily pulls back from Mooshak the baby mouse to reveal Ganesha sitting on a cushion holding a modak; Mooshak points up at him proudly, his mouth moving smoothly as if talking. Mooshak the baby mouse and Ganesha, Mooshak proudly points up at Ganesha as the camera pulls back, Mount Kailash terrace, bright golden morning, smooth pull-back, eye level, warm golden morning sunlight, stylized 3D character animation, proud, cheery, main subjects centred with clear space around them, subtle, restrained motion that stays physically coherent, animating motion only while preserving the source image's subject, identity, composition and product details.\n\nNegative prompt: no text, no captions, no watermark, no distorted anatomy, no warped geometry, no duplicate objects, no jittery motion, no flicker, no blur, no low-quality artifacts, no identity drift, no morphing, no fast cuts, no flashing lights, no sudden or loud motion, no scary expressions, no text or logos, no extra limbs, no audio, no logos, consistent character design",
+   "start_image": "https://app-uploads.krea.ai/public/31bdba72-5f50-42ad-a73d-bed75f45e55b.png",
+   "aspect_ratio": "16:9",
+   "duration": 7,
+   "resolution": "1080p",
+   "reference_images": [
+    "https://app-uploads.krea.ai/public/92ee786f-ea2f-45b0-991f-7b18c53ae4b8.png",
+    "https://app-uploads.krea.ai/public/60d1235b-0efd-44fc-a24b-398e1a3df894-image.png"
+   ]
+  }
+ },
+ "5": {
+  "model": "bytedance/seedance-2-5",
+  "input": {
+   "prompt": "Wide establishing view of the cosy Mount Kailash home in golden morning light; a cloud drifts steadily past the pastel snowy peaks and marigold garlands sway smoothly on the arch. No characters in frame. Cosy mountain home and terrace, a cloud drifts steadily past the peaks while garlands sway, Mount Kailash home and terrace, bright golden morning, smooth crane-down, warm golden morning sunlight, stylized 3D character animation, calm, cosy, horizontal 16:9 framing with balanced headroom, subtle, restrained motion that stays physically coherent, animating motion only while preserving the source image's subject, identity, composition and product details.\n\nNegative prompt: no text, no captions, no watermark, no distorted anatomy, no warped geometry, no duplicate objects, no jittery motion, no flicker, no blur, no low-quality artifacts, no identity drift, no morphing, no fast cuts, no flashing lights, no sudden or loud motion, no scary expressions, no text or logos, no extra limbs, no audio, no logos, consistent character design",
+   "start_image": "https://app-uploads.krea.ai/public/82578b6c-2126-439e-8628-52c95f9bed99-image.jpeg",
+   "aspect_ratio": "16:9",
+   "duration": 9,
+   "resolution": "1080p"
+  }
+ },
+ "6": {
+  "model": "bytedance/seedance-2-5",
+  "input": {
+   "prompt": "Amma (Parvati) and Baba (Shiva) sit side by side on the stone terrace, smiling lovingly at each other; Baba's tiny cobra blinks happily around his neck. Parvati and Shiva, Amma and Baba smile at each other while the tiny cobra blinks, Mount Kailash terrace, bright golden morning, static two-shot with a tiny push-in, warm golden morning sunlight, stylized 3D character animation, loving, smooth, both parents centred in a two-shot, subtle, restrained motion that stays physically coherent, animating motion only while preserving the source image's subject, identity, composition and product details.\n\nNegative prompt: no text, no captions, no watermark, no distorted anatomy, no warped geometry, no duplicate objects, no jittery motion, no flicker, no blur, no low-quality artifacts, no identity drift, no morphing, no fast cuts, no flashing lights, no sudden or loud motion, no scary expressions, no text or logos, no extra limbs, no audio, no logos, consistent character design",
+   "start_image": "https://app-uploads.krea.ai/public/13bd4f34-e7c0-417c-b769-1379ba829643.png",
+   "aspect_ratio": "16:9",
+   "duration": 9,
+   "resolution": "1080p",
+   "reference_images": [
+    "https://app-uploads.krea.ai/public/e0793c43-382a-4fb8-b6d2-19a13aa286ba-image.jpeg",
+    "https://app-uploads.krea.ai/public/5d2a03fc-8ca0-427b-a679-cef76bc86f59.png"
+   ]
+  }
+ },
+ "7": {
+  "model": "bytedance/seedance-2-5",
+  "input": {
+   "prompt": "Ganesha and his brother Kartikeya sit side by side on the terrace; behind them the shiny blue peacock steadily fans out its tail feathers. Ganesha, Kartikeya and the peacock, the peacock steadily fans its tail behind the two brothers, Mount Kailash terrace, bright golden morning, smooth pan left to right, warm golden morning sunlight, stylized 3D character animation, playful, happy, the two brothers centred with the peacock behind, subtle, restrained motion that stays physically coherent, animating motion only while preserving the source image's subject, identity, composition and product details.\n\nNegative prompt: no text, no captions, no watermark, no distorted anatomy, no warped geometry, no duplicate objects, no jittery motion, no flicker, no blur, no low-quality artifacts, no identity drift, no morphing, no fast cuts, no flashing lights, no sudden or loud motion, no scary expressions, no text or logos, no extra limbs, no audio, no logos, consistent character design",
+   "start_image": "https://app-uploads.krea.ai/public/0efb9c79-a4f4-40d8-a5db-8eb8f80e788d-image.png",
+   "aspect_ratio": "16:9",
+   "duration": 9,
+   "resolution": "1080p",
+   "reference_images": [
+    "https://app-uploads.krea.ai/public/60d1235b-0efd-44fc-a24b-398e1a3df894-image.png",
+    "https://app-uploads.krea.ai/public/06102609-9147-48eb-9bac-17616109aac2.png",
+    "https://app-uploads.krea.ai/public/cabff9a4-8f74-49d5-aa21-d84940ab0334-image.png"
+   ]
+  }
+ },
+ "8": {
+  "model": "bytedance/seedance-2-5",
+  "input": {
+   "prompt": "Ganesha happily holds up a modak while Mooshak the baby mouse sits beside him nibbling a crumb. Ganesha and Mooshak, Ganesha holds up a modak while Mooshak nibbles a crumb, Mount Kailash terrace, bright golden morning, smooth push-in, warm golden morning sunlight, stylized 3D character animation, happy, content, Ganesha and Mooshak centred, subtle, restrained motion that stays physically coherent, animating motion only while preserving the source image's subject, identity, composition and product details.\n\nNegative prompt: no text, no captions, no watermark, no distorted anatomy, no warped geometry, no duplicate objects, no jittery motion, no flicker, no blur, no low-quality artifacts, no identity drift, no morphing, no fast cuts, no flashing lights, no sudden or loud motion, no scary expressions, no text or logos, no extra limbs, no audio, no logos, consistent character design",
+   "start_image": "https://app-uploads.krea.ai/public/b31ec963-45a1-4ce4-81be-5c608da3237a.png",
+   "aspect_ratio": "16:9",
+   "duration": 9,
+   "resolution": "1080p",
+   "reference_images": [
+    "https://app-uploads.krea.ai/public/60d1235b-0efd-44fc-a24b-398e1a3df894-image.png",
+    "https://app-uploads.krea.ai/public/92ee786f-ea2f-45b0-991f-7b18c53ae4b8.png"
+   ]
+  }
+ },
+ "9": {
+  "model": "bytedance/seedance-2-5",
+  "input": {
+   "prompt": "Close view of a small golden plate holding three modaks on a low stone; Ganesha's hand points to each modak in turn and each glows as it is counted, then Mooshak the baby mouse hops up happily at the edge of the plate. Three modaks on a golden plate, Ganesha's hand, Mooshak, each of the three modaks glows in turn, then Mooshak hops up, Mount Kailash terrace, bright golden morning, static with a slight tilt-in, warm golden morning sunlight, stylized 3D character animation, playful, the plate centred with the three modaks clearly separate and visible, subtle, restrained motion that stays physically coherent, animating motion only while preserving the source image's subject, identity, composition and product details.\n\nNegative prompt: no text, no captions, no watermark, no distorted anatomy, no warped geometry, no duplicate objects, no jittery motion, no flicker, no blur, no low-quality artifacts, no identity drift, no morphing, no fast cuts, no flashing lights, no sudden or loud motion, no scary expressions, no text or logos, no extra limbs, no audio, no logos, consistent character design",
+   "start_image": "https://app-uploads.krea.ai/public/73a4a93d-5734-446d-93c9-25d88dff507f.png",
+   "aspect_ratio": "16:9",
+   "duration": 11,
+   "resolution": "1080p",
+   "reference_images": [
+    "https://app-uploads.krea.ai/public/60d1235b-0efd-44fc-a24b-398e1a3df894-image.png",
+    "https://app-uploads.krea.ai/public/92ee786f-ea2f-45b0-991f-7b18c53ae4b8.png"
+   ]
+  }
+ },
+ "10": {
+  "model": "bytedance/seedance-2-5",
+  "input": {
+   "prompt": "A glowing golden mango floats smoothly down into Baba's open hands and sparkles while Amma smiles beside him. Shiva with a golden mango, Parvati beside him, the golden mango floats into Baba's hands and sparkles, Mount Kailash terrace, bright golden morning, smooth push-in, warm golden morning sunlight with a smooth golden glow from the mango, stylized 3D character animation, wonder, Baba and the mango centred, subtle, restrained motion that stays physically coherent, animating motion only while preserving the source image's subject, identity, composition and product details.\n\nNegative prompt: no text, no captions, no watermark, no distorted anatomy, no warped geometry, no duplicate objects, no jittery motion, no flicker, no blur, no low-quality artifacts, no identity drift, no morphing, no fast cuts, no flashing lights, no sudden or loud motion, no scary expressions, no text or logos, no extra limbs, no audio, no logos, consistent character design",
+   "start_image": "https://app-uploads.krea.ai/public/c3efba66-8f94-4134-aeb4-092cdad09ae9-image.jpeg",
+   "aspect_ratio": "16:9",
+   "duration": 9,
+   "resolution": "1080p",
+   "reference_images": [
+    "https://app-uploads.krea.ai/public/5d2a03fc-8ca0-427b-a679-cef76bc86f59.png",
+    "https://app-uploads.krea.ai/public/e0793c43-382a-4fb8-b6d2-19a13aa286ba-image.jpeg"
+   ]
+  }
+ },
+ "11": {
+  "model": "bytedance/seedance-2-5",
+  "input": {
+   "prompt": "Baba and Amma smile and gesture smoothly toward the wide green world beyond the terrace while Ganesha and Kartikeya look out at it, eager and excited. Shiva, Parvati, Ganesha and Kartikeya, the parents gesture toward the wide green world and both boys look out eagerly, Mount Kailash terrace, bright golden morning, smooth pan to reveal the horizon, warm golden morning sunlight, stylized 3D character animation, friendly challenge, eager, family grouped in the centre-left with open green horizon on the right, subtle, restrained motion that stays physically coherent, animating motion only while preserving the source image's subject, identity, composition and product details.\n\nNegative prompt: no text, no captions, no watermark, no distorted anatomy, no warped geometry, no duplicate objects, no jittery motion, no flicker, no blur, no low-quality artifacts, no identity drift, no morphing, no fast cuts, no flashing lights, no sudden or loud motion, no scary expressions, no text or logos, no extra limbs, no audio, no logos, consistent character design",
+   "start_image": "https://app-uploads.krea.ai/public/2ac8e818-46e2-447a-acb8-079f0aa4fb3b-image.jpeg",
+   "aspect_ratio": "16:9",
+   "duration": 10,
+   "resolution": "1080p",
+   "reference_images": [
+    "https://app-uploads.krea.ai/public/5d2a03fc-8ca0-427b-a679-cef76bc86f59.png",
+    "https://app-uploads.krea.ai/public/e0793c43-382a-4fb8-b6d2-19a13aa286ba-image.jpeg",
+    "https://app-uploads.krea.ai/public/60d1235b-0efd-44fc-a24b-398e1a3df894-image.png",
+    "https://app-uploads.krea.ai/public/06102609-9147-48eb-9bac-17616109aac2.png"
+   ]
+  }
+ },
+ "12": {
+  "model": "bytedance/seedance-2-5",
+  "input": {
+   "prompt": "Kartikeya hops onto his big blue peacock; the peacock spreads its wings and lifts off smoothly into the air while Ganesha and Mooshak wave from the terrace. Kartikeya on his peacock, Ganesha and Mooshak waving, Kartikeya mounts the peacock and it lifts off smoothly, Mount Kailash terrace, bright golden morning, low angle, static, then a tilt-up, warm golden morning sunlight, stylized 3D character animation, excited, Kartikeya and the peacock centred, steady, physically coherent motion, animating motion only while preserving the source image's subject, identity, composition and product details.\n\nNegative prompt: no text, no captions, no watermark, no distorted anatomy, no warped geometry, no duplicate objects, no jittery motion, no flicker, no blur, no low-quality artifacts, no identity drift, no morphing, no fast cuts, no flashing lights, no sudden or loud motion, no scary expressions, no text or logos, no extra limbs, no audio, no logos, consistent character design",
+   "start_image": "https://app-uploads.krea.ai/public/1a16ac13-aacc-48f5-a89c-51e456725d75.png",
+   "aspect_ratio": "16:9",
+   "duration": 9,
+   "resolution": "1080p",
+   "reference_images": [
+    "https://app-uploads.krea.ai/public/06102609-9147-48eb-9bac-17616109aac2.png",
+    "https://app-uploads.krea.ai/public/cabff9a4-8f74-49d5-aa21-d84940ab0334-image.png",
+    "https://app-uploads.krea.ai/public/60d1235b-0efd-44fc-a24b-398e1a3df894-image.png",
+    "https://app-uploads.krea.ai/public/92ee786f-ea2f-45b0-991f-7b18c53ae4b8.png"
+   ]
+  }
+ },
+ "13": {
+  "model": "google/veo-3.1",
+  "input": {
+   "prompt": "Soft, rounded 3D character animation in a warm, bright, modern feature-film style. Soft global illumination, saturated but gentle colours, big clear expressive faces, simple uncluttered background, cosy and gentle mood.\n\nKartikeya glides smoothly on his big blue peacock over rolling green hills, a silver winding river and round forests; tiny animals wave from far below. Calm and joyful, never fast or risky. Kartikeya riding the peacock, Kartikeya and the peacock glide over hills, river and forests, the wide world seen from the sky, bright sunny day, smooth, slow aerial follow, soft warm sunlight, stylized 3D character animation, joyful, wind in the hair, calm, Kartikeya and the peacock centred with the landscape below, steady, physically coherent motion, animating motion only while preserving the source image's subject, identity, composition and product details.\n\nCharacters (exactly as described):\n- Kartikeya, Ganesha's brother, a cheerful boy with one face, in soft rounded 3D animation. Slightly taller than Ganesha, with warm golden-brown skin, big friendly dark eyes and a bright, kind smile. Black hair in a neat topknot with one small blue-green peacock feather. Bare chest, a peacock-teal silk dhoti with a gold border, gold earrings, a gold necklace and gold armbands. He carries a small golden leaf-shaped spear with a rounded, safe tip.\n- Kartikeya's peacock, a big friendly peacock in soft rounded 3D animation, large enough for a child to ride. Shiny peacock-blue and teal feathers, a small gold crest, kind round eyes, wide soft wings, and a long tail of feathers with gold-and-green eye patterns.\n\nLocation: The wide world seen from the sky in soft rounded 3D animation. Gentle green hills, a silver winding river, round forests, pastel mountains and fluffy white clouds, tiny waving animals (an elephant, a deer and a monkey) far below, a bright blue sky, warm sunlight, simple clean shapes.\n\nNegative prompt: no text, no captions, no watermark, no distorted anatomy, no warped geometry, no duplicate objects, no jittery motion, no flicker, no blur, no low-quality artifacts, no identity drift, no morphing, no fast cuts, no flashing lights, no sudden or loud motion, no scary expressions, no text or logos, no extra limbs, no audio, no logos, consistent character design",
+   "start_image": "https://app-uploads.krea.ai/public/e9b02098-a743-4d14-8e64-d632c3bc8fca.png",
+   "aspect_ratio": "16:9",
+   "duration": 8,
+   "resolution": "1080p",
+   "generate_audio": false
+  }
+ },
+ "14": {
+  "model": "bytedance/seedance-2-5",
+  "input": {
+   "prompt": "Side view: Kartikeya waves at the viewer and laughs happily while the peacock's wide wings flap steadily and smoothly high above white clouds. Kartikeya and the peacock, Kartikeya waves and laughs while the peacock's wings flap steadily, the wide world seen from the sky, bright sunny day, smooth side tracking, warm sunlight, stylized 3D character animation, laughing, joyful, Kartikeya and the peacock centred, steady, physically coherent motion, animating motion only while preserving the source image's subject, identity, composition and product details.\n\nNegative prompt: no text, no captions, no watermark, no distorted anatomy, no warped geometry, no duplicate objects, no jittery motion, no flicker, no blur, no low-quality artifacts, no identity drift, no morphing, no fast cuts, no flashing lights, no sudden or loud motion, no scary expressions, no text or logos, no extra limbs, no audio, no logos, consistent character design",
+   "start_image": "https://app-uploads.krea.ai/public/78c0adc0-d524-4a48-bf88-933f708de9eb.png",
+   "aspect_ratio": "16:9",
+   "duration": 10,
+   "resolution": "1080p",
+   "reference_images": [
+    "https://app-uploads.krea.ai/public/06102609-9147-48eb-9bac-17616109aac2.png",
+    "https://app-uploads.krea.ai/public/cabff9a4-8f74-49d5-aa21-d84940ab0334-image.png"
+   ]
+  }
+ },
+ "15": {
+  "model": "bytedance/seedance-2-5",
+  "input": {
+   "prompt": "Ganesha sits on a small stone and looks down at his little feet, thoughtful and a little unsure but not sad; Mooshak the baby mouse looks up at him. Ganesha and Mooshak, Ganesha looks down at his little feet while Mooshak looks up at him, Mount Kailash terrace, bright golden morning, smooth push-in, warm golden morning sunlight, stylized 3D character animation, thoughtful, a little unsure, not sad, Ganesha and Mooshak centred, subtle, restrained motion that stays physically coherent, animating motion only while preserving the source image's subject, identity, composition and product details.\n\nNegative prompt: no text, no captions, no watermark, no distorted anatomy, no warped geometry, no duplicate objects, no jittery motion, no flicker, no blur, no low-quality artifacts, no identity drift, no morphing, no fast cuts, no flashing lights, no sudden or loud motion, no scary expressions, no crying, no text or logos, no extra limbs, no audio, no logos, consistent character design",
+   "start_image": "https://app-uploads.krea.ai/public/44289971-a7ec-4e6f-98c9-65e59bf1836c.png",
+   "aspect_ratio": "16:9",
+   "duration": 9,
+   "resolution": "1080p",
+   "reference_images": [
+    "https://app-uploads.krea.ai/public/60d1235b-0efd-44fc-a24b-398e1a3df894-image.png",
+    "https://app-uploads.krea.ai/public/92ee786f-ea2f-45b0-991f-7b18c53ae4b8.png"
+   ]
+  }
+ },
+ "16": {
+  "model": "bytedance/seedance-2-5",
+  "input": {
+   "prompt": "Mooshak the baby mouse hops onto Ganesha's shoulder and pats his cheek with both tiny paws; Ganesha giggles happily. Mooshak and Ganesha, Mooshak hops onto Ganesha's shoulder and pats his cheek, Mount Kailash terrace, bright golden morning, static medium close-up, warm golden morning sunlight, stylized 3D character animation, comforting, funny, Ganesha's face and Mooshak centred, steady, physically coherent motion, animating motion only while preserving the source image's subject, identity, composition and product details.\n\nNegative prompt: no text, no captions, no watermark, no distorted anatomy, no warped geometry, no duplicate objects, no jittery motion, no flicker, no blur, no low-quality artifacts, no identity drift, no morphing, no fast cuts, no flashing lights, no sudden or loud motion, no scary expressions, no text or logos, no extra limbs, no audio, no logos, consistent character design",
+   "start_image": "https://app-uploads.krea.ai/public/d22a947b-79d1-444e-8cee-01d94709e78b.png",
+   "aspect_ratio": "16:9",
+   "duration": 9,
+   "resolution": "1080p",
+   "reference_images": [
+    "https://app-uploads.krea.ai/public/60d1235b-0efd-44fc-a24b-398e1a3df894-image.png",
+    "https://app-uploads.krea.ai/public/92ee786f-ea2f-45b0-991f-7b18c53ae4b8.png"
+   ]
+  }
+ },
+ "17": {
+  "model": "bytedance/seedance-2-5",
+  "input": {
+   "prompt": "Ganesha's eyes light up and a golden sparkle floats near his head; he stands up and turns to Mooshak, speaking happily, his mouth moving smoothly. Ganesha and Mooshak, Ganesha has an idea, stands and turns to Mooshak, Mount Kailash terrace, bright golden morning, smooth push-in to a medium shot, warm golden morning sunlight, stylized 3D character animation, delighted discovery, Ganesha centred, Mooshak at his side, steady, physically coherent motion, animating motion only while preserving the source image's subject, identity, composition and product details.\n\nNegative prompt: no text, no captions, no watermark, no distorted anatomy, no warped geometry, no duplicate objects, no jittery motion, no flicker, no blur, no low-quality artifacts, no identity drift, no morphing, no fast cuts, no flashing lights, no sudden or loud motion, no scary expressions, no text or logos, no extra limbs, no audio, no logos, consistent character design",
+   "start_image": "https://app-uploads.krea.ai/public/3f1b876c-1d90-4a83-b279-b4c3e3830325.png",
+   "aspect_ratio": "16:9",
+   "duration": 9,
+   "resolution": "1080p",
+   "reference_images": [
+    "https://app-uploads.krea.ai/public/60d1235b-0efd-44fc-a24b-398e1a3df894-image.png",
+    "https://app-uploads.krea.ai/public/92ee786f-ea2f-45b0-991f-7b18c53ae4b8.png"
+   ]
+  }
+ },
+ "18": {
+  "model": "bytedance/seedance-2-5",
+  "input": {
+   "prompt": "Ganesha looks lovingly at Amma and Baba sitting together on the terrace; a warm glow fills the scene. Ganesha, Parvati and Shiva, Ganesha gazes lovingly at his parents, Mount Kailash terrace, bright golden morning, smooth dolly over Ganesha's shoulder, warm golden morning sunlight with a smooth glow, stylized 3D character animation, tender, the parents centred in frame, Ganesha in the foreground, subtle, restrained motion that stays physically coherent, animating motion only while preserving the source image's subject, identity, composition and product details.\n\nNegative prompt: no text, no captions, no watermark, no distorted anatomy, no warped geometry, no duplicate objects, no jittery motion, no flicker, no blur, no low-quality artifacts, no identity drift, no morphing, no fast cuts, no flashing lights, no sudden or loud motion, no scary expressions, no text or logos, no extra limbs, no audio, no logos, consistent character design",
+   "start_image": "https://app-uploads.krea.ai/public/a71e5e60-354d-42d4-8b3e-ec440e803aab.png",
+   "aspect_ratio": "16:9",
+   "duration": 9,
+   "resolution": "1080p",
+   "reference_images": [
+    "https://app-uploads.krea.ai/public/60d1235b-0efd-44fc-a24b-398e1a3df894-image.png",
+    "https://app-uploads.krea.ai/public/e0793c43-382a-4fb8-b6d2-19a13aa286ba-image.jpeg",
+    "https://app-uploads.krea.ai/public/5d2a03fc-8ca0-427b-a679-cef76bc86f59.png"
+   ]
+  }
+ },
+ "19": {
+  "model": "bytedance/seedance-2-5",
+  "input": {
+   "prompt": "Ganesha begins to walk steadily in a circle around his seated parents, Mooshak the baby mouse scampering beside him, while marigold petals drift through the air. Ganesha and Mooshak walking around Shiva and Parvati, Ganesha starts walking steadily around his seated parents, Mount Kailash terrace, bright golden morning, medium-wide, smooth tracking that begins to circle, warm golden morning sunlight, stylized 3D character animation, calm and determined, the seated parents centred, Ganesha circling them, steady, physically coherent motion, animating motion only while preserving the source image's subject, identity, composition and product details.\n\nNegative prompt: no text, no captions, no watermark, no distorted anatomy, no warped geometry, no duplicate objects, no jittery motion, no flicker, no blur, no low-quality artifacts, no identity drift, no morphing, no fast cuts, no flashing lights, no sudden or loud motion, no scary expressions, no text or logos, no extra limbs, no audio, no logos, consistent character design",
+   "start_image": "https://app-uploads.krea.ai/public/3a7daa2f-ae98-4f67-b03b-5afb19ec6a09.png",
+   "aspect_ratio": "16:9",
+   "duration": 8,
+   "resolution": "1080p",
+   "reference_images": [
+    "https://app-uploads.krea.ai/public/60d1235b-0efd-44fc-a24b-398e1a3df894-image.png",
+    "https://app-uploads.krea.ai/public/92ee786f-ea2f-45b0-991f-7b18c53ae4b8.png",
+    "https://app-uploads.krea.ai/public/5d2a03fc-8ca0-427b-a679-cef76bc86f59.png",
+    "https://app-uploads.krea.ai/public/e0793c43-382a-4fb8-b6d2-19a13aa286ba-image.jpeg"
+   ]
+  }
+ },
+ "20": {
+  "model": "bytedance/seedance-2-5",
+  "input": {
+   "prompt": "Ganesha completes his first gentle circle around his seated parents while Amma and Baba smile and watch him lovingly. Ganesha circling Shiva and Parvati, Ganesha completes his first smooth circle around his parents, Mount Kailash terrace, bright golden morning, smooth 180-degree orbit, warm golden morning sunlight, stylized 3D character animation, joy, the seated parents centred, Ganesha circling them, steady, physically coherent motion, animating motion only while preserving the source image's subject, identity, composition and product details.\n\nNegative prompt: no text, no captions, no watermark, no distorted anatomy, no warped geometry, no duplicate objects, no jittery motion, no flicker, no blur, no low-quality artifacts, no identity drift, no morphing, no fast cuts, no flashing lights, no sudden or loud motion, no scary expressions, no text or logos, no extra limbs, no audio, no logos, consistent character design",
+   "start_image": "https://app-uploads.krea.ai/public/450e7b8b-7c94-46ee-bf33-d740f6277336.png",
+   "aspect_ratio": "16:9",
+   "duration": 8,
+   "resolution": "1080p",
+   "reference_images": [
+    "https://app-uploads.krea.ai/public/60d1235b-0efd-44fc-a24b-398e1a3df894-image.png",
+    "https://app-uploads.krea.ai/public/5d2a03fc-8ca0-427b-a679-cef76bc86f59.png",
+    "https://app-uploads.krea.ai/public/e0793c43-382a-4fb8-b6d2-19a13aa286ba-image.jpeg"
+   ]
+  }
+ },
+ "21": {
+  "model": "google/veo-3.1",
+  "input": {
+   "prompt": "Soft, rounded 3D character animation in a warm, bright, modern feature-film style. Soft global illumination, saturated but gentle colours, big clear expressive faces, simple uncluttered background, cosy and gentle mood.\n\nGanesha walks past the camera for his second and third gentle circles around his seated parents; marigold petals swirl softly around the family. Leave clear space in the frame for three big number overlays. Ganesha circling Shiva and Parvati, Ganesha completes his second and third slow circles, Mount Kailash terrace, bright golden morning, slow orbit continues, soft warm golden morning sunlight, stylized 3D character animation, proud, gentle, the seated parents centred, open space in the upper third of the frame, steady, physically coherent motion, animating motion only while preserving the source image's subject, identity, composition and product details.\n\nCharacters (exactly as described):\n- Ganesha, a cheerful child Ganesha in soft rounded 3D animation. Toddler proportions, about three heads tall, with a big round head and a round chubby belly. Soft saffron-orange skin with lighter peach on his belly. A friendly elephant head with big floppy ears that are pink inside, two large kind dark-brown eyes with tiny white highlights, and a gently curled trunk turning to his left. One long ivory tusk on his left and one short broken tusk with a rounded tip on his right. A small gold crown, a red tilak on his forehead, a gold necklace and gold armbands. A deep sunset-red silk dhoti with a wide gold border and a marigold-yellow sash. Exactly two arms: his right hand holds a golden-brown modak, his left hand is open and relaxed. Bare feet with tiny gold anklets.\n- Shiva, called Baba, a calm, gentle, loving father in soft rounded 3D animation. Soft silvery-blue skin, three thin white ash stripes and a small closed third eye on his forehead, kind eyes and a peaceful smile. Black hair in a tall topknot with a silver crescent moon. A tiny smiling cobra rests around his neck like a necklace, with a rudraksha bead necklace. A saffron-orange cloth around his waist. His golden trident, with a small drum tied to it, stands beside him. Strong, warm and loving.\n- Parvati, called Amma, a graceful, loving mother in soft rounded 3D animation. Warm golden-brown skin, big kind dark eyes, a warm smile and a small red bindi. Long black hair in a soft braid with white jasmine flowers and a small gold crown. A deep red silk saree with a wide gold border and a green shawl, gold bangles, earrings and necklace. Gentle, patient and glowing with love.\n\nLocation: Mount Kailash home in soft rounded 3D animation, bright golden morning. A wide cream-white stone terrace on a green meadow with small pink and white flowers, a small round-roofed cosy home with a saffron flag, marigold garlands on a simple arch, a big friendly banyan tree, soft pastel snowy peaks and fluffy white clouds behind, warm golden sunlight, simple clean background.\n\nNegative prompt: no text, no captions, no watermark, no distorted anatomy, no warped geometry, no duplicate objects, no jittery motion, no flicker, no blur, no low-quality artifacts, no identity drift, no morphing, no fast cuts, no flashing lights, no sudden or loud motion, no scary expressions, no text or logos, no extra limbs, no audio, no logos, consistent character design",
+   "start_image": "https://app-uploads.krea.ai/public/9da2006a-6ef7-4e55-ba4b-2dde22e21a56-image.jpeg",
+   "aspect_ratio": "16:9",
+   "duration": 8,
+   "resolution": "1080p",
+   "generate_audio": false
+  }
+ },
+ "22": {
+  "model": "bytedance/seedance-2-5",
+  "input": {
+   "prompt": "The big blue peacock lands on the terrace; Kartikeya sees Ganesha already home with their parents and raises both eyebrows with his mouth open in comic surprise. Kartikeya on the peacock, Ganesha and his parents, the peacock lands and Kartikeya looks surprised, Mount Kailash terrace, bright golden morning, wide to medium, smooth, warm golden morning sunlight, stylized 3D character animation, surprised, comic, never scary, Kartikeya and the peacock centred, the family on the right, steady, physically coherent motion, animating motion only while preserving the source image's subject, identity, composition and product details.\n\nNegative prompt: no text, no captions, no watermark, no distorted anatomy, no warped geometry, no duplicate objects, no jittery motion, no flicker, no blur, no low-quality artifacts, no identity drift, no morphing, no fast cuts, no flashing lights, no sudden or loud motion, no scary expressions, no text or logos, no extra limbs, no audio, no logos, consistent character design",
+   "start_image": "https://app-uploads.krea.ai/public/e7a514fd-fb77-4a2b-ab49-a362c7fad0dc.png",
+   "aspect_ratio": "16:9",
+   "duration": 9,
+   "resolution": "1080p",
+   "reference_images": [
+    "https://app-uploads.krea.ai/public/06102609-9147-48eb-9bac-17616109aac2.png",
+    "https://app-uploads.krea.ai/public/cabff9a4-8f74-49d5-aa21-d84940ab0334-image.png",
+    "https://app-uploads.krea.ai/public/60d1235b-0efd-44fc-a24b-398e1a3df894-image.png",
+    "https://app-uploads.krea.ai/public/5d2a03fc-8ca0-427b-a679-cef76bc86f59.png",
+    "https://app-uploads.krea.ai/public/e0793c43-382a-4fb8-b6d2-19a13aa286ba-image.jpeg"
+   ]
+  }
+ },
+ "23": {
+  "model": "bytedance/seedance-2-5",
+  "input": {
+   "prompt": "Kartikeya holds out his hands, curious; Ganesha smiles and holds both his parents' hands. Kartikeya and Ganesha with their parents, Kartikeya asks curiously while Ganesha smiles and holds his parents' hands, Mount Kailash terrace, bright golden morning, two-shot, smooth push-in, warm golden morning sunlight, stylized 3D character animation, curious, warm, Kartikeya and Ganesha centred, subtle, restrained motion that stays physically coherent, animating motion only while preserving the source image's subject, identity, composition and product details.\n\nNegative prompt: no text, no captions, no watermark, no distorted anatomy, no warped geometry, no duplicate objects, no jittery motion, no flicker, no blur, no low-quality artifacts, no identity drift, no morphing, no fast cuts, no flashing lights, no sudden or loud motion, no scary expressions, no text or logos, no extra limbs, no audio, no logos, consistent character design",
+   "start_image": "https://app-uploads.krea.ai/public/d0a31556-3d8a-4900-a4ad-8502a5da2c9e.png",
+   "aspect_ratio": "16:9",
+   "duration": 9,
+   "resolution": "1080p",
+   "reference_images": [
+    "https://app-uploads.krea.ai/public/06102609-9147-48eb-9bac-17616109aac2.png",
+    "https://app-uploads.krea.ai/public/60d1235b-0efd-44fc-a24b-398e1a3df894-image.png",
+    "https://app-uploads.krea.ai/public/5d2a03fc-8ca0-427b-a679-cef76bc86f59.png",
+    "https://app-uploads.krea.ai/public/e0793c43-382a-4fb8-b6d2-19a13aa286ba-image.jpeg"
+   ]
+  }
+ },
+ "24": {
+  "model": "bytedance/seedance-2-5",
+  "input": {
+   "prompt": "Ganesha stands between Amma and Baba, holding both their hands, and looks up at them sincerely, his mouth moving smoothly as he speaks. Ganesha with Parvati and Shiva, Ganesha looks up lovingly at his parents while holding their hands, Mount Kailash terrace, bright golden morning, smooth push-in to Ganesha's face, warm golden morning sunlight, stylized 3D character animation, sincere, tender, Ganesha centred between his parents, subtle, restrained motion that stays physically coherent, animating motion only while preserving the source image's subject, identity, composition and product details.\n\nNegative prompt: no text, no captions, no watermark, no distorted anatomy, no warped geometry, no duplicate objects, no jittery motion, no flicker, no blur, no low-quality artifacts, no identity drift, no morphing, no fast cuts, no flashing lights, no sudden or loud motion, no scary expressions, no text or logos, no extra limbs, no audio, no logos, consistent character design",
+   "start_image": "https://app-uploads.krea.ai/public/1bd99afa-f2ad-41b5-b26f-cf3b0243ae72.png",
+   "aspect_ratio": "16:9",
+   "duration": 10,
+   "resolution": "1080p",
+   "reference_images": [
+    "https://app-uploads.krea.ai/public/60d1235b-0efd-44fc-a24b-398e1a3df894-image.png",
+    "https://app-uploads.krea.ai/public/5d2a03fc-8ca0-427b-a679-cef76bc86f59.png",
+    "https://app-uploads.krea.ai/public/e0793c43-382a-4fb8-b6d2-19a13aa286ba-image.jpeg"
+   ]
+  }
+ },
+ "25": {
+  "model": "bytedance/seedance-2-5",
+  "input": {
+   "prompt": "Amma and Baba hug Ganesha lovingly; Baba lifts the glowing golden mango toward him. Parvati, Shiva and Ganesha with the golden mango, the parents hug Ganesha and Baba lifts the golden mango toward him, Mount Kailash terrace, bright golden morning, smooth push-in, warm golden morning sunlight with a smooth glow from the mango, stylized 3D character animation, proud, loving, the three of them centred, subtle, restrained motion that stays physically coherent, animating motion only while preserving the source image's subject, identity, composition and product details.\n\nNegative prompt: no text, no captions, no watermark, no distorted anatomy, no warped geometry, no duplicate objects, no jittery motion, no flicker, no blur, no low-quality artifacts, no identity drift, no morphing, no fast cuts, no flashing lights, no sudden or loud motion, no scary expressions, no text or logos, no extra limbs, no audio, no logos, consistent character design",
+   "start_image": "https://app-uploads.krea.ai/public/cf8256d4-cde0-4eac-a858-b4f8e4a5bb92.png",
+   "aspect_ratio": "16:9",
+   "duration": 10,
+   "resolution": "1080p",
+   "reference_images": [
+    "https://app-uploads.krea.ai/public/e0793c43-382a-4fb8-b6d2-19a13aa286ba-image.jpeg",
+    "https://app-uploads.krea.ai/public/5d2a03fc-8ca0-427b-a679-cef76bc86f59.png",
+    "https://app-uploads.krea.ai/public/60d1235b-0efd-44fc-a24b-398e1a3df894-image.png"
+   ]
+  }
+ },
+ "26": {
+  "model": "bytedance/seedance-2-5",
+  "input": {
+   "prompt": "Marigold petals shower smoothly down on the terrace; Mooshak the baby mouse does a little happy dance while the whole family cheers. Ganesha, Mooshak, Kartikeya, Shiva and Parvati celebrating, petals shower down while Mooshak dances, Mount Kailash terrace, bright golden morning, smooth crane-up, warm golden morning sunlight, stylized 3D character animation, joyful, the family grouped and centred, steady, physically coherent motion, animating motion only while preserving the source image's subject, identity, composition and product details.\n\nNegative prompt: no text, no captions, no watermark, no distorted anatomy, no warped geometry, no duplicate objects, no jittery motion, no flicker, no blur, no low-quality artifacts, no identity drift, no morphing, no fast cuts, no flashing lights, no sudden or loud motion, no scary expressions, no text or logos, no extra limbs, no audio, no logos, consistent character design",
+   "start_image": "https://app-uploads.krea.ai/public/1ee00fc4-d89c-40dd-aa1b-da042d7927ca-image.jpeg",
+   "aspect_ratio": "16:9",
+   "duration": 8,
+   "resolution": "1080p",
+   "reference_images": [
+    "https://app-uploads.krea.ai/public/60d1235b-0efd-44fc-a24b-398e1a3df894-image.png",
+    "https://app-uploads.krea.ai/public/92ee786f-ea2f-45b0-991f-7b18c53ae4b8.png",
+    "https://app-uploads.krea.ai/public/06102609-9147-48eb-9bac-17616109aac2.png",
+    "https://app-uploads.krea.ai/public/5d2a03fc-8ca0-427b-a679-cef76bc86f59.png",
+    "https://app-uploads.krea.ai/public/e0793c43-382a-4fb8-b6d2-19a13aa286ba-image.jpeg"
+   ]
+  }
+ },
+ "27": {
+  "model": "bytedance/seedance-2-5",
+  "input": {
+   "prompt": "Ganesha smoothly breaks the golden mango in two and hands the bigger half to his brother Kartikeya, who smiles. Ganesha and Kartikeya with the golden mango, Ganesha breaks the mango and hands the bigger half to Kartikeya, Mount Kailash terrace, bright golden morning, close two-shot, smooth push-in, warm golden morning sunlight with a smooth glow from the mango, stylized 3D character animation, kind, generous, the two brothers and the mango centred, subtle, restrained motion that stays physically coherent, animating motion only while preserving the source image's subject, identity, composition and product details.\n\nNegative prompt: no text, no captions, no watermark, no distorted anatomy, no warped geometry, no duplicate objects, no jittery motion, no flicker, no blur, no low-quality artifacts, no identity drift, no morphing, no fast cuts, no flashing lights, no sudden or loud motion, no scary expressions, no text or logos, no extra limbs, no audio, no logos, consistent character design",
+   "start_image": "https://app-uploads.krea.ai/public/432eb1db-1605-4937-8bb4-22e1d12bd64b.png",
+   "aspect_ratio": "16:9",
+   "duration": 10,
+   "resolution": "1080p",
+   "reference_images": [
+    "https://app-uploads.krea.ai/public/60d1235b-0efd-44fc-a24b-398e1a3df894-image.png",
+    "https://app-uploads.krea.ai/public/06102609-9147-48eb-9bac-17616109aac2.png"
+   ]
+  }
+ },
+ "28": {
+  "model": "bytedance/seedance-2-5",
+  "input": {
+   "prompt": "Kartikeya laughs and hugs Ganesha warmly while Mooshak the baby mouse nibbles a crumb of mango, delighted. Kartikeya, Ganesha and Mooshak, Kartikeya hugs Ganesha while Mooshak nibbles a crumb, Mount Kailash terrace, bright golden morning, static medium-wide, warm golden morning sunlight, stylized 3D character animation, happy, resolved, the three centred, subtle, restrained motion that stays physically coherent, animating motion only while preserving the source image's subject, identity, composition and product details.\n\nNegative prompt: no text, no captions, no watermark, no distorted anatomy, no warped geometry, no duplicate objects, no jittery motion, no flicker, no blur, no low-quality artifacts, no identity drift, no morphing, no fast cuts, no flashing lights, no sudden or loud motion, no scary expressions, no text or logos, no extra limbs, no audio, no logos, consistent character design",
+   "start_image": "https://app-uploads.krea.ai/public/3c2fc140-b287-4c2b-8457-7baa1e7c4320.png",
+   "aspect_ratio": "16:9",
+   "duration": 9,
+   "resolution": "1080p",
+   "reference_images": [
+    "https://app-uploads.krea.ai/public/06102609-9147-48eb-9bac-17616109aac2.png",
+    "https://app-uploads.krea.ai/public/60d1235b-0efd-44fc-a24b-398e1a3df894-image.png",
+    "https://app-uploads.krea.ai/public/92ee786f-ea2f-45b0-991f-7b18c53ae4b8.png"
+   ]
+  }
+ },
+ "29": {
+  "model": "bytedance/seedance-2-5",
+  "input": {
+   "prompt": "A golden-pink evening on the terrace: rows of small clay lamps glow warmly, the whole family sits close together, and the peacock dozes peacefully beside them. The whole family sitting together with Mooshak and the peacock, the family sits together peacefully while the lamps glow, Mount Kailash terrace, golden evening, smooth crane-back, warm pink-gold evening light with glowing clay lamps, stylized 3D character animation, peaceful, warm, the family grouped and centred, subtle, restrained motion that stays physically coherent, animating motion only while preserving the source image's subject, identity, composition and product details.\n\nNegative prompt: no text, no captions, no watermark, no distorted anatomy, no warped geometry, no duplicate objects, no jittery motion, no flicker, no blur, no low-quality artifacts, no identity drift, no morphing, no fast cuts, no flashing lights, no sudden or loud motion, no scary expressions, no text or logos, no extra limbs, no audio, no logos, consistent character design",
+   "start_image": "https://app-uploads.krea.ai/public/0f8a3dbb-7e06-47bf-8bc4-cd39c95b3387.png",
+   "aspect_ratio": "16:9",
+   "duration": 10,
+   "resolution": "1080p",
+   "reference_images": [
+    "https://app-uploads.krea.ai/public/60d1235b-0efd-44fc-a24b-398e1a3df894-image.png",
+    "https://app-uploads.krea.ai/public/92ee786f-ea2f-45b0-991f-7b18c53ae4b8.png",
+    "https://app-uploads.krea.ai/public/06102609-9147-48eb-9bac-17616109aac2.png",
+    "https://app-uploads.krea.ai/public/5d2a03fc-8ca0-427b-a679-cef76bc86f59.png",
+    "https://app-uploads.krea.ai/public/e0793c43-382a-4fb8-b6d2-19a13aa286ba-image.jpeg",
+    "https://app-uploads.krea.ai/public/cabff9a4-8f74-49d5-aa21-d84940ab0334-image.png"
+   ]
+  }
+ },
+ "30": {
+  "model": "bytedance/seedance-2-5",
+  "input": {
+   "prompt": "Ganesha smiles warmly at the viewer and gives one smooth, wise nod, with a warm glow around him. Ganesha smiles at the viewer and gives one smooth nod, Mount Kailash terrace, golden evening, smooth push-in, warm pink-gold evening light with glowing clay lamps behind him, stylized 3D character animation, warm, wise, Ganesha centred, big and clear, with space below for a lesson card, subtle, restrained motion that stays physically coherent, animating motion only while preserving the source image's subject, identity, composition and product details.\n\nNegative prompt: no text, no captions, no watermark, no distorted anatomy, no warped geometry, no duplicate objects, no jittery motion, no flicker, no blur, no low-quality artifacts, no identity drift, no morphing, no fast cuts, no flashing lights, no sudden or loud motion, no scary expressions, no text or logos, no extra limbs, no audio, no logos, consistent character design",
+   "start_image": "https://app-uploads.krea.ai/public/e634c73a-e8ce-4c49-9aa5-1699be3d3eca.png",
+   "aspect_ratio": "16:9",
+   "duration": 8,
+   "resolution": "1080p",
+   "reference_images": [
+    "https://app-uploads.krea.ai/public/60d1235b-0efd-44fc-a24b-398e1a3df894-image.png"
+   ]
+  }
+ },
+ "31": {
+  "model": "bytedance/seedance-2-5",
+  "input": {
+   "prompt": "The whole family sways smoothly together on the terrace at golden evening while Ganesha and Mooshak clap happily and marigold petals float through the air. Ganesha, Mooshak, Kartikeya, Shiva and Parvati, the family sways together while Ganesha and Mooshak clap, Mount Kailash terrace, golden evening, smooth sway, smooth pan, warm pink-gold evening light with glowing clay lamps, stylized 3D character animation, joyful, warm, the family grouped and centred, steady, physically coherent motion, animating motion only while preserving the source image's subject, identity, composition and product details.\n\nNegative prompt: no text, no captions, no watermark, no distorted anatomy, no warped geometry, no duplicate objects, no jittery motion, no flicker, no blur, no low-quality artifacts, no identity drift, no morphing, no fast cuts, no flashing lights, no sudden or loud motion, no scary expressions, no text or logos, no extra limbs, no audio, no logos, consistent character design",
+   "start_image": "https://app-uploads.krea.ai/public/2151bbb3-73e3-42b4-b619-6b6031661b51.png",
+   "aspect_ratio": "16:9",
+   "duration": 11,
+   "resolution": "1080p",
+   "reference_images": [
+    "https://app-uploads.krea.ai/public/60d1235b-0efd-44fc-a24b-398e1a3df894-image.png",
+    "https://app-uploads.krea.ai/public/92ee786f-ea2f-45b0-991f-7b18c53ae4b8.png",
+    "https://app-uploads.krea.ai/public/06102609-9147-48eb-9bac-17616109aac2.png",
+    "https://app-uploads.krea.ai/public/5d2a03fc-8ca0-427b-a679-cef76bc86f59.png",
+    "https://app-uploads.krea.ai/public/e0793c43-382a-4fb8-b6d2-19a13aa286ba-image.jpeg"
+   ]
+  }
+ },
+ "32": {
+  "model": "google/veo-3.1",
+  "input": {
+   "prompt": "Soft, rounded 3D character animation in a warm, bright, modern feature-film style. Soft global illumination, saturated but gentle colours, big clear expressive faces, simple uncluttered background, cosy and gentle mood.\n\nEveryone on the terrace raises their hands together in joy while Mooshak the baby mouse twirls happily, at golden evening. Ganesha, Mooshak, Kartikeya, Shiva and Parvati, everyone raises their hands together while Mooshak twirls, Mount Kailash terrace, golden evening, slow crane-up, warm pink-gold evening light with glowing clay lamps, stylized 3D character animation, celebration, joyful, the family grouped and centred, steady, physically coherent motion, animating motion only while preserving the source image's subject, identity, composition and product details.\n\nCharacters (exactly as described):\n- Ganesha, a cheerful child Ganesha in soft rounded 3D animation. Toddler proportions, about three heads tall, with a big round head and a round chubby belly. Soft saffron-orange skin with lighter peach on his belly. A friendly elephant head with big floppy ears that are pink inside, two large kind dark-brown eyes with tiny white highlights, and a gently curled trunk turning to his left. One long ivory tusk on his left and one short broken tusk with a rounded tip on his right. A small gold crown, a red tilak on his forehead, a gold necklace and gold armbands. A deep sunset-red silk dhoti with a wide gold border and a marigold-yellow sash. Exactly two arms: his right hand holds a golden-brown modak, his left hand is open and relaxed. Bare feet with tiny gold anklets.\n- Mooshak, a small chubby baby mouse in soft rounded 3D animation, about knee-high to Ganesha. Soft warm grey-brown fur with a cream belly, big round pink ears, huge shiny black eyes with white highlights, a tiny pink nose, a few small whiskers, tiny pink paws and a long, thin, curled pink tail. He wears a small red-and-gold scarf. Cheeky, bouncy and always smiling.\n- Kartikeya, Ganesha's brother, a cheerful boy with one face, in soft rounded 3D animation. Slightly taller than Ganesha, with warm golden-brown skin, big friendly dark eyes and a bright, kind smile. Black hair in a neat topknot with one small blue-green peacock feather. Bare chest, a peacock-teal silk dhoti with a gold border, gold earrings, a gold necklace and gold armbands. He carries a small golden leaf-shaped spear with a rounded, safe tip.\n- Shiva, called Baba, a calm, gentle, loving father in soft rounded 3D animation. Soft silvery-blue skin, three thin white ash stripes and a small closed third eye on his forehead, kind eyes and a peaceful smile. Black hair in a tall topknot with a silver crescent moon. A tiny smiling cobra rests around his neck like a necklace, with a rudraksha bead necklace. A saffron-orange cloth around his waist. His golden trident, with a small drum tied to it, stands beside him. Strong, warm and loving.\n- Parvati, called Amma, a graceful, loving mother in soft rounded 3D animation. Warm golden-brown skin, big kind dark eyes, a warm smile and a small red bindi. Long black hair in a soft braid with white jasmine flowers and a small gold crown. A deep red silk saree with a wide gold border and a green shawl, gold bangles, earrings and necklace. Gentle, patient and glowing with love.\n\nLocation: The same Mount Kailash terrace at golden evening in soft rounded 3D animation. A pink-gold sky, rows of small glowing clay lamps along the terrace, marigold garlands, a few soft fireflies, a big friendly banyan tree, warm gentle light, simple clean background.\n\nNegative prompt: no text, no captions, no watermark, no distorted anatomy, no warped geometry, no duplicate objects, no jittery motion, no flicker, no blur, no low-quality artifacts, no identity drift, no morphing, no fast cuts, no flashing lights, no sudden or loud motion, no scary expressions, no text or logos, no extra limbs, no audio, no logos, consistent character design",
+   "start_image": "https://app-uploads.krea.ai/public/544da437-9543-4b41-81fb-0184cf0cb5c3.png",
+   "aspect_ratio": "16:9",
+   "duration": 8,
+   "resolution": "1080p",
+   "generate_audio": false
+  }
+ },
+ "33": {
+  "model": "bytedance/seedance-2-5",
+  "input": {
+   "prompt": "A calm golden-hour terrace with floating marigold petals; Ganesha and Mooshak wave goodbye from the lower left corner of the frame, with the centre and right of the frame left clear. Ganesha and Mooshak waving goodbye, Ganesha and Mooshak wave goodbye while petals drift, Mount Kailash terrace, golden evening, static with a very smooth push-in, warm pink-gold evening light with glowing clay lamps, stylized 3D character animation, warm goodbye, Ganesha and Mooshak small at the lower left; large clear empty space across the centre and right, subtle, restrained motion that stays physically coherent, animating motion only while preserving the source image's subject, identity, composition and product details.\n\nNegative prompt: no text, no captions, no watermark, no distorted anatomy, no warped geometry, no duplicate objects, no jittery motion, no flicker, no blur, no low-quality artifacts, no identity drift, no morphing, no fast cuts, no flashing lights, no sudden or loud motion, no scary expressions, no text or logos, no extra limbs, no audio, no logos, consistent character design",
+   "start_image": "https://app-uploads.krea.ai/public/bcc5e9d3-529f-42f9-a8f4-976e85a4ea65.png",
+   "aspect_ratio": "16:9",
+   "duration": 10,
+   "resolution": "1080p",
+   "reference_images": [
+    "https://app-uploads.krea.ai/public/60d1235b-0efd-44fc-a24b-398e1a3df894-image.png",
+    "https://app-uploads.krea.ai/public/92ee786f-ea2f-45b0-991f-7b18c53ae4b8.png"
+   ]
+  }
+ }
+}

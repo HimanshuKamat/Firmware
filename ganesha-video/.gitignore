@@ -1,0 +1,13 @@
+08_edit/work/
+07_graphics/projects/*/renders/
+07_graphics/renders/
+09_final/*.wav
+06_audio/final_mix_prenorm.wav
+06_audio/sfx_track_v2.wav
+10_thumbnail/work/
+10_thumbnail/*/snaps/
+07_graphics/projects/_smoke/
+**/node_modules/
+09_final/Ganesha_Big_Race_1080p.mp4
+07_graphics/previews/.prev_tmp/
+07_graphics/previews/.work/

@@ -1,0 +1,297 @@
+{
+ "timebase": "no-intro seconds (shot 02 = 0)",
+ "ambience_lufs_src": {
+  "AMB_MORNING": -42.2,
+  "AMB_SKY": -47.8,
+  "AMB_EVENING": -24.2
+ },
+ "cues": [
+  {
+   "file": "AMB_MORNING",
+   "t": 0,
+   "gain_db": 5.2,
+   "dur": 88.5,
+   "note": "shots 02-12"
+  },
+  {
+   "file": "S02_sparkle_chime",
+   "t": 0.15,
+   "gain_db": -8.0,
+   "dur": 2.0,
+   "note": ""
+  },
+  {
+   "file": "SQUEAK_A",
+   "t": 4.29,
+   "gain_db": -15.5,
+   "dur": 1.0,
+   "note": "Mooshak squeak under L02/L16/L30/L63"
+  },
+  {
+   "file": "S01_temple_bell",
+   "t": 18.14,
+   "gain_db": 14.9,
+   "dur": 1.0,
+   "note": ""
+  },
+  {
+   "file": "S05_peacock_call",
+   "t": 41.6,
+   "gain_db": -15.8,
+   "dur": 1.0,
+   "note": ""
+  },
+  {
+   "file": "S03_count_pop",
+   "t": 57.47,
+   "gain_db": -14.7,
+   "dur": 0.6,
+   "note": "count 1 (pitch step)"
+  },
+  {
+   "file": "S03_count_pop",
+   "t": 58.8,
+   "gain_db": -14.7,
+   "dur": 0.53,
+   "note": "count 2 (pitch step)"
+  },
+  {
+   "file": "S03_count_pop",
+   "t": 60.03,
+   "gain_db": -14.7,
+   "dur": 0.48,
+   "note": "count 3 (pitch step)"
+  },
+  {
+   "file": "SQUEAK_B",
+   "t": 60.97,
+   "gain_db": -16.8,
+   "dur": 1.2,
+   "note": "Mooshak squeak under L02/L16/L30/L63"
+  },
+  {
+   "file": "MANGO_SHIMMER",
+   "t": 66.2,
+   "gain_db": -11.3,
+   "dur": 3.0,
+   "note": "golden mango (shot 10)"
+  },
+  {
+   "file": "AMB_SKY",
+   "t": 84.0,
+   "gain_db": 12.8,
+   "dur": 23.0,
+   "note": "flight, shots 12-14"
+  },
+  {
+   "file": "HOP_FEATHER",
+   "t": 84.35,
+   "gain_db": -9.9,
+   "dur": 1.48,
+   "note": "Kartikeya hops on the peacock (L22)"
+  },
+  {
+   "file": "S05_peacock_call",
+   "t": 84.8,
+   "gain_db": -15.8,
+   "dur": 1.0,
+   "note": ""
+  },
+  {
+   "file": "S06_whoosh",
+   "t": 86.2,
+   "gain_db": -23.1,
+   "dur": 2.0,
+   "note": ""
+  },
+  {
+   "file": "WING_FLAPS(0.5x)",
+   "t": 88.8,
+   "gain_db": -20.0,
+   "dur": 2.0,
+   "note": "peacock wing beats"
+  },
+  {
+   "file": "WING_FLAPS(0.5x)",
+   "t": 96.6,
+   "gain_db": -20.0,
+   "dur": 2.0,
+   "note": "peacock wing beats"
+  },
+  {
+   "file": "WING_FLAPS(0.5x)",
+   "t": 100.2,
+   "gain_db": -20.0,
+   "dur": 2.0,
+   "note": "peacock wing beats"
+  },
+  {
+   "file": "AMB_MORNING",
+   "t": 102.5,
+   "gain_db": 5.2,
+   "dur": 118.0,
+   "note": "shots 15-28"
+  },
+  {
+   "file": "SQUEAK_C",
+   "t": 115.69,
+   "gain_db": -17.1,
+   "dur": 1.2,
+   "note": "Mooshak squeak under L02/L16/L30/L63"
+  },
+  {
+   "file": "GIGGLE",
+   "t": 117.15,
+   "gain_db": -22.2,
+   "dur": 1.48,
+   "note": "Ganesha giggles (shot 16)"
+  },
+  {
+   "file": "S02_sparkle_chime",
+   "t": 124.9,
+   "gain_db": -8.0,
+   "dur": 2.0,
+   "note": ""
+  },
+  {
+   "file": "FOOTSTEPS",
+   "t": 139.2,
+   "gain_db": -0.3,
+   "dur": 21.6,
+   "note": "Ganesha walks round his parents (shots 19-21)"
+  },
+  {
+   "file": "MOUSE_SCAMPER",
+   "t": 140.0,
+   "gain_db": 3.3,
+   "dur": 3.0,
+   "note": "Mooshak scampers beside Ganesha, shot 19"
+  },
+  {
+   "file": "S01_temple_bell",
+   "t": 142.58,
+   "gain_db": 14.9,
+   "dur": 1.0,
+   "note": ""
+  },
+  {
+   "file": "S03_count_pop",
+   "t": 153.5,
+   "gain_db": -14.7,
+   "dur": 0.6,
+   "note": "count 1 (pitch step)"
+  },
+  {
+   "file": "S03_count_pop",
+   "t": 154.78,
+   "gain_db": -14.7,
+   "dur": 0.53,
+   "note": "count 2 (pitch step)"
+  },
+  {
+   "file": "S03_count_pop",
+   "t": 156.06,
+   "gain_db": -14.7,
+   "dur": 0.48,
+   "note": "count 3 (pitch step)"
+  },
+  {
+   "file": "S05_peacock_call",
+   "t": 161.8,
+   "gain_db": -15.8,
+   "dur": 1.0,
+   "note": ""
+  },
+  {
+   "file": "S08_soft_landing",
+   "t": 164.6,
+   "gain_db": 13.7,
+   "dur": 1.0,
+   "note": ""
+  },
+  {
+   "file": "MANGO_SHIMMER",
+   "t": 191.0,
+   "gain_db": -11.3,
+   "dur": 3.0,
+   "note": "Baba gives the mango (L47)"
+  },
+  {
+   "file": "S09_petal_sparkle",
+   "t": 195.2,
+   "gain_db": -9.0,
+   "dur": 1.0,
+   "note": ""
+  },
+  {
+   "file": "CHEER",
+   "t": 195.3,
+   "gain_db": -20.6,
+   "dur": 3.0,
+   "note": "Hooray for Ganesha (L48)"
+  },
+  {
+   "file": "CLAPS",
+   "t": 195.6,
+   "gain_db": -26.3,
+   "dur": 8.0,
+   "note": "soft applause under the celebration, shot 26"
+  },
+  {
+   "file": "MOUSE_SCAMPER",
+   "t": 197.9,
+   "gain_db": 1.3,
+   "dur": 3.0,
+   "note": "Mooshak dances, shot 26"
+  },
+  {
+   "file": "S01_temple_bell",
+   "t": 199.9,
+   "gain_db": 14.9,
+   "dur": 1.0,
+   "note": ""
+  },
+  {
+   "file": "FRUIT_SPLIT",
+   "t": 204.5,
+   "gain_db": -20.6,
+   "dur": 1.48,
+   "note": "mango is broken (shot 27)"
+  },
+  {
+   "file": "AMB_EVENING",
+   "t": 216.0,
+   "gain_db": -12.8,
+   "dur": 58.5,
+   "note": "shots 29-33, fades with the end screen"
+  },
+  {
+   "file": "S10_nibbling",
+   "t": 216.36,
+   "gain_db": -12.2,
+   "dur": 2.0,
+   "note": ""
+  },
+  {
+   "file": "S01_temple_bell",
+   "t": 230.41,
+   "gain_db": 12.9,
+   "dur": 1.0,
+   "note": ""
+  },
+  {
+   "file": "CLAPS",
+   "t": 241.2,
+   "gain_db": -26.3,
+   "dur": 8.0,
+   "note": "soft applause under the song, shot 31"
+  },
+  {
+   "file": "S12",
+   "t": 256.78,
+   "gain_db": -16.1,
+   "dur": 1.0,
+   "note": "Mooshak squeak under L02/L16/L30/L63"
+  }
+ ]
+}

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<title>Shorts frame</title>
+<script src="vendor/gsap.min.js"></script>
+<link rel="stylesheet" href="kit.css" />
+<script src="kit.js"></script>
+<style>
+  #root { position: relative; width: 100%; height: 100%; overflow: hidden; background: transparent; }
+  /* video window is x 0-1080, y 656-1264 (608 tall) and stays transparent */
+  .scrim-top { position: absolute; left: 0; top: 0; width: 1080px; height: 700px; background: linear-gradient(180deg, rgba(214,59,47,.78) 0%, rgba(242,140,40,.62) 62%, rgba(246,178,26,0) 100%); }
+  .scrim-bot { position: absolute; left: 0; top: 1220px; width: 1080px; height: 700px; background: linear-gradient(0deg, rgba(122,31,22,.85) 0%, rgba(214,59,47,.62) 60%, rgba(214,59,47,0) 100%); }
+  .t1 { position: absolute; left: 0; width: 1080px; top: 70px; text-align: center; font-size: 150px; transform: rotate(-3deg); }
+  .t2 { position: absolute; left: 0; width: 1080px; top: 214px; text-align: center; font-size: 190px; transform: rotate(-3deg); }
+  .sub { position: absolute; left: 190px; width: 700px; top: 452px; height: 100px; display: flex; align-items: center; justify-content: center; font-size: 52px; border-radius: 50px; border-width: 6px; }
+  .strip { position: absolute; left: 0; width: 1080px; height: 18px; background: var(--cream); box-shadow: 0 0 0 6px rgba(122,31,22,.8); }
+  .gar { position: absolute; left: 0; width: 1080px; height: 110px; }
+  #mooshak { position: absolute; left: 6px; bottom: -10px; height: 330px; filter: drop-shadow(0 12px 14px rgba(60,10,5,.5)); transform: rotate(-4deg); }
+  .tag { position: absolute; right: 36px; bottom: 86px; width: 680px; height: 150px; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 56px; border-radius: 80px; border-width: 7px; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="shorts-frame" data-start="0" data-width="1080" data-height="1920" data-duration="1">
+  <div class="scrim-top"></div>
+  <div class="scrim-bot"></div>
+  <div class="t1 display">Ganesha's</div>
+  <div class="t2 display gold">Big Race!</div>
+  <div class="sub panel"><span class="display" style="font-size:52px;-webkit-text-stroke:0;text-shadow:none;color:var(--cream)">A Ganesha Story for Kids</span></div>
+  <div class="strip" style="top:648px"></div><div class="strip" style="top:1264px"></div>
+  <div class="gar" id="gar1" style="top:566px"></div>
+  <div class="gar" id="gar2" style="top:1250px"></div>
+  <img id="mooshak" src="img/mooshak_front_trim.png" />
+  <div class="tag panel"><span class="display" style="font-size:54px;-webkit-text-stroke:0.1em #7A1F16">Full story on the channel!</span></div>
+</div>
+<script>
+  for (const id of ['gar1', 'gar2']) {
+    let g = '';
+    for (let i = 0; i < 11; i++) g += `<div style="position:absolute;left:${i * 100 - 20}px;top:${(i % 2) * 12}px">${Kit.svg.marigold(96)}</div>`;
+    document.getElementById(id).innerHTML = g;
+  }
+  const tl = gsap.timeline({ paused: true });
+  window.__timelines['shorts-frame'] = tl;
+</script>
+</body>
+</html>

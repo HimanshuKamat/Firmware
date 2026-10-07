@@ -1,0 +1,96 @@
+{
+ "note": "shot -> list of Krea job ids for the full clips (latest last). Shot 02 = tests/shot02_veo_1080.mp4 (job 9e53899a-6512-4473-931b-a42c9e5f24d3), shot 04 = tests/shot04_seedance_1080.mp4 (job 16449df1-3f57-4247-9012-bdf0ad44a90b).",
+ "13": [
+  "aafea416-3c53-4251-8fac-9ff873c90e6b"
+ ],
+ "21": [
+  "f1234688-856d-4829-92b2-c2a150297665"
+ ],
+ "32": [
+  "43924bf8-31ff-4d95-a3c5-3620d7b51b42"
+ ],
+ "3": [
+  "501bd23d-5682-4476-b884-fa8fd214acfe"
+ ],
+ "5": [
+  "2bd8872f-bd2b-467f-ab95-9b36e7ef9cf8"
+ ],
+ "6": [
+  "5f3d4847-bfd7-42ce-bfb8-378ec2586ba4"
+ ],
+ "7": [
+  "8dfce757-35de-4a27-8de7-aa70c5d11d70"
+ ],
+ "8": [
+  "54b6fd95-b336-4795-8ec1-871d2b636516"
+ ],
+ "9": [
+  "89b9fb1b-9a8b-4856-96e7-9a1c16bca631"
+ ],
+ "10": [
+  "d8372a4f-bb03-454c-9545-c4e3a431a591"
+ ],
+ "11": [
+  "54f2da4d-31b9-464f-957d-7a7ab2da1e56"
+ ],
+ "12": [
+  "f960fef2-958c-483b-93bd-9bc1a2d8d50f"
+ ],
+ "14": [
+  "9eafe136-bc2d-40af-8d4c-e60f1a2186df"
+ ],
+ "15": [
+  "a8097839-b027-4704-8310-d399c0400532"
+ ],
+ "16": [
+  "1b41c3ef-70ed-49db-912b-944da67d9138"
+ ],
+ "19": [
+  "668eb3a7-8629-4b39-aabe-74cbc8a159dc"
+ ],
+ "20": [
+  "43984ffa-bebe-4ed7-b131-a8c9f8c967e9"
+ ],
+ "17": [
+  "c192861c-ec32-4e3f-87b2-491aa344478e"
+ ],
+ "22": [
+  "789359d3-a901-4e27-9f55-e7c1b5c36b6d"
+ ],
+ "24": [
+  "071f0a30-15b9-40f2-9bd3-40e70076f300"
+ ],
+ "25": [
+  "af083fdf-9f32-450e-b071-4f17a981a2dc"
+ ],
+ "26": [
+  "b4d95e69-10d7-441b-b2d5-49d22aca994d"
+ ],
+ "18": [
+  "a3d79318-3bcd-4870-8665-35e8b91fb354"
+ ],
+ "23": [
+  "acbc5fee-f7c0-4b02-a465-38ca6ddba061",
+  "FAILED content_policy (Veo moderation), not charged"
+ ],
+ "27": [
+  "a5728e69-a894-4c3a-8471-e1daec75499b",
+  "FAILED content_policy (Veo moderation), not charged"
+ ],
+ "28": [
+  "5885601a-1c5d-40b4-8b2f-7af3d70de662",
+  "FAILED content_policy (Veo moderation), not charged"
+ ],
+ "29": [
+  "29d932ad-718f-4320-9f0a-a80b75c78ba1"
+ ],
+ "30": [
+  "c227c8ac-1f80-4670-878c-e51c76d582a8"
+ ],
+ "31": [
+  "ace08588-8700-4014-89a5-235ecb4201f3"
+ ],
+ "33": [
+  "5b505972-67bd-4885-9e28-fc61d925b008"
+ ]
+}

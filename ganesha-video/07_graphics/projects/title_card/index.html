@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1920, height=1080" />
+<title>Ganesha's Big Race Title Card</title>
+<script src="vendor/gsap.min.js"></script>
+<link rel="stylesheet" href="kit.css" />
+<script src="kit.js"></script>
+<style>
+  @font-face { font-family: "Fredoka"; src: url("fonts/Fredoka.ttf") format("truetype"); font-weight: 300 700; }
+  #root { position: relative; width: 100%; height: 100%; overflow: hidden; background: transparent; }
+
+  /* Exit layer (opacity + lift) > float layer (slow bob) > the pieces that pop in. One property per element. */
+  #fader { position: absolute; inset: 0; opacity: 1; }
+  #lock  { position: absolute; left: 0; right: 0; top: 100px; display: flex; flex-direction: column; align-items: center; }
+
+  /* ---- Title: one line, three words that pop in one after another ---- */
+  #title { display: flex; align-items: baseline; justify-content: center; gap: 0.32em; font-size: 144px; white-space: nowrap; }
+  #title .w { display: block; opacity: 0; will-change: transform; }
+
+  /* ---- Subtitle ribbon (red body, gold rim, swallow-tail ends) ---- */
+  #ribbon { position: relative; margin-top: 17px; opacity: 0; }
+  #ribbon .body {
+    position: relative; z-index: 2;
+    padding: 0 64px 3px;
+    border: 7px solid var(--gold);
+    border-radius: 34px;
+    background: linear-gradient(180deg, #DF4636 0%, #C73327 55%, #A8261C 100%);
+    box-shadow: inset 0 4px 0 rgba(255, 255, 255, 0.22), 0 8px 0 rgba(110, 22, 15, 0.55), 0 12px 20px var(--shadow);
+    font-family: "Fredoka", sans-serif; font-weight: 600; font-size: 64px; line-height: 1.1; letter-spacing: 0.012em;
+    color: var(--gold-light); white-space: nowrap;
+    text-shadow: 0 3px 0 rgba(110, 22, 15, 0.7);
+  }
+  #ribbon .body span { display: block; opacity: 0; }
+  #ribbon .tail { position: absolute; z-index: 1; top: 2px; width: 196px; height: 86px; }
+  #ribbon .tail.l { left: -150px; }
+  #ribbon .tail.r { right: -150px; }
+  #ribbon .tail svg { display: block; width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 8px 10px rgba(70, 14, 8, 0.38)); }
+
+  /* ---- Marigold rosettes on the ribbon ends + sparkles ---- */
+  .rose { position: absolute; z-index: 3; width: 88px; height: 88px; opacity: 0; }
+  .rose svg { display: block; width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 6px 8px rgba(70, 14, 8, 0.4)); }
+  .rose.l { left: -50px; top: -12px; }
+  .rose.r { right: -50px; top: -12px; }
+  .twk { position: absolute; opacity: 0; }
+  #fx { position: absolute; inset: 0; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="title_card" data-start="0" data-width="1920" data-height="1080" data-duration="4.6">
+  <div id="fader">
+    <div id="fx"></div>
+    <div id="lock">
+      <div id="title" class="display">
+        <span id="w1" class="w">Ganesha&rsquo;s</span>
+        <span id="w2" class="w">Big</span>
+        <span id="w3" class="w">Race</span>
+      </div>
+      <div id="ribbon">
+        <div class="tail l" data-layout-allow-overflow><svg viewBox="0 0 196 92"><path d="M196 7 L14 7 L58 46 L14 85 L196 85 Z" fill="#8F1F17" stroke="#F6B21A" stroke-width="7" stroke-linejoin="round"/></svg></div>
+        <div class="tail r" data-layout-allow-overflow><svg viewBox="0 0 196 92"><path d="M0 7 L182 7 L138 46 L182 85 L0 85 Z" fill="#8F1F17" stroke="#F6B21A" stroke-width="7" stroke-linejoin="round"/></svg></div>
+        <div class="body"><span id="sub">A Ganesha Story for Kids</span></div>
+        <div id="roseL" class="rose l" data-layout-allow-overflow></div>
+        <div id="roseR" class="rose r" data-layout-allow-overflow></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  const tl = gsap.timeline({ paused: true });
+
+  // marigold rosettes (SVG built by the kit)
+  document.getElementById('roseL').innerHTML = Kit.svg.marigold(88);
+  document.getElementById('roseR').innerHTML = Kit.svg.marigold(88);
+
+  // --- 0.35 s: title words pop in one after another (first word lands exactly on the cue) ---
+  const words = ['#w1', '#w2', '#w3'], tilt = [-2.5, 1.6, -2];
+  words.forEach((w, i) => {
+    tl.fromTo(w,
+      { scale: 0.5, y: 30, rotation: tilt[i] - 4, opacity: 0, transformOrigin: '50% 70%' },
+      { scale: 1, y: 0, rotation: tilt[i], opacity: 1, duration: 0.62, ease: 'back.out(1.3)' }, 0.35 + i * 0.1);
+  });
+
+  // --- ribbon unfurls under the title, then the subtitle and rosettes arrive ---
+  tl.fromTo('#ribbon', { scaleX: 0.45, scaleY: 0.8, opacity: 0, y: -10, transformOrigin: '50% 0%' },
+                       { scaleX: 1, scaleY: 1, opacity: 1, y: 0, duration: 0.6, ease: 'back.out(1.5)' }, 0.8);
+  tl.fromTo('#sub', { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' }, 0.95);
+  tl.fromTo('#roseL', { scale: 0.2, rotation: -70, opacity: 0, transformOrigin: '50% 50%' }, { scale: 1, rotation: 0, opacity: 1, duration: 0.65, ease: 'back.out(1.8)' }, 1.0);
+  tl.fromTo('#roseR', { scale: 0.2, rotation: 70, opacity: 0, transformOrigin: '50% 50%' }, { scale: 1, rotation: 0, opacity: 1, duration: 0.65, ease: 'back.out(1.8)' }, 1.1);
+  // rosettes turn very slowly while the card holds (finite, no loop)
+  tl.to('#roseL', { rotation: 18, duration: 2.9, ease: 'none' }, 1.65);
+  tl.to('#roseR', { rotation: -18, duration: 2.9, ease: 'none' }, 1.75);
+
+  // --- soft sparkle bursts as the words land (gentle, few) ---
+  Kit.sparkBurst(tl, '#fx', { x: 250, y: 215, at: 0.62, n: 6, r: 80, size: 30, seed: 11 });
+  Kit.sparkBurst(tl, '#fx', { x: 1670, y: 215, at: 0.8, n: 6, r: 80, size: 30, seed: 23 });
+
+  // --- slow twinkles during the hold (each one eases in and out over ~1.4 s, never strobes) ---
+  const tw = [
+    { x: 175, y: 160, s: 36, at: 1.3 }, { x: 1745, y: 165, s: 34, at: 1.7 },
+    { x: 195, y: 345, s: 40, at: 2.1 }, { x: 1725, y: 345, s: 36, at: 2.5 },
+    { x: 235, y: 262, s: 28, at: 2.9 }, { x: 1685, y: 258, s: 30, at: 3.0 },
+  ];
+  const fx = document.getElementById('fx');
+  tw.forEach((t, i) => {
+    const d = document.createElement('div');
+    d.className = 'twk'; d.id = 'twk' + i;
+    d.style.cssText = `left:${t.x - t.s / 2}px;top:${t.y - t.s / 2}px;width:${t.s}px;height:${t.s}px`;
+    d.innerHTML = Kit.svg.sparkle(i % 2 ? '#FFF3DC' : '#FFD866', t.s);
+    fx.appendChild(d);
+    tl.fromTo(d, { opacity: 0, scale: 0.35, rotation: 0 }, { opacity: 0.92, scale: 1, rotation: 45, duration: 0.7, ease: 'sine.inOut' }, t.at);
+    tl.to(d, { opacity: 0, scale: 0.35, rotation: 90, duration: 0.7, ease: 'sine.inOut' }, t.at + 0.7);
+  });
+
+  // --- hold: a very slow float of the whole lockup (1.0 -> 4.0, finite) ---
+  tl.to('#lock', { y: -5, duration: 1.5, ease: 'sine.inOut', yoyo: true, repeat: 1 }, 1.0);
+
+  // --- 4.0 -> 4.5: soft fade with a tiny lift ---
+  tl.to('#fader', { opacity: 0, y: -14, duration: 0.5, ease: 'power1.inOut' }, 4.0);
+
+  window.__timelines['title_card'] = tl;
+</script>
+</body>
+</html>

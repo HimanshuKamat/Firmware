@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1920, height=1080" />
+<title>Chant Caption</title>
+<script src="vendor/gsap.min.js"></script>
+<link rel="stylesheet" href="kit.css" />
+<script src="kit.js"></script>
+<style>
+  @font-face { font-family: "Fredoka"; src: url("fonts/Fredoka.ttf") format("truetype"); font-weight: 300 700; }
+  #root { position: relative; width: 100%; height: 100%; overflow: hidden; background: transparent; }
+
+  /* One placement for all three shots (04 close-up, 19 family at left, 26 cheering):
+     top-right corner. Faces in those shots never reach this corner (in shot 04 the head
+     stays left of x~1250 above y~330), so the lock-up is a tidy right-aligned block
+     with its right edge on the 96 px margin. */
+  #fader { position: absolute; inset: 0; opacity: 1; }
+  #fx    { position: absolute; inset: 0; }
+  #lock  { position: absolute; right: 108px; top: 96px; display: flex; flex-direction: column; align-items: flex-end; }
+
+  /* soft warm bloom behind "Morya!" (blooms on the pop, then settles) */
+  #halo {
+    position: absolute; left: -24px; top: 48px; width: 600px; height: 250px; opacity: 0;
+    background: radial-gradient(closest-side, rgba(255, 226, 130, 0.78) 0%, rgba(255, 200, 90, 0.38) 52%, rgba(255, 200, 90, 0) 100%);
+  }
+
+  /* ---- line 1: "Ganpati Bappa..." (three beats, one after another) ---- */
+  #l1 { position: relative; display: flex; align-items: baseline; justify-content: flex-end; gap: 0.26em; font-size: 68px; white-space: nowrap; }
+  #l1 .w { display: block; opacity: 0; will-change: transform; }
+  #dots { display: flex; align-items: baseline; gap: 0.01em; margin-left: -0.12em; }
+  #dots .dot { display: block; opacity: 0; will-change: transform; }
+
+  /* ---- line 2: the big held "Morya!" ---- */
+  #mWrap { position: relative; margin-top: 18px; }
+  #mFloat, #mPop { display: block; }
+  #mPop { font-size: 144px; white-space: nowrap; opacity: 0; will-change: transform; }
+
+  .twk { position: absolute; opacity: 0; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="chant" data-start="0" data-width="1920" data-height="1080" data-duration="4.7">
+  <div id="fader">
+    <div id="fx"></div>
+    <div id="lock">
+      <div id="halo"></div>
+      <div id="l1" class="display">
+        <span id="w1" class="w">Ganpati</span>
+        <span id="w2" class="w">Bappa</span>
+        <span id="dots"><span id="d1" class="dot">.</span><span id="d2" class="dot">.</span><span id="d3" class="dot">.</span></span>
+      </div>
+      <div id="mWrap"><div id="mFloat" data-layout-allow-overflow><div id="mPop" class="display gold">Morya!</div></div></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const tl = gsap.timeline({ paused: true });
+
+  /* ---------- cues (seconds, relative to the overlay start; chant_04 in timing.json) ---------- */
+  const CUE = { ganpati: 0.25, bappa: 0.7, morya: 2.55, out_start: 3.8, out_end: 4.5 };
+
+  /* ---------- line 1: each word pops on its cue ---------- */
+  function popWord(sel, at, tilt) {
+    tl.fromTo(sel,
+      { scale: 0.5, y: 26, rotation: tilt - 5, transformOrigin: '50% 78%' },
+      { scale: 1, y: 0, rotation: tilt, duration: 0.62, ease: 'back.out(1.5)' }, at);
+    tl.fromTo(sel, { opacity: 0 }, { opacity: 1, duration: 0.3, ease: 'power1.out', immediateRender: false }, at);
+  }
+  popWord('#w1', CUE.ganpati, -1.5);
+  popWord('#w2', CUE.bappa, 1.2);
+
+  /* the "..." while the chant waits: three soft dots, one by one, ending just before Morya */
+  ['#d1', '#d2', '#d3'].forEach((d, i) => {
+    const at = 1.25 + i * 0.4;
+    tl.fromTo(d, { scale: 0.3, y: 10, transformOrigin: '50% 90%' }, { scale: 1, y: 0, duration: 0.45, ease: 'back.out(2)' }, at);
+    tl.fromTo(d, { opacity: 0 }, { opacity: 1, duration: 0.3, ease: 'power1.out', immediateRender: false }, at);
+  });
+  // slow float of the first line while it waits (finite, ends at rest)
+  tl.to('#l1', { y: -4, duration: 1.0, ease: 'sine.inOut', yoyo: true, repeat: 2 }, 0.9);
+
+  /* ---------- "Morya!" : pops big, settles with a little wobble ---------- */
+  tl.fromTo('#mPop',
+    { scale: 0.22, y: 34, rotation: -4, transformOrigin: '50% 40%' },
+    { scale: 1, y: 0, rotation: -1, duration: 0.7, ease: 'back.out(1.5)' }, CUE.morya);
+  tl.fromTo('#mPop', { opacity: 0 }, { opacity: 1, duration: 0.3, ease: 'power1.out', immediateRender: false }, CUE.morya);
+  tl.to('#mPop', { rotation: 1.4, duration: 0.5, ease: 'sine.inOut' }, CUE.morya + 0.7);
+  tl.to('#mPop', { rotation: -0.6, duration: 0.55, ease: 'sine.inOut' }, CUE.morya + 1.2);
+  // slow bob while it holds
+  tl.to('#mFloat', { y: -7, duration: 1.3, ease: 'sine.inOut' }, CUE.morya + 0.6);
+  // warm bloom behind the word
+  tl.fromTo('#halo', { scale: 0.55, opacity: 0, transformOrigin: '50% 50%' },
+                     { scale: 1.04, opacity: 0.8, duration: 0.7, ease: 'power2.out' }, CUE.morya - 0.05);
+  tl.to('#halo', { scale: 1, opacity: 0.5, duration: 1.0, ease: 'sine.inOut' }, CUE.morya + 0.7);
+
+  /* ---------- sparkles around "Morya!" (upper arc only, never toward the face) ---------- */
+  const fx = document.getElementById('fx');
+  // [x, y, drift x, drift y, size]: around the word's left, right and lower edge, all behind the letters
+  const SPARKS = [
+    [1312, 232, -34, -26, 34], [1318, 300, -38, 12, 26], [1286, 160, -30, -30, 24],
+    [1828, 188, 14, -28, 34], [1838, 262, 22, 0, 26], [1832, 340, 20, 24, 30],
+    [1762, 374, 6, 34, 28], [1650, 384, -6, 34, 24], [1520, 372, -14, 30, 24],
+  ];
+  SPARKS.forEach((p, i) => {
+    const size = p[4];
+    const s = document.createElement('div');
+    s.className = 'twk'; s.id = 'sp' + i;
+    s.style.cssText = `left:${p[0] - size / 2}px;top:${p[1] - size / 2}px;width:${size}px;height:${size}px`;
+    s.innerHTML = Kit.svg.sparkle(i % 3 === 0 ? '#FFF3DC' : '#FFD866', size);
+    fx.appendChild(s);
+    const d0 = CUE.morya + 0.1 + 0.05 * (i % 4);
+    tl.fromTo(s, { x: 0, y: 0, scale: 0.2, opacity: 0, rotation: 0 },
+      { x: p[2], y: p[3], scale: 1, opacity: 1, rotation: 90, duration: 0.55, ease: 'power2.out' }, d0);
+    tl.to(s, { opacity: 0, scale: 0.3, duration: 0.6, ease: 'power1.in' }, d0 + 0.55);
+  });
+
+  /* ---------- a few marigold petals flutter down the right edge (they stay clear of the faces) ---------- */
+  (function petals(at, n, seed) {
+    const rnd = Kit.rng(seed);
+    const cols = ['#F6B21A', '#F28C28', '#F4A6B8', '#FFD866'];
+    for (let i = 0; i < n; i++) {
+      const outer = document.createElement('div');   // position + fade
+      outer.id = 'pt' + i;
+      outer.style.cssText = 'position:absolute;left:0;top:0;opacity:0;will-change:transform';
+      const mid = document.createElement('div');     // slow spin
+      mid.id = 'ptm' + i;
+      const inner = document.createElement('div');   // side-to-side flutter
+      inner.id = 'pti' + i;
+      const size = 34 + rnd() * 20;
+      inner.innerHTML = Kit.svg.petal(cols[i % cols.length], size * 0.62, size);
+      mid.appendChild(inner); outer.appendChild(mid); fx.appendChild(outer);
+      const x0 = 1566 + rnd() * 250, y0 = 98 + rnd() * 120;
+      const dx = (rnd() - 0.5) * 70, dy = 190 + rnd() * 120;
+      const d = 1.9 + rnd() * 0.9, t0 = at + rnd() * 0.5;
+      const r0 = rnd() * 360, spin = (rnd() - 0.5) * 300;
+      tl.fromTo(outer, { x: x0, y: y0 }, { x: x0 + dx, y: y0 + dy, duration: d, ease: 'sine.out' }, t0);
+      tl.fromTo(mid, { rotation: r0, transformOrigin: '50% 50%' }, { rotation: r0 + spin, duration: d, ease: 'none' }, t0);
+      tl.to(outer, { opacity: 0.95, duration: 0.4, ease: 'none' }, t0);
+      tl.to(outer, { opacity: 0, duration: 0.7, ease: 'none' }, t0 + d - 0.7);
+      const sw = 12 + rnd() * 14, per = 1.1 + rnd() * 0.5;
+      tl.fromTo(inner, { x: -sw, rotationY: -35 }, { x: sw, rotationY: 35, duration: per, ease: 'sine.inOut', yoyo: true, repeat: 1 }, t0);
+    }
+  })(CUE.morya + 0.12, 8, 29);
+
+  /* ---------- slow twinkles on the right while it holds (ease in/out over ~1.3 s, never strobe) ---------- */
+  [
+    { x: 1796, y: 342, s: 34, at: 0.95 }, { x: 1262, y: 96, s: 26, at: 1.55 },
+    { x: 1700, y: 372, s: 28, at: 3.0 },
+  ].forEach((t, i) => {
+    const d = document.createElement('div');
+    d.className = 'twk'; d.id = 'twk' + i;
+    d.style.cssText = `left:${t.x - t.s / 2}px;top:${t.y - t.s / 2}px;width:${t.s}px;height:${t.s}px`;
+    d.innerHTML = Kit.svg.sparkle(i % 2 ? '#FFF3DC' : '#FFD866', t.s);
+    fx.appendChild(d);
+    tl.fromTo(d, { opacity: 0, scale: 0.35, rotation: 0 }, { opacity: 0.92, scale: 1, rotation: 45, duration: 0.65, ease: 'sine.inOut' }, t.at);
+    tl.to(d, { opacity: 0, scale: 0.35, rotation: 90, duration: 0.65, ease: 'sine.inOut' }, t.at + 0.65);
+  });
+
+  /* ---------- exit: everything fades softly with a tiny lift (out_start -> out_end) ---------- */
+  tl.to('#fader', { opacity: 0, y: -12, duration: CUE.out_end - CUE.out_start, ease: 'sine.inOut' }, CUE.out_start);
+
+  window.__timelines['chant'] = tl;
+</script>
+</body>
+</html>
